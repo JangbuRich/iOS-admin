@@ -11,7 +11,7 @@ import SwiftUI
 struct JangbuRichApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LaunchView()
         }
     }
 }

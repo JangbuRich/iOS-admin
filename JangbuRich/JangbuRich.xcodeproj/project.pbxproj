@@ -19,6 +19,8 @@
 		3CA749222CEA4DBF00ACDFEF /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA749212CEA4DBF00ACDFEF /* Font+.swift */; };
 		3CA749242CEA4F2D00ACDFEF /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA749232CEA4F2D00ACDFEF /* Color+.swift */; };
 		3CA749262CEA4F5500ACDFEF /* ShapeStyle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA749252CEA4F5500ACDFEF /* ShapeStyle+.swift */; };
+		3CA749282CEA529C00ACDFEF /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA749272CEA529C00ACDFEF /* LaunchView.swift */; };
+		3CA7492A2CEA52CB00ACDFEF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA749292CEA52CB00ACDFEF /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		3CA749212CEA4DBF00ACDFEF /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 		3CA749232CEA4F2D00ACDFEF /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		3CA749252CEA4F5500ACDFEF /* ShapeStyle+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShapeStyle+.swift"; sourceTree = "<group>"; };
+		3CA749272CEA529C00ACDFEF /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
+		3CA749292CEA52CB00ACDFEF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,8 @@
 		3CA7490D2CEA4C1600ACDFEF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3CA749272CEA529C00ACDFEF /* LaunchView.swift */,
+				3CA749292CEA52CB00ACDFEF /* LoginView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -225,7 +231,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CA7492A2CEA52CB00ACDFEF /* LoginView.swift in Sources */,
 				3CA749262CEA4F5500ACDFEF /* ShapeStyle+.swift in Sources */,
+				3CA749282CEA529C00ACDFEF /* LaunchView.swift in Sources */,
 				3CA749222CEA4DBF00ACDFEF /* Font+.swift in Sources */,
 				3CA749242CEA4F2D00ACDFEF /* Color+.swift in Sources */,
 				3CA749002CEA48F100ACDFEF /* JangbuRichApp.swift in Sources */,
