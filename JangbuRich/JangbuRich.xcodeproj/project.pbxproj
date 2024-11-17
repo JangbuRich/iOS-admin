@@ -17,6 +17,7 @@
 		3CA7491E2CEA4D7200ACDFEF /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3CA749172CEA4D7200ACDFEF /* Pretendard-Regular.otf */; };
 		3CA7491F2CEA4D7200ACDFEF /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3CA749182CEA4D7200ACDFEF /* Pretendard-SemiBold.otf */; };
 		3CA749202CEA4D7200ACDFEF /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3CA749192CEA4D7200ACDFEF /* Pretendard-Thin.otf */; };
+		3CA749222CEA4DBF00ACDFEF /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA749212CEA4DBF00ACDFEF /* Font+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		3CA749172CEA4D7200ACDFEF /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		3CA749182CEA4D7200ACDFEF /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		3CA749192CEA4D7200ACDFEF /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
+		3CA749212CEA4DBF00ACDFEF /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 		3CA749112CEA4C3300ACDFEF /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				3CA749212CEA4DBF00ACDFEF /* Font+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CA749222CEA4DBF00ACDFEF /* Font+.swift in Sources */,
 				3CA749022CEA48F100ACDFEF /* ContentView.swift in Sources */,
 				3CA749002CEA48F100ACDFEF /* JangbuRichApp.swift in Sources */,
 			);
