@@ -18,6 +18,8 @@
 		3CA7491F2CEA4D7200ACDFEF /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3CA749182CEA4D7200ACDFEF /* Pretendard-SemiBold.otf */; };
 		3CA749202CEA4D7200ACDFEF /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3CA749192CEA4D7200ACDFEF /* Pretendard-Thin.otf */; };
 		3CA749222CEA4DBF00ACDFEF /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA749212CEA4DBF00ACDFEF /* Font+.swift */; };
+		3CA749242CEA4F2D00ACDFEF /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA749232CEA4F2D00ACDFEF /* Color+.swift */; };
+		3CA749262CEA4F5500ACDFEF /* ShapeStyle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA749252CEA4F5500ACDFEF /* ShapeStyle+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		3CA749182CEA4D7200ACDFEF /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		3CA749192CEA4D7200ACDFEF /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
 		3CA749212CEA4DBF00ACDFEF /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
+		3CA749232CEA4F2D00ACDFEF /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
+		3CA749252CEA4F5500ACDFEF /* ShapeStyle+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShapeStyle+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				3CA749212CEA4DBF00ACDFEF /* Font+.swift */,
+				3CA749232CEA4F2D00ACDFEF /* Color+.swift */,
+				3CA749252CEA4F5500ACDFEF /* ShapeStyle+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -222,7 +228,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CA749262CEA4F5500ACDFEF /* ShapeStyle+.swift in Sources */,
 				3CA749222CEA4DBF00ACDFEF /* Font+.swift in Sources */,
+				3CA749242CEA4F2D00ACDFEF /* Color+.swift in Sources */,
 				3CA749022CEA48F100ACDFEF /* ContentView.swift in Sources */,
 				3CA749002CEA48F100ACDFEF /* JangbuRichApp.swift in Sources */,
 			);
