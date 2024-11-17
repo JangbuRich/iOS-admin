@@ -11,6 +11,12 @@
 		3CA749022CEA48F100ACDFEF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA749012CEA48F100ACDFEF /* ContentView.swift */; };
 		3CA749042CEA48F400ACDFEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CA749032CEA48F400ACDFEF /* Assets.xcassets */; };
 		3CA749072CEA48F400ACDFEF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CA749062CEA48F400ACDFEF /* Preview Assets.xcassets */; };
+		3CA7491B2CEA4D7200ACDFEF /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3CA749142CEA4D7200ACDFEF /* Pretendard-Bold.otf */; };
+		3CA7491C2CEA4D7200ACDFEF /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3CA749152CEA4D7200ACDFEF /* Pretendard-Light.otf */; };
+		3CA7491D2CEA4D7200ACDFEF /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3CA749162CEA4D7200ACDFEF /* Pretendard-Medium.otf */; };
+		3CA7491E2CEA4D7200ACDFEF /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3CA749172CEA4D7200ACDFEF /* Pretendard-Regular.otf */; };
+		3CA7491F2CEA4D7200ACDFEF /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3CA749182CEA4D7200ACDFEF /* Pretendard-SemiBold.otf */; };
+		3CA749202CEA4D7200ACDFEF /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3CA749192CEA4D7200ACDFEF /* Pretendard-Thin.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +25,13 @@
 		3CA749012CEA48F100ACDFEF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3CA749032CEA48F400ACDFEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3CA749062CEA48F400ACDFEF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3CA749132CEA4CDB00ACDFEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3CA749142CEA4D7200ACDFEF /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		3CA749152CEA4D7200ACDFEF /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
+		3CA749162CEA4D7200ACDFEF /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		3CA749172CEA4D7200ACDFEF /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		3CA749182CEA4D7200ACDFEF /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		3CA749192CEA4D7200ACDFEF /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +64,7 @@
 		3CA748FE2CEA48F100ACDFEF /* JangbuRich */ = {
 			isa = PBXGroup;
 			children = (
+				3CA749132CEA4CDB00ACDFEF /* Info.plist */,
 				3CA748FF2CEA48F100ACDFEF /* JangbuRichApp.swift */,
 				3CA749102CEA4C2900ACDFEF /* Global */,
 				3CA7490F2CEA4C2500ACDFEF /* Model */,
@@ -111,8 +125,22 @@
 			isa = PBXGroup;
 			children = (
 				3CA749032CEA48F400ACDFEF /* Assets.xcassets */,
+				3CA7491A2CEA4D7200ACDFEF /* Pretendard */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		3CA7491A2CEA4D7200ACDFEF /* Pretendard */ = {
+			isa = PBXGroup;
+			children = (
+				3CA749142CEA4D7200ACDFEF /* Pretendard-Bold.otf */,
+				3CA749152CEA4D7200ACDFEF /* Pretendard-Light.otf */,
+				3CA749162CEA4D7200ACDFEF /* Pretendard-Medium.otf */,
+				3CA749172CEA4D7200ACDFEF /* Pretendard-Regular.otf */,
+				3CA749182CEA4D7200ACDFEF /* Pretendard-SemiBold.otf */,
+				3CA749192CEA4D7200ACDFEF /* Pretendard-Thin.otf */,
+			);
+			path = Pretendard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +202,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CA749072CEA48F400ACDFEF /* Preview Assets.xcassets in Resources */,
+				3CA7491E2CEA4D7200ACDFEF /* Pretendard-Regular.otf in Resources */,
+				3CA7491F2CEA4D7200ACDFEF /* Pretendard-SemiBold.otf in Resources */,
+				3CA749202CEA4D7200ACDFEF /* Pretendard-Thin.otf in Resources */,
+				3CA7491D2CEA4D7200ACDFEF /* Pretendard-Medium.otf in Resources */,
+				3CA7491C2CEA4D7200ACDFEF /* Pretendard-Light.otf in Resources */,
+				3CA7491B2CEA4D7200ACDFEF /* Pretendard-Bold.otf in Resources */,
 				3CA749042CEA48F400ACDFEF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,6 +357,7 @@
 				DEVELOPMENT_TEAM = MAZQ6JDBT4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = JangbuRich/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "장부리치";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -358,6 +393,7 @@
 				DEVELOPMENT_TEAM = MAZQ6JDBT4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = JangbuRich/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "장부리치";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
