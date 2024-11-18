@@ -23,6 +23,7 @@ struct LoginView: View {
                 Text("소상공인과 소비자를 위한\n손쉬운 장부 관리의 시작!")
                     .font(.body8)
                     .foregroundStyle(.jgray30)
+                    .multilineTextAlignment(.center)
                     .padding(.top, scaledHeight(25))
                 
                 Image(.login)
