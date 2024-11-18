@@ -8,8 +8,43 @@
 import SwiftUI
 
 struct LoginView: View {
+    
+    @EnvironmentObject var navigationPathManager: NavigationPathManager
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack(path: $navigationPathManager.path) {
+            VStack {
+                Image(.jAppLogo)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: scaledHeight(120))
+                    .padding(.top, scaledHeight(276))
+                
+                Text("소상공인과 소비자를 위한\n손쉬운 장부 관리의 시작!")
+                    .font(.body8)
+                    .foregroundStyle(.jgray30)
+                    .padding(.top, scaledHeight(25))
+                
+                Image(.login)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: scaledHeight(360))
+                .padding(.top, scaledHeight(150))
+                
+                Spacer()
+                
+                NavigationLink(value: "") {
+                    Image(.buttonKakao)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: scaledHeight(48))
+                }
+                .navigationDestination(for: String.self) { _ in
+                    OnboardingFirstView()
+                }
+                .padding(.bottom, scaledHeight(40))
+            }
+        }
     }
 }
 
