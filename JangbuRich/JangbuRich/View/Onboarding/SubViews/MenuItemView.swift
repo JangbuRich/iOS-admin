@@ -38,8 +38,36 @@ struct MenuItemView: View {
                     
                     Spacer()
                     
-                    Button {
-                        print("수정! 삭제!")
+                    Menu {
+                        Button {
+                            print("수정하기 클릭")
+                        } label: {
+                            HStack {
+                                Image(.iconEdit)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(height: scaledHeight(24))
+                                
+                                Text("수정하기")
+                                    .font(.detail1)
+                                    .foregroundStyle(.jgray30)
+                            }
+                        }
+
+                        Button {
+                            print("삭제하기 클릭")
+                        } label: {
+                            HStack {
+                                Image(.iconDelete)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(height: scaledHeight(24))
+                                
+                                Text("삭제하기")
+                                    .font(.detail1)
+                                    .foregroundStyle(.jgray30)
+                            }
+                        }
                     } label: {
                         Image(.iconMore)
                             .resizable()
