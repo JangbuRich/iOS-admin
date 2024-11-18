@@ -52,6 +52,11 @@ struct OnboardingFourthView: View {
                                 
                                 Button {
                                     isRegisterMenuPresented.toggle()
+                                    
+                                    selectedStoreImage = nil
+                                    menuName = ""
+                                    menuDescription = ""
+                                    menuPrice = ""
                                 } label: {
                                     VStack(spacing: scaledHeight(10)) {
                                         Image(.iconMenuPlus)
