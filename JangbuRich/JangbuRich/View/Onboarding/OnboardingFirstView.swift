@@ -37,9 +37,10 @@ struct OnboardingFirstView: View {
                     
                     VStack {
                         VStack(spacing: scaledHeight(35)) {
-                            JTextField(title: "매장명", placeholder: "매장명을 입력해주세요", text: $storeName, isRequired: true)
+                            JTextField(title: "매장명", placeholder: "매장명을 입력해주세요", text: $storeName, isRequired: true, isNumberPad: false)
                             
-                            JTextField(title: "전화번호", placeholder: "010 1234 5678", text: $phoneNumber, isRequired: true)
+                            JTextField(title: "전화번호", placeholder: "010 1234 5678", text: $phoneNumber, isRequired: true, isNumberPad: true)
+                                .keyboardType(.numberPad)
                         }
                         
                         Divider()
@@ -56,9 +57,9 @@ struct OnboardingFirstView: View {
                         }
                         
                         VStack(spacing: scaledHeight(35)) {
-                            JTextField(title: "대표자 성명", placeholder: "대표자 성명을 입력해주세요", text: $name, isRequired: true)
+                            JTextField(title: "대표자 성명", placeholder: "대표자 성명을 입력해주세요", text: $name, isRequired: true, isNumberPad: false)
                             
-                            JTextField(title: "사업자등록번호", placeholder: "사업자등록번호를 입력해주세요", text: $businessNumber, isRequired: true)
+                            JTextField(title: "사업자등록번호", placeholder: "사업자등록번호를 입력해주세요", text: $businessNumber, isRequired: true, isNumberPad: true)
                         }
                         .padding(.top, scaledHeight(20))
                         

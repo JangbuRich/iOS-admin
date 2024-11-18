@@ -12,6 +12,7 @@ struct JTextField: View {
     let placeholder: String
     @Binding var text: String
     let isRequired: Bool
+    let isNumberPad: Bool
 
     var body: some View {
         VStack(alignment: .leading, spacing: scaledHeight(10)) {
@@ -32,8 +33,14 @@ struct JTextField: View {
                 .foregroundStyle(.jgray60)
                 .padding()
                 .frame(height: scaledHeight(42))
+                .keyboardType(isNumberPad ? .numberPad : .default)
                 .background(.jgray95)
                 .cornerRadius(scaledHeight(10))
+                .onChange(of: text) {
+                    if isNumberPad {
+                        text = text.filter { $0.isNumber }
+                    }
+                }
         }
     }
 }

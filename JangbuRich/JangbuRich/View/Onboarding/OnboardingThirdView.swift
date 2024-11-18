@@ -12,7 +12,7 @@ struct OnboardingThirdView: View {
     @EnvironmentObject var navigationPathManager: NavigationPathManager
     
     @State private var selectedStoreImage: UIImage? = nil
-    @State private var storeName: String = "써브웨이 광교엘포트점"
+    @State private var storeName: String = ""
     @State private var storeIntro: String = ""
     @State private var selectedStoreTags: Set<String> = []
     @State private var storeLocation: String = ""
@@ -93,10 +93,10 @@ struct OnboardingThirdView: View {
                     }
                 }
                 
-                JTextField(title: "매장명", placeholder: "매장명을 입력해주세요", text: $storeName, isRequired: true)
+                JTextField(title: "매장명", placeholder: "매장명을 입력해주세요", text: $storeName, isRequired: true, isNumberPad: false)
                 
                 HStack(alignment: .bottom, spacing: scaledWidth(10)) {
-                    JTextField(title: "매장 소개", placeholder: "간단한 매장 소개를 입력해주세요", text: $storeIntro, isRequired: true)
+                    JTextField(title: "매장 소개", placeholder: "간단한 매장 소개를 입력해주세요", text: $storeIntro, isRequired: true, isNumberPad: false)
                     
                     Button {
                         print("AI, 매장 소개 작성해~")
@@ -143,7 +143,7 @@ struct OnboardingThirdView: View {
                 
                 VStack {
                     HStack(alignment: .bottom, spacing: scaledWidth(10)) {
-                        JTextField(title: "매장 위치", placeholder: "매장 위치를 검색해보세요", text: $storeIntro, isRequired: true)
+                        JTextField(title: "매장 위치", placeholder: "매장 위치를 검색해보세요", text: $storeLocation, isRequired: true, isNumberPad: false)
                         
                         Button {
                             print("매장 위치 검색!! 얍!")
@@ -261,6 +261,9 @@ struct OnboardingThirdView: View {
         }
         .customNavigationBar(title: "") {
             navigationPathManager.resetToRoot()
+        }
+        .onTapGesture {
+            self.hideKeyboard()
         }
     }
     
