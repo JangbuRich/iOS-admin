@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C9F9DE32CEAD71000ED539E /* JTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F9DE22CEAD71000ED539E /* JTextField.swift */; };
+		3C9F9DE52CEAD72D00ED539E /* JNavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F9DE42CEAD72D00ED539E /* JNavigationButton.swift */; };
 		3CA749002CEA48F100ACDFEF /* JangbuRichApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA748FF2CEA48F100ACDFEF /* JangbuRichApp.swift */; };
 		3CA749042CEA48F400ACDFEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CA749032CEA48F400ACDFEF /* Assets.xcassets */; };
 		3CA749072CEA48F400ACDFEF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CA749062CEA48F400ACDFEF /* Preview Assets.xcassets */; };
@@ -21,9 +23,15 @@
 		3CA749262CEA4F5500ACDFEF /* ShapeStyle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA749252CEA4F5500ACDFEF /* ShapeStyle+.swift */; };
 		3CA749282CEA529C00ACDFEF /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA749272CEA529C00ACDFEF /* LaunchView.swift */; };
 		3CA7492A2CEA52CB00ACDFEF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA749292CEA52CB00ACDFEF /* LoginView.swift */; };
+		3CA7492D2CEA6C5100ACDFEF /* NavigationPathManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA7492C2CEA6C5100ACDFEF /* NavigationPathManager.swift */; };
+		3CA7492F2CEA6CA300ACDFEF /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA7492E2CEA6CA300ACDFEF /* View+.swift */; };
+		3CA749322CEA6CCB00ACDFEF /* JBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA749312CEA6CCB00ACDFEF /* JBackButton.swift */; };
+		3CA749352CEACF6D00ACDFEF /* OnboardingFirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA749342CEACF6D00ACDFEF /* OnboardingFirstView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C9F9DE22CEAD71000ED539E /* JTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTextField.swift; sourceTree = "<group>"; };
+		3C9F9DE42CEAD72D00ED539E /* JNavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JNavigationButton.swift; sourceTree = "<group>"; };
 		3CA748FC2CEA48F100ACDFEF /* JangbuRich.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JangbuRich.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CA748FF2CEA48F100ACDFEF /* JangbuRichApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JangbuRichApp.swift; sourceTree = "<group>"; };
 		3CA749032CEA48F400ACDFEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,6 +48,10 @@
 		3CA749252CEA4F5500ACDFEF /* ShapeStyle+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShapeStyle+.swift"; sourceTree = "<group>"; };
 		3CA749272CEA529C00ACDFEF /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		3CA749292CEA52CB00ACDFEF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		3CA7492C2CEA6C5100ACDFEF /* NavigationPathManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPathManager.swift; sourceTree = "<group>"; };
+		3CA7492E2CEA6CA300ACDFEF /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
+		3CA749312CEA6CCB00ACDFEF /* JBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JBackButton.swift; sourceTree = "<group>"; };
+		3CA749342CEACF6D00ACDFEF /* OnboardingFirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFirstView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +108,8 @@
 			children = (
 				3CA749272CEA529C00ACDFEF /* LaunchView.swift */,
 				3CA749292CEA52CB00ACDFEF /* LoginView.swift */,
+				3CA749302CEA6CB900ACDFEF /* Commons */,
+				3CA749332CEACF1C00ACDFEF /* Onboarding */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -117,6 +131,7 @@
 		3CA749102CEA4C2900ACDFEF /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				3CA7492B2CEA6C3F00ACDFEF /* Manager */,
 				3CA749122CEA4C4500ACDFEF /* Resource */,
 				3CA749112CEA4C3300ACDFEF /* Extension */,
 			);
@@ -129,6 +144,7 @@
 				3CA749212CEA4DBF00ACDFEF /* Font+.swift */,
 				3CA749232CEA4F2D00ACDFEF /* Color+.swift */,
 				3CA749252CEA4F5500ACDFEF /* ShapeStyle+.swift */,
+				3CA7492E2CEA6CA300ACDFEF /* View+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -153,6 +169,32 @@
 				3CA749192CEA4D7200ACDFEF /* Pretendard-Thin.otf */,
 			);
 			path = Pretendard;
+			sourceTree = "<group>";
+		};
+		3CA7492B2CEA6C3F00ACDFEF /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				3CA7492C2CEA6C5100ACDFEF /* NavigationPathManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		3CA749302CEA6CB900ACDFEF /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				3CA749312CEA6CCB00ACDFEF /* JBackButton.swift */,
+				3C9F9DE22CEAD71000ED539E /* JTextField.swift */,
+				3C9F9DE42CEAD72D00ED539E /* JNavigationButton.swift */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		3CA749332CEACF1C00ACDFEF /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				3CA749342CEACF6D00ACDFEF /* OnboardingFirstView.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,12 +273,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C9F9DE52CEAD72D00ED539E /* JNavigationButton.swift in Sources */,
+				3CA749352CEACF6D00ACDFEF /* OnboardingFirstView.swift in Sources */,
 				3CA7492A2CEA52CB00ACDFEF /* LoginView.swift in Sources */,
+				3CA749322CEA6CCB00ACDFEF /* JBackButton.swift in Sources */,
 				3CA749262CEA4F5500ACDFEF /* ShapeStyle+.swift in Sources */,
 				3CA749282CEA529C00ACDFEF /* LaunchView.swift in Sources */,
 				3CA749222CEA4DBF00ACDFEF /* Font+.swift in Sources */,
+				3CA7492F2CEA6CA300ACDFEF /* View+.swift in Sources */,
+				3C9F9DE32CEAD71000ED539E /* JTextField.swift in Sources */,
 				3CA749242CEA4F2D00ACDFEF /* Color+.swift in Sources */,
 				3CA749002CEA48F100ACDFEF /* JangbuRichApp.swift in Sources */,
+				3CA7492D2CEA6C5100ACDFEF /* NavigationPathManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
