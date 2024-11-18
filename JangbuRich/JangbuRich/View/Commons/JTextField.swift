@@ -30,7 +30,7 @@ struct JTextField: View {
             
             TextField(placeholder, text: $text)
                 .font(.detail1)
-                .foregroundStyle(.jgray60)
+                .foregroundStyle(.jgray20)
                 .padding()
                 .frame(height: scaledHeight(42))
                 .keyboardType(isNumberPad ? .numberPad : .default)
