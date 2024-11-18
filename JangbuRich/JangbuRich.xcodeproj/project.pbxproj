@@ -9,6 +9,17 @@
 /* Begin PBXBuildFile section */
 		3C9F9DE32CEAD71000ED539E /* JTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F9DE22CEAD71000ED539E /* JTextField.swift */; };
 		3C9F9DE52CEAD72D00ED539E /* JNavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F9DE42CEAD72D00ED539E /* JNavigationButton.swift */; };
+		3C9F9DE72CEAD87A00ED539E /* OnboardingSecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F9DE62CEAD87A00ED539E /* OnboardingSecondView.swift */; };
+		3C9F9DE92CEAD8A200ED539E /* JAgreementRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F9DE82CEAD8A200ED539E /* JAgreementRowView.swift */; };
+		3C9F9DEB2CEAD8B900ED539E /* OnboardingThirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F9DEA2CEAD8B900ED539E /* OnboardingThirdView.swift */; };
+		3C9F9DED2CEAD8D300ED539E /* OnboardingFourthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F9DEC2CEAD8D300ED539E /* OnboardingFourthView.swift */; };
+		3C9F9DEF2CEAD90D00ED539E /* JImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F9DEE2CEAD90D00ED539E /* JImagePicker.swift */; };
+		3C9F9DF12CEAD92700ED539E /* JTagButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F9DF02CEAD92700ED539E /* JTagButton.swift */; };
+		3C9F9DF32CEAD95100ED539E /* JDayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F9DF22CEAD95100ED539E /* JDayButton.swift */; };
+		3C9F9DF52CEADA3D00ED539E /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F9DF42CEADA3D00ED539E /* MenuItem.swift */; };
+		3C9F9DF82CEADAD800ED539E /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F9DF72CEADAD800ED539E /* MenuItemView.swift */; };
+		3C9F9DFA2CEADAEC00ED539E /* MenuRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F9DF92CEADAEC00ED539E /* MenuRegisterView.swift */; };
+		3C9F9DFC2CEADC9500ED539E /* JPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F9DFB2CEADC9500ED539E /* JPopupView.swift */; };
 		3CA749002CEA48F100ACDFEF /* JangbuRichApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA748FF2CEA48F100ACDFEF /* JangbuRichApp.swift */; };
 		3CA749042CEA48F400ACDFEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CA749032CEA48F400ACDFEF /* Assets.xcassets */; };
 		3CA749072CEA48F400ACDFEF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CA749062CEA48F400ACDFEF /* Preview Assets.xcassets */; };
@@ -32,6 +43,17 @@
 /* Begin PBXFileReference section */
 		3C9F9DE22CEAD71000ED539E /* JTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTextField.swift; sourceTree = "<group>"; };
 		3C9F9DE42CEAD72D00ED539E /* JNavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JNavigationButton.swift; sourceTree = "<group>"; };
+		3C9F9DE62CEAD87A00ED539E /* OnboardingSecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSecondView.swift; sourceTree = "<group>"; };
+		3C9F9DE82CEAD8A200ED539E /* JAgreementRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JAgreementRowView.swift; sourceTree = "<group>"; };
+		3C9F9DEA2CEAD8B900ED539E /* OnboardingThirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingThirdView.swift; sourceTree = "<group>"; };
+		3C9F9DEC2CEAD8D300ED539E /* OnboardingFourthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFourthView.swift; sourceTree = "<group>"; };
+		3C9F9DEE2CEAD90D00ED539E /* JImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JImagePicker.swift; sourceTree = "<group>"; };
+		3C9F9DF02CEAD92700ED539E /* JTagButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTagButton.swift; sourceTree = "<group>"; };
+		3C9F9DF22CEAD95100ED539E /* JDayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JDayButton.swift; sourceTree = "<group>"; };
+		3C9F9DF42CEADA3D00ED539E /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		3C9F9DF72CEADAD800ED539E /* MenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
+		3C9F9DF92CEADAEC00ED539E /* MenuRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRegisterView.swift; sourceTree = "<group>"; };
+		3C9F9DFB2CEADC9500ED539E /* JPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPopupView.swift; sourceTree = "<group>"; };
 		3CA748FC2CEA48F100ACDFEF /* JangbuRich.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JangbuRich.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CA748FF2CEA48F100ACDFEF /* JangbuRichApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JangbuRichApp.swift; sourceTree = "<group>"; };
 		3CA749032CEA48F400ACDFEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -65,6 +87,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C9F9DF62CEADAC400ED539E /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				3C9F9DF72CEADAD800ED539E /* MenuItemView.swift */,
+				3C9F9DF92CEADAEC00ED539E /* MenuRegisterView.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
 		3CA748F32CEA48F100ACDFEF = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +155,7 @@
 		3CA7490F2CEA4C2500ACDFEF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3C9F9DF42CEADA3D00ED539E /* MenuItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -185,6 +217,11 @@
 				3CA749312CEA6CCB00ACDFEF /* JBackButton.swift */,
 				3C9F9DE22CEAD71000ED539E /* JTextField.swift */,
 				3C9F9DE42CEAD72D00ED539E /* JNavigationButton.swift */,
+				3C9F9DE82CEAD8A200ED539E /* JAgreementRowView.swift */,
+				3C9F9DEE2CEAD90D00ED539E /* JImagePicker.swift */,
+				3C9F9DF02CEAD92700ED539E /* JTagButton.swift */,
+				3C9F9DF22CEAD95100ED539E /* JDayButton.swift */,
+				3C9F9DFB2CEADC9500ED539E /* JPopupView.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -193,6 +230,10 @@
 			isa = PBXGroup;
 			children = (
 				3CA749342CEACF6D00ACDFEF /* OnboardingFirstView.swift */,
+				3C9F9DE62CEAD87A00ED539E /* OnboardingSecondView.swift */,
+				3C9F9DEA2CEAD8B900ED539E /* OnboardingThirdView.swift */,
+				3C9F9DEC2CEAD8D300ED539E /* OnboardingFourthView.swift */,
+				3C9F9DF62CEADAC400ED539E /* SubViews */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -274,17 +315,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C9F9DE52CEAD72D00ED539E /* JNavigationButton.swift in Sources */,
+				3C9F9DF12CEAD92700ED539E /* JTagButton.swift in Sources */,
+				3C9F9DE72CEAD87A00ED539E /* OnboardingSecondView.swift in Sources */,
 				3CA749352CEACF6D00ACDFEF /* OnboardingFirstView.swift in Sources */,
+				3C9F9DF82CEADAD800ED539E /* MenuItemView.swift in Sources */,
 				3CA7492A2CEA52CB00ACDFEF /* LoginView.swift in Sources */,
 				3CA749322CEA6CCB00ACDFEF /* JBackButton.swift in Sources */,
+				3C9F9DEF2CEAD90D00ED539E /* JImagePicker.swift in Sources */,
 				3CA749262CEA4F5500ACDFEF /* ShapeStyle+.swift in Sources */,
 				3CA749282CEA529C00ACDFEF /* LaunchView.swift in Sources */,
+				3C9F9DFC2CEADC9500ED539E /* JPopupView.swift in Sources */,
+				3C9F9DFA2CEADAEC00ED539E /* MenuRegisterView.swift in Sources */,
+				3C9F9DF52CEADA3D00ED539E /* MenuItem.swift in Sources */,
 				3CA749222CEA4DBF00ACDFEF /* Font+.swift in Sources */,
 				3CA7492F2CEA6CA300ACDFEF /* View+.swift in Sources */,
 				3C9F9DE32CEAD71000ED539E /* JTextField.swift in Sources */,
 				3CA749242CEA4F2D00ACDFEF /* Color+.swift in Sources */,
+				3C9F9DED2CEAD8D300ED539E /* OnboardingFourthView.swift in Sources */,
 				3CA749002CEA48F100ACDFEF /* JangbuRichApp.swift in Sources */,
 				3CA7492D2CEA6C5100ACDFEF /* NavigationPathManager.swift in Sources */,
+				3C9F9DE92CEAD8A200ED539E /* JAgreementRowView.swift in Sources */,
+				3C9F9DF32CEAD95100ED539E /* JDayButton.swift in Sources */,
+				3C9F9DEB2CEAD8B900ED539E /* OnboardingThirdView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
