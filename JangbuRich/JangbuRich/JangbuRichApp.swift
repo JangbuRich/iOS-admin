@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct JangbuRichApp: App {
+    
+    @ObservedObject private var navigationPathManager = NavigationPathManager()
+    
     var body: some Scene {
         WindowGroup {
             LaunchView()
+                .environmentObject(navigationPathManager)
         }
     }
 }
