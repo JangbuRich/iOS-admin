@@ -45,6 +45,7 @@
 /* Begin PBXFileReference section */
 		3C4CF3CE2CEBCC2500515453 /* OnboardingFifthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFifthView.swift; sourceTree = "<group>"; };
 		3C4CF3D02CEBCD9B00515453 /* JLeftTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLeftTextField.swift; sourceTree = "<group>"; };
+		3C4CF3D32CEC3AD700515453 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		3C9F9DE22CEAD71000ED539E /* JTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTextField.swift; sourceTree = "<group>"; };
 		3C9F9DE42CEAD72D00ED539E /* JNavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JNavigationButton.swift; sourceTree = "<group>"; };
 		3C9F9DE62CEAD87A00ED539E /* OnboardingSecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSecondView.swift; sourceTree = "<group>"; };
@@ -103,6 +104,7 @@
 		3CA748F32CEA48F100ACDFEF = {
 			isa = PBXGroup;
 			children = (
+				3C4CF3D32CEC3AD700515453 /* Config.xcconfig */,
 				3CA748FE2CEA48F100ACDFEF /* JangbuRich */,
 				3CA748FD2CEA48F100ACDFEF /* Products */,
 			);

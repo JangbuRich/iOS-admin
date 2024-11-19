@@ -129,6 +129,7 @@ iOSInjectionProject/
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
+*.xcconfig
 
 # Keys 🔐
 /**/*.plist
