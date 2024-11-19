@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C4CF3CF2CEBCC2500515453 /* OnboardingFifthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4CF3CE2CEBCC2500515453 /* OnboardingFifthView.swift */; };
+		3C4CF3D12CEBCD9B00515453 /* JLeftTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4CF3D02CEBCD9B00515453 /* JLeftTextField.swift */; };
 		3C9F9DE32CEAD71000ED539E /* JTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F9DE22CEAD71000ED539E /* JTextField.swift */; };
 		3C9F9DE52CEAD72D00ED539E /* JNavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F9DE42CEAD72D00ED539E /* JNavigationButton.swift */; };
 		3C9F9DE72CEAD87A00ED539E /* OnboardingSecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F9DE62CEAD87A00ED539E /* OnboardingSecondView.swift */; };
@@ -41,6 +43,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C4CF3CE2CEBCC2500515453 /* OnboardingFifthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFifthView.swift; sourceTree = "<group>"; };
+		3C4CF3D02CEBCD9B00515453 /* JLeftTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLeftTextField.swift; sourceTree = "<group>"; };
 		3C9F9DE22CEAD71000ED539E /* JTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTextField.swift; sourceTree = "<group>"; };
 		3C9F9DE42CEAD72D00ED539E /* JNavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JNavigationButton.swift; sourceTree = "<group>"; };
 		3C9F9DE62CEAD87A00ED539E /* OnboardingSecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSecondView.swift; sourceTree = "<group>"; };
@@ -216,6 +220,7 @@
 			children = (
 				3CA749312CEA6CCB00ACDFEF /* JBackButton.swift */,
 				3C9F9DE22CEAD71000ED539E /* JTextField.swift */,
+				3C4CF3D02CEBCD9B00515453 /* JLeftTextField.swift */,
 				3C9F9DE42CEAD72D00ED539E /* JNavigationButton.swift */,
 				3C9F9DE82CEAD8A200ED539E /* JAgreementRowView.swift */,
 				3C9F9DEE2CEAD90D00ED539E /* JImagePicker.swift */,
@@ -233,6 +238,7 @@
 				3C9F9DE62CEAD87A00ED539E /* OnboardingSecondView.swift */,
 				3C9F9DEA2CEAD8B900ED539E /* OnboardingThirdView.swift */,
 				3C9F9DEC2CEAD8D300ED539E /* OnboardingFourthView.swift */,
+				3C4CF3CE2CEBCC2500515453 /* OnboardingFifthView.swift */,
 				3C9F9DF62CEADAC400ED539E /* SubViews */,
 			);
 			path = Onboarding;
@@ -316,7 +322,9 @@
 			files = (
 				3C9F9DE52CEAD72D00ED539E /* JNavigationButton.swift in Sources */,
 				3C9F9DF12CEAD92700ED539E /* JTagButton.swift in Sources */,
+				3C4CF3D12CEBCD9B00515453 /* JLeftTextField.swift in Sources */,
 				3C9F9DE72CEAD87A00ED539E /* OnboardingSecondView.swift in Sources */,
+				3C4CF3CF2CEBCC2500515453 /* OnboardingFifthView.swift in Sources */,
 				3CA749352CEACF6D00ACDFEF /* OnboardingFirstView.swift in Sources */,
 				3C9F9DF82CEADAD800ED539E /* MenuItemView.swift in Sources */,
 				3CA7492A2CEA52CB00ACDFEF /* LoginView.swift in Sources */,
