@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3C4CF3CF2CEBCC2500515453 /* OnboardingFifthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4CF3CE2CEBCC2500515453 /* OnboardingFifthView.swift */; };
 		3C4CF3D12CEBCD9B00515453 /* JLeftTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4CF3D02CEBCD9B00515453 /* JLeftTextField.swift */; };
+		3C4CF3D62CEC3DAE00515453 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4CF3D52CEC3DAE00515453 /* Config.swift */; };
 		3C9F9DE32CEAD71000ED539E /* JTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F9DE22CEAD71000ED539E /* JTextField.swift */; };
 		3C9F9DE52CEAD72D00ED539E /* JNavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F9DE42CEAD72D00ED539E /* JNavigationButton.swift */; };
 		3C9F9DE72CEAD87A00ED539E /* OnboardingSecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F9DE62CEAD87A00ED539E /* OnboardingSecondView.swift */; };
@@ -46,6 +47,7 @@
 		3C4CF3CE2CEBCC2500515453 /* OnboardingFifthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFifthView.swift; sourceTree = "<group>"; };
 		3C4CF3D02CEBCD9B00515453 /* JLeftTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLeftTextField.swift; sourceTree = "<group>"; };
 		3C4CF3D32CEC3AD700515453 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		3C4CF3D52CEC3DAE00515453 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		3C9F9DE22CEAD71000ED539E /* JTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTextField.swift; sourceTree = "<group>"; };
 		3C9F9DE42CEAD72D00ED539E /* JNavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JNavigationButton.swift; sourceTree = "<group>"; };
 		3C9F9DE62CEAD87A00ED539E /* OnboardingSecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSecondView.swift; sourceTree = "<group>"; };
@@ -92,6 +94,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C4CF3D42CEC3D9500515453 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3C4CF3D52CEC3DAE00515453 /* Config.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		3C9F9DF62CEADAC400ED539E /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +134,7 @@
 				3CA749132CEA4CDB00ACDFEF /* Info.plist */,
 				3CA748FF2CEA48F100ACDFEF /* JangbuRichApp.swift */,
 				3CA749102CEA4C2900ACDFEF /* Global */,
+				3C4CF3D42CEC3D9500515453 /* Network */,
 				3CA7490F2CEA4C2500ACDFEF /* Model */,
 				3CA7490E2CEA4C1E00ACDFEF /* Store */,
 				3CA7490D2CEA4C1600ACDFEF /* View */,
@@ -344,6 +355,7 @@
 				3CA7492F2CEA6CA300ACDFEF /* View+.swift in Sources */,
 				3C9F9DE32CEAD71000ED539E /* JTextField.swift in Sources */,
 				3CA749242CEA4F2D00ACDFEF /* Color+.swift in Sources */,
+				3C4CF3D62CEC3DAE00515453 /* Config.swift in Sources */,
 				3C9F9DED2CEAD8D300ED539E /* OnboardingFourthView.swift in Sources */,
 				3CA749002CEA48F100ACDFEF /* JangbuRichApp.swift in Sources */,
 				3CA7492D2CEA6C5100ACDFEF /* NavigationPathManager.swift in Sources */,
