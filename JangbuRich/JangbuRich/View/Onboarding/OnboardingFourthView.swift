@@ -92,7 +92,7 @@ struct OnboardingFourthView: View {
                 
                 Spacer()
                 
-                JNavigationButton(destination: OnboardingThirdView(), label: "다음", isEnabled: true)
+                JNavigationButton(destination: OnboardingFifthView(), label: "다음", isEnabled: true)
                     .padding(.horizontal, scaledWidth(210))
                     .padding(.bottom, scaledHeight(40))
             }
