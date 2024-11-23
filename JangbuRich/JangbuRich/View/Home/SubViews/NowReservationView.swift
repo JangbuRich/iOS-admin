@@ -14,7 +14,7 @@ struct NowReservationView: View {
         VStack {
             VStack {
                 HStack {
-                    Image(.aiHelperButton)
+                    Image(.reservationAvailable)
                         .resizable()
                         .scaledToFit()
                         .frame(height: scaledHeight(24))
@@ -27,7 +27,7 @@ struct NowReservationView: View {
                                 .font(.detail2)
                                 .foregroundStyle(.jgray20)
                             
-                            Image(.iconBack)
+                            Image(.iconRight)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: scaledHeight(20))

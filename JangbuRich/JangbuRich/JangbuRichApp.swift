@@ -17,6 +17,7 @@ struct JangbuRichApp: App {
     @ObservedObject var authStore = AuthStore()
     @ObservedObject var todayOrderStore = TodayOrderStore()
     @ObservedObject var jangbuStore = JangbuStore()
+    @ObservedObject var myInfoStore = MyInfoStore()
     
     @StateObject private var overlayManager = OverlayManager()
     
@@ -30,6 +31,7 @@ struct JangbuRichApp: App {
                 .environmentObject(authStore)
                 .environmentObject(todayOrderStore)
                 .environmentObject(jangbuStore)
+                .environmentObject(myInfoStore)
                 .environmentObject(overlayManager)
                 .overlay(OverlayContainer().environmentObject(overlayManager))
                 .onOpenURL { url in
