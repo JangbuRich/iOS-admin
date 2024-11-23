@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     @EnvironmentObject var todayOrderStore: TodayOrderStore
+    @EnvironmentObject var myInfoStore: MyInfoStore
     
     let nowReservation = [
         NowReservation(name: "김장부", numberOfPeople: "6명", reservationDate: "2024.11.23"),
@@ -66,7 +67,7 @@ struct HomeView: View {
                                                 .padding(.trailing, scaledWidth(15))
                                             
                                             VStack {
-                                                Image(.aiHelperButton)
+                                                Image(.reservationRed)
                                                     .resizable()
                                                     .scaledToFit()
                                                     .frame(height: scaledHeight(24))
@@ -79,7 +80,7 @@ struct HomeView: View {
                                                         .font(.body2)
                                                         .foregroundStyle(.jgray20)
                                                     
-                                                    Image(.iconBack)
+                                                    Image(.iconRight)
                                                         .resizable()
                                                         .scaledToFit()
                                                         .frame(height: scaledHeight(20))
@@ -127,56 +128,72 @@ struct HomeView: View {
                             .padding(.bottom, scaledHeight(20))
                             
                             VStack(spacing: scaledHeight(10)) {
-                                HStack {
-                                    Text("내 매장 정보")
-                                        .font(.headline4)
-                                        .foregroundStyle(.jgray20)
+                                NavigationLink {
+                                    MyInfoView()
+                                } label: {
+                                    HStack {
+                                        Text("내 매장 정보")
+                                            .font(.headline4)
+                                            .foregroundStyle(.jgray20)
+                                        
+                                        Spacer()
+                                    }
                                     
-                                    Spacer()
-                                }
-                                
-                                HStack {
-                                    HStack(spacing: scaledWidth(20)) {
-                                        Image(.aiHelperButton)
-                                            .resizable()
+                                    HStack {
+                                        HStack(spacing: scaledWidth(20)) {
+                                            AsyncImage(url: URL(string: myInfoStore.storeInfo.representativeImage)) { phase in
+                                                switch phase {
+                                                case .empty:
+                                                    ProgressView()
+                                                case .success(let image):
+                                                    image
+                                                        .resizable()
+                                                        .scaledToFit()
+                                                case .failure:
+                                                    Image(systemName: "photo") // 오류 시 기본 이미지
+                                                        .resizable()
+                                                        .scaledToFit()
+                                                @unknown default:
+                                                    EmptyView()
+                                                }
+                                            }
                                             .scaledToFit()
                                             .frame(height: scaledHeight(99))
                                             .cornerRadius(scaledWidth(8))
-                                        
-                                        VStack {
-                                            Text("써브웨이 광교엘포트점")
-                                                .font(.headline3)
-                                                .foregroundStyle(.jgray20)
                                             
-                                            Text("음식점 • 서울 종로구 수표로")
-                                                .font(.body4)
-                                                .foregroundStyle(.jgray40)
-                                            
-                                            Spacer()
-                                            
-                                            HStack {
-                                                Image(.aiHelperButton)
-                                                    .resizable()
-                                                    .scaledToFit()
-                                                    .frame(height: scaledHeight(24))
+                                            VStack {
+                                                Text("써브웨이 광교엘포트점")
+                                                    .font(.headline3)
+                                                    .foregroundStyle(.jgray20)
+                                                
+                                                Text("음식점 • 서울 종로구 수표로")
+                                                    .font(.body4)
+                                                    .foregroundStyle(.jgray40)
+                                                
+                                                Spacer()
+                                                
+                                                HStack {
+                                                    Image(.reservationRed)
+                                                        .resizable()
+                                                        .scaledToFit()
+                                                        .frame(height: scaledHeight(24))
+                                                    
+                                                    Spacer()
+                                                }
                                             }
                                             
-                                            Spacer()
+                                            Image(.iconRightFill)
+                                                .resizable()
+                                                .scaledToFit()
+                                                .frame(height: scaledHeight(34))
+                                                .padding(.trailing, scaledWidth(5))
                                         }
-                                        
-                                        Spacer()
-                                        
-                                        Image(.aiHelperButton)
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(height: scaledHeight(34))
-                                            .padding(.trailing, scaledWidth(5))
+                                        .padding(scaledWidth(20))
                                     }
-                                    .padding(scaledWidth(20))
+                                    .frame(height: scaledHeight(139))
+                                    .background(.jgray100)
+                                    .cornerRadius(scaledWidth(10))
                                 }
-                                .frame(height: scaledHeight(139))
-                                .background(.jgray100)
-                                .cornerRadius(scaledWidth(10))
                             }
                             .padding(.bottom, scaledHeight(40))
                             
@@ -300,6 +317,7 @@ struct HomeView: View {
             .background(.jgray95)
             .onAppear {
                 todayOrderStore.getOrderToday()
+                myInfoStore.getMyStoreInfo()
             }
         }
     }
