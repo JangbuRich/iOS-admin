@@ -8,24 +8,27 @@
 import SwiftUI
 
 import KakaoSDKAuth
-import KakaoSDKUser
 import KakaoSDKCommon
+import KakaoSDKUser
 
 @main
 struct JangbuRichApp: App {
     
     @ObservedObject private var navigationPathManager = NavigationPathManager()
+    @ObservedObject var authStore = AuthStore()
+    
     @StateObject private var overlayManager = OverlayManager()
     
     init() {
-        KakaoSDK.initSDK(appKey: "YOUR_NATIVE_APP_KEY")
+        KakaoSDK.initSDK(appKey: Config.nativeAppKey)
     }
     
     var body: some Scene {
         WindowGroup {
             LaunchView()
-                .environmentObject(navigationPathManager)
+                .environmentObject(authStore)
                 .environmentObject(overlayManager)
+                .environmentObject(navigationPathManager)
                 .overlay(OverlayContainer().environmentObject(overlayManager))
                 .onOpenURL { url in
                     if AuthApi.isKakaoTalkLoginUrl(url) {
