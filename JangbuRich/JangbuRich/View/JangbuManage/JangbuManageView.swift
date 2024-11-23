@@ -9,38 +9,7 @@ import SwiftUI
 
 struct JangbuManageView: View {
     
-//    @State private var groupList: [JangbuGroup] = []
-//    @State private var historyList: [JangbuHistory] = []
-    
-    let groupList: [JangbuGroup] = [
-        JangbuGroup(groupName: "미르미 그룹1", groupDescription: "33기 구름톤 유니브 팀의 장부입니다!", groupPeriod: "2024.11.23 ~ 2024.12.31", groupRemainPrice: "350,000원"),
-        JangbuGroup(groupName: "미르미 그룹2", groupDescription: "33기 구름톤 유니브 팀의 장부입니다!", groupPeriod: "2024.11.23 ~ 2024.12.31", groupRemainPrice: "350,000원"),
-        JangbuGroup(groupName: "미르미 그룹3", groupDescription: "33기 구름톤 유니브 팀의 장부입니다!", groupPeriod: "2024.11.23 ~ 2024.12.31", groupRemainPrice: "350,000원"),
-        JangbuGroup(groupName: "미르미 그룹4", groupDescription: "33기 구름톤 유니브 팀의 장부입니다!", groupPeriod: "2024.11.23 ~ 2024.12.31", groupRemainPrice: "350,000원"),
-        JangbuGroup(groupName: "미르미 그룹5", groupDescription: "33기 구름톤 유니브 팀의 장부입니다!", groupPeriod: "2024.11.23 ~ 2024.12.31", groupRemainPrice: "350,000원"),
-        JangbuGroup(groupName: "미르미 그룹6", groupDescription: "33기 구름톤 유니브 팀의 장부입니다!", groupPeriod: "2024.11.23 ~ 2024.12.31", groupRemainPrice: "350,000원"),
-        JangbuGroup(groupName: "미르미 그룹7", groupDescription: "33기 구름톤 유니브 팀의 장부입니다!", groupPeriod: "2024.11.23 ~ 2024.12.31", groupRemainPrice: "350,000원"),
-    ]
-    
-    let historyList: [JangbuHistory] = [
-        JangbuHistory(jangbuNumber: "5", jangbuDate: "2024.11.20", jangbuGroupName: "미르미 그룹", price: "+ 100,000원"),
-        JangbuHistory(jangbuNumber: "5", jangbuDate: "2024.11.20", jangbuGroupName: "미르미 그룹", price: "+ 100,000원"),
-        JangbuHistory(jangbuNumber: "5", jangbuDate: "2024.11.20", jangbuGroupName: "미르미 그룹", price: "+ 100,000원"),
-        JangbuHistory(jangbuNumber: "5", jangbuDate: "2024.11.20", jangbuGroupName: "미르미 그룹", price: "+ 100,000원"),
-        JangbuHistory(jangbuNumber: "5", jangbuDate: "2024.11.20", jangbuGroupName: "미르미 그룹", price: "+ 100,000원"),
-        JangbuHistory(jangbuNumber: "5", jangbuDate: "2024.11.20", jangbuGroupName: "미르미 그룹", price: "+ 100,000원"),
-        JangbuHistory(jangbuNumber: "5", jangbuDate: "2024.11.20", jangbuGroupName: "미르미 그룹", price: "+ 100,000원"),
-        JangbuHistory(jangbuNumber: "5", jangbuDate: "2024.11.20", jangbuGroupName: "미르미 그룹", price: "+ 100,000원"),
-        JangbuHistory(jangbuNumber: "5", jangbuDate: "2024.11.20", jangbuGroupName: "미르미 그룹", price: "+ 100,000원"),
-        JangbuHistory(jangbuNumber: "5", jangbuDate: "2024.11.20", jangbuGroupName: "미르미 그룹", price: "+ 100,000원"),
-        JangbuHistory(jangbuNumber: "5", jangbuDate: "2024.11.20", jangbuGroupName: "미르미 그룹", price: "+ 100,000원"),
-        JangbuHistory(jangbuNumber: "5", jangbuDate: "2024.11.20", jangbuGroupName: "미르미 그룹", price: "+ 100,000원"),
-        JangbuHistory(jangbuNumber: "5", jangbuDate: "2024.11.20", jangbuGroupName: "미르미 그룹", price: "+ 100,000원"),
-        JangbuHistory(jangbuNumber: "5", jangbuDate: "2024.11.20", jangbuGroupName: "미르미 그룹", price: "+ 100,000원"),
-        JangbuHistory(jangbuNumber: "5", jangbuDate: "2024.11.20", jangbuGroupName: "미르미 그룹", price: "+ 100,000원"),
-        JangbuHistory(jangbuNumber: "5", jangbuDate: "2024.11.20", jangbuGroupName: "미르미 그룹", price: "+ 100,000원"),
-        JangbuHistory(jangbuNumber: "5", jangbuDate: "2024.11.20", jangbuGroupName: "미르미 그룹", price: "+ 100,000원"),
-    ]
+    @EnvironmentObject var jangbuStore: JangbuStore
     
     let columns: [GridItem] = [
         GridItem(.flexible(), spacing: 15),
@@ -70,7 +39,7 @@ struct JangbuManageView: View {
                     
                     VStack {
                         NavigationLink {
-                            JangbuGroupListView(groupList: groupList)
+                            JangbuGroupListView(groupList: jangbuStore.groupList)
                         } label: {
                             HStack(spacing: 0) {
                                 Text("결제 그룹")
@@ -88,7 +57,7 @@ struct JangbuManageView: View {
                         .padding(.bottom, scaledHeight(15))
                         
                         LazyVGrid(columns: columns, spacing: 15) {
-                            ForEach(groupList.prefix(4), id: \.groupName) { group in
+                            ForEach(jangbuStore.groupList.prefix(4), id: \.id) { group in
                                 JangbuGroupView(jangbuGroup: group)
                             }
                         }
@@ -97,7 +66,7 @@ struct JangbuManageView: View {
                     
                     VStack {
                         NavigationLink {
-                            JangbuHistoryListView(historyList: historyList)
+                            JangbuHistoryListView(historyList: jangbuStore.paymentHistoryList)
                         } label: {
                             HStack(spacing: 0) {
                                 Text("결제 내역")
@@ -137,7 +106,7 @@ struct JangbuManageView: View {
                                 .padding(.vertical, scaledHeight(15))
                             
                             VStack(spacing: scaledHeight(20)) {
-                                ForEach(historyList.prefix(10), id: \.jangbuNumber) { history in
+                                ForEach(jangbuStore.paymentHistoryList.prefix(10), id: \.id) { history in
                                     JangbuHistoryView(jangbHistory: history)
                                 }
                             }
@@ -153,6 +122,10 @@ struct JangbuManageView: View {
             }
             .scrollIndicators(.hidden)
             .background(.jgray95)
+            .onAppear {
+                jangbuStore.getPaymentGroup()
+                jangbuStore.getPaymentHistory()
+            }
         }
     }
 }
