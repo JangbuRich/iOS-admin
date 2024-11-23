@@ -10,41 +10,7 @@ import SwiftUI
 struct OrderHistoryView: View {
     
     @EnvironmentObject var overlayManager: OverlayManager
-    
-//    @State private var orderList: OrderDetailList = []
-//    @State private var todayOrder: OrderDetail = []
-//    @State private var pastOrder: OrderDetail = []
-
-    @State private var orderList: OrderDetailList = OrderDetailList(
-        orderNumber: "5",
-        orderGroup: "미르미 그룹",
-        orderName: "김장부",
-        orderMenus: [
-            OrderMenuList(menuTitle: "이탈리안 비엠티", menuNumberOfCount: "1"),
-            OrderMenuList(menuTitle: "이탈리안 비엠티", menuNumberOfCount: "1"),
-            OrderMenuList(menuTitle: "이탈리안 비엠티", menuNumberOfCount: "1")
-        ],
-        orderDate: "2024.11.23",
-        orderTime: "10:30",
-        orderTotalCount: "3",
-        orderTotalPrice: "28,400"
-    )
-        
-    @State private var todayOrder = [
-        OrderDetail(orderNumber: "5", menuTitle: "이탈리안 비엠티 외 2개", numberOfMenu: "총 3개", orderDate: "2024.11.23", price: "9,700원"),
-        OrderDetail(orderNumber: "5", menuTitle: "이탈리안 비엠티 외 2개", numberOfMenu: "총 3개", orderDate: "2024.11.23", price: "9,700원"),
-        OrderDetail(orderNumber: "5", menuTitle: "이탈리안 비엠티 외 2개", numberOfMenu: "총 3개", orderDate: "2024.11.23", price: "9,700원"),
-        OrderDetail(orderNumber: "5", menuTitle: "이탈리안 비엠티 외 2개", numberOfMenu: "총 3개", orderDate: "2024.11.23", price: "9,700원"),
-        OrderDetail(orderNumber: "5", menuTitle: "이탈리안 비엠티 외 2개", numberOfMenu: "총 3개", orderDate: "2024.11.23", price: "9,700원"),
-    ]
-    
-    @State private var pastOrder = [
-        OrderDetail(orderNumber: "5", menuTitle: "이탈리안 비엠티 외 2개", numberOfMenu: "총 3개", orderDate: "2024.11.19", price: "9,700원"),
-        OrderDetail(orderNumber: "5", menuTitle: "이탈리안 비엠티 외 2개", numberOfMenu: "총 3개", orderDate: "2024.11.19", price: "9,700원"),
-        OrderDetail(orderNumber: "5", menuTitle: "이탈리안 비엠티 외 2개", numberOfMenu: "총 3개", orderDate: "2024.11.19", price: "9,700원"),
-        OrderDetail(orderNumber: "5", menuTitle: "이탈리안 비엠티 외 2개", numberOfMenu: "총 3개", orderDate: "2024.11.19", price: "9,700원"),
-        OrderDetail(orderNumber: "5", menuTitle: "이탈리안 비엠티 외 2개", numberOfMenu: "총 3개", orderDate: "2024.11.19", price: "9,700원"),
-    ]
+    @EnvironmentObject var todayOrderStore: TodayOrderStore
     
     var body: some View {
         NavigationStack {
@@ -67,7 +33,7 @@ struct OrderHistoryView: View {
                     
                     VStack {
                         NavigationLink {
-                            OrderHistoryListView(isToday: true, orderList: todayOrder, orderDetail: orderList)
+                            OrderHistoryListView(isToday: true)
                         } label: {
                             HStack(spacing: 0) {
                                 Text("오늘의 주문 내역")
@@ -87,7 +53,7 @@ struct OrderHistoryView: View {
                         VStack {
                             VStack {
                                 HStack(spacing: scaledWidth(10)) {
-                                    Image(.aiHelperButton)
+                                    Image(.iconCoupon)
                                         .resizable()
                                         .scaledToFit()
                                         .frame(height: scaledHeight(34))
@@ -102,11 +68,11 @@ struct OrderHistoryView: View {
                                         Spacer()
                                         
                                         VStack(alignment: .trailing) {
-                                            Text("총 5건")
+                                            Text("총 \(todayOrderStore.todayOrderList.count)건")
                                                 .font(.label3)
                                                 .foregroundStyle(.jgray50)
                                             
-                                            Text("250,000원")
+                                            Text("\(todayOrderStore.todayTotalPrice)원")
                                                 .font(.headline2)
                                                 .foregroundStyle(.jgray20)
                                         }
@@ -119,9 +85,9 @@ struct OrderHistoryView: View {
                                     .padding(.vertical, scaledHeight(25))
                                 
                                 VStack(spacing: scaledHeight(30)) {
-                                    ForEach(todayOrder, id: \.orderNumber) { order in
+                                    ForEach(todayOrderStore.todayOrderList.prefix(5), id: \.id) { order in
                                         HStack {
-                                            OrderDetailView(order: order, isToday: true)
+                                            TodayOrderDetailView(order: order, isToday: true)
                                             
                                             Image(.iconRight)
                                                 .resizable()
@@ -129,9 +95,13 @@ struct OrderHistoryView: View {
                                                 .frame(height: scaledHeight(24))
                                         }
                                         .onTapGesture {
-                                            overlayManager.showSheet(
-                                                OrderDetailPopupView(orderList: orderList)
-                                            )
+                                            todayOrderStore.getOrderDetail(orderId: order.id) { result in
+                                                if result {
+                                                    overlayManager.showSheet(
+                                                        OrderDetailPopupView(orderDetail: todayOrderStore.orderDetailResult)
+                                                    )
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -144,7 +114,7 @@ struct OrderHistoryView: View {
                         .padding(.bottom, scaledHeight(30))
                         
                         NavigationLink {
-                            OrderHistoryListView(isToday: false, orderList: todayOrder, orderDetail: orderList)
+                            OrderHistoryListView(isToday: false)
                         } label: {
                             HStack(spacing: 0) {
                                 Text("지난 주문 내역")
@@ -163,8 +133,8 @@ struct OrderHistoryView: View {
                         
                         VStack {
                             VStack {
-                                ForEach(pastOrder, id: \.orderNumber) { order in
-                                    OrderDetailView(order: order, isToday: false)
+                                ForEach(todayOrderStore.pastOrderList.prefix(5), id: \.id) { order in
+                                    PastOrderDetailView(order: order, isToday: false)
                                 }
                             }
                             .padding(.vertical, scaledHeight(20))
@@ -180,6 +150,10 @@ struct OrderHistoryView: View {
             }
             .scrollIndicators(.hidden)
             .background(.jgray95)
+            .onAppear {
+                todayOrderStore.getOrderToday()
+                todayOrderStore.getOrderPast()
+            }
         }
     }
 }
