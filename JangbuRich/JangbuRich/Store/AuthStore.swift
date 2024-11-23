@@ -17,6 +17,9 @@ class AuthStore: ObservableObject {
     
     @Published var isHavingToken = false
     @Published var isFinishedOnboarding = false
+    @Published var onboardingUser: OnboardingUser
+    @Published var onboardingStoreImage: UIImage?
+    @Published var onboardingMenuImage: [UIImage]?
     
     init() {
         if ((KeychainStore.sharedKeychain.getAccessToken() ?? "") == "" && (KeychainStore.sharedKeychain.getRefreshToken() ?? "") == "") {
@@ -24,6 +27,8 @@ class AuthStore: ObservableObject {
         } else {
             isHavingToken = true
         }
+        
+        onboardingUser = OnboardingUser(storeName: "", phoneNumber: "", businessName: "", businessRegistrationNumber: "", openingDate: "", agreeMarketing: false, agreeAdvertise: false, introduction: "", category: "", latitude: 0, longitude: 0, address: "", location: "", dayOfWeek: [], openTime: "", closeTime: "", menuCreateRequestDTOS: [], minPrepayment: 0, prepaymentDuration: 0, reservationAvailable: false, maxReservation: 0)
     }
     
     let aToken: String = KeychainStore.sharedKeychain.getAccessToken() ?? ""
@@ -89,6 +94,49 @@ class AuthStore: ObservableObject {
                         }
                     }
                 }
+            }
+        }
+    }
+    
+    func createUser(user: OnboardingUser, storeImage: UIImage, menuImages: [UIImage], completion: @escaping (Bool) -> Void) {
+        
+        guard let storeImageData = storeImage.jpegData(compressionQuality: 0.8) else { return }
+        let menuImagesData = menuImages.compactMap { $0.jpegData(compressionQuality: 0.8) }
+        
+        let url = Config.baseURL + "store/create"
+        
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(KeychainStore.sharedKeychain.getAccessToken() ?? "")",
+            "Content-Type": "multipart/form-data"
+        ]
+        
+        AF.upload(multipartFormData: { multipartFormData in
+            
+            // 가게 세부 정보
+            if let userData = try? JSONEncoder().encode(user) {
+                if let jsonString = String(data: userData, encoding: .utf8) {
+                    multipartFormData.append(Data(jsonString.utf8), withName: "store")
+                }
+            }
+            
+            // 가게 메인 이미지
+            multipartFormData.append(storeImageData, withName: "image", fileName: "store_image.jpg", mimeType: "image/jpeg")
+            
+            // 메뉴 이미지
+            for (index, menuImageData) in menuImagesData.enumerated() {
+                multipartFormData.append(menuImageData, withName: "menuImages", fileName: "menu_image_\(index).jpg", mimeType: "image/jpeg")
+            }
+        }, to: url, headers: headers).response { response in
+            print("response: \(response)")
+            switch response.result {
+            case .success(let data):
+                if let data = data, let responseString = String(data: data, encoding: .utf8) {
+                    print("Upload Success: \(responseString)")
+                    completion(true)
+                }
+            case .failure(let error):
+                print("Upload Failed: \(error.localizedDescription)")
+                completion(false)
             }
         }
     }
