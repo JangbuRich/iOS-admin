@@ -10,6 +10,9 @@ import SwiftUI
 struct LoginView: View {
     
     @EnvironmentObject var navigationPathManager: NavigationPathManager
+    @EnvironmentObject var authStore: AuthStore
+    
+    @State private var isSuccessLogin = false
     
     var body: some View {
         NavigationStack(path: $navigationPathManager.path) {
@@ -34,15 +37,21 @@ struct LoginView: View {
                 
                 Spacer()
                 
-                NavigationLink(value: "") {
+                Button {
+                    authStore.kakaoSocialLogin { result in
+                        if result {
+                            isSuccessLogin = true
+                        }
+                    }
+                } label: {
                     Image(.buttonKakao)
                         .resizable()
                         .scaledToFit()
                         .frame(height: scaledHeight(48))
                 }
-                .navigationDestination(for: String.self) { _ in
-                    OnboardingFirstView()
-                }
+                .navigationDestination(isPresented: $isSuccessLogin, destination: {
+                    OnboardingFirstView(isSuccessLogin: $isSuccessLogin)
+                })
                 .padding(.bottom, scaledHeight(40))
             }
         }

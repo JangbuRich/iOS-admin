@@ -11,6 +11,8 @@ struct OnboardingSecondView: View {
     
     @EnvironmentObject var navigationPathManager: NavigationPathManager
     
+    @Binding var isSuccessLogin: Bool
+    
     @State private var isChecked1 = false
     @State private var isChecked2 = false
     @State private var isChecked3 = false
@@ -83,12 +85,12 @@ struct OnboardingSecondView: View {
             
             Spacer()
             
-            JNavigationButton(destination: OnboardingThirdView(), label: "다음", isEnabled: isAllRequiredChecked)
+            JNavigationButton(destination: OnboardingThirdView(isSuccessLogin: $isSuccessLogin), label: "다음", isEnabled: isAllRequiredChecked)
                 .padding(.horizontal, scaledWidth(210))
                 .padding(.bottom, scaledHeight(40))
         }
         .customNavigationBar(title: "") {
-            navigationPathManager.resetToRoot()
+            isSuccessLogin = false
         }
     }
     
@@ -100,8 +102,4 @@ struct OnboardingSecondView: View {
         isChecked4 = newValue
         isChecked5 = newValue
     }
-}
-
-#Preview {
-    OnboardingSecondView()
 }

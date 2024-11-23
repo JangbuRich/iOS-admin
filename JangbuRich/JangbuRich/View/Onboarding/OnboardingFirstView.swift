@@ -11,6 +11,8 @@ struct OnboardingFirstView: View {
     
     @EnvironmentObject var navigationPathManager: NavigationPathManager
     
+    @Binding var isSuccessLogin: Bool
+    
     @State private var storeName: String = ""
     @State private var phoneNumber: String = ""
     @State private var name: String = ""
@@ -117,7 +119,7 @@ struct OnboardingFirstView: View {
                     
                     Spacer()
                     
-                    JNavigationButton(destination: OnboardingSecondView(), label: "다음", isEnabled: true)
+                    JNavigationButton(destination: OnboardingSecondView(isSuccessLogin: $isSuccessLogin), label: "다음", isEnabled: true)
                         .padding(.horizontal, scaledWidth(210))
                         .padding(.bottom, scaledHeight(40))
                 }
@@ -126,7 +128,7 @@ struct OnboardingFirstView: View {
             .scrollDisabled(true)
         }
         .customNavigationBar(title: "") {
-            navigationPathManager.resetToRoot()
+            isSuccessLogin = false
         }
         .onTapGesture {
             self.hideKeyboard()
@@ -139,8 +141,4 @@ struct OnboardingFirstView: View {
         formatter.dateFormat = "yy.MM.dd"
         return formatter.string(from: date)
     }
-}
-
-#Preview {
-    OnboardingFirstView()
 }

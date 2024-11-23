@@ -11,6 +11,8 @@ struct OnboardingFifthView: View {
     
     @EnvironmentObject var navigationPathManager: NavigationPathManager
     
+    @Binding var isSuccessLogin: Bool
+    
     @State private var prepayment: String = ""
     @State private var prepaymentPeriod: String = ""
     @State private var isAvailableReservation: Bool?
@@ -167,7 +169,7 @@ struct OnboardingFifthView: View {
                     
                     Button {
                         print("온보딩 완료")
-                        navigationPathManager.resetToRoot()
+                        isSuccessLogin = false
                     } label: {
                         Text("완료")
                             .font(.label1)
@@ -188,14 +190,10 @@ struct OnboardingFifthView: View {
             .scrollDisabled(true)
         }
         .customNavigationBar(title: "") {
-            navigationPathManager.resetToRoot()
+            isSuccessLogin = false
         }
         .onTapGesture {
             self.hideKeyboard()
         }
     }
-}
-
-#Preview {
-    OnboardingFifthView()
 }

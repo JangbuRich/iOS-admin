@@ -11,6 +11,8 @@ struct OnboardingThirdView: View {
     
     @EnvironmentObject var navigationPathManager: NavigationPathManager
     
+    @Binding var isSuccessLogin: Bool
+    
     @State private var selectedStoreImage: UIImage? = nil
     @State private var storeName: String = ""
     @State private var storeIntro: String = ""
@@ -257,7 +259,7 @@ struct OnboardingThirdView: View {
                     
                     Spacer()
                     
-                    JNavigationButton(destination: OnboardingFourthView(), label: "다음", isEnabled: true)
+                    JNavigationButton(destination: OnboardingFourthView(isSuccessLogin: $isSuccessLogin), label: "다음", isEnabled: true)
                         .padding(.horizontal, scaledWidth(210))
                         .padding(.bottom, scaledHeight(40))
                 }
@@ -266,7 +268,7 @@ struct OnboardingThirdView: View {
             .scrollDisabled(true)
         }
         .customNavigationBar(title: "") {
-            navigationPathManager.resetToRoot()
+            isSuccessLogin = false
         }
         .onTapGesture {
             self.hideKeyboard()
@@ -288,8 +290,4 @@ struct OnboardingThirdView: View {
             selectedDays.insert(day)
         }
     }
-}
-
-#Preview {
-    OnboardingThirdView()
 }

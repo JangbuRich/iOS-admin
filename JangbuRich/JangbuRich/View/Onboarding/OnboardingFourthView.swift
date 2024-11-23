@@ -11,6 +11,8 @@ struct OnboardingFourthView: View {
     
     @EnvironmentObject var navigationPathManager: NavigationPathManager
     
+    @Binding var isSuccessLogin: Bool
+    
     @State private var selectedStoreImage: UIImage? = nil
     @State private var menuName: String = ""
     @State private var menuDescription: String = ""
@@ -92,7 +94,7 @@ struct OnboardingFourthView: View {
                 
                 Spacer()
                 
-                JNavigationButton(destination: OnboardingFifthView(), label: "다음", isEnabled: true)
+                JNavigationButton(destination: OnboardingFifthView(isSuccessLogin: $isSuccessLogin), label: "다음", isEnabled: true)
                     .padding(.horizontal, scaledWidth(210))
                     .padding(.bottom, scaledHeight(40))
             }
@@ -104,14 +106,10 @@ struct OnboardingFourthView: View {
             })
         }
         .customNavigationBar(title: "") {
-            navigationPathManager.resetToRoot()
+            isSuccessLogin = false
         }
         .sheet(isPresented: $isImagePickerPresented) {
             JImagePicker(selectedImage: $selectedStoreImage)
         }
     }
-}
-
-#Preview {
-    OnboardingFourthView()
 }
