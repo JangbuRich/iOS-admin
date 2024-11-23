@@ -13,8 +13,22 @@
 		3C4CF3D82CEC634000515453 /* AuthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4CF3D72CEC634000515453 /* AuthStore.swift */; };
 		3C4CF3DB2CEC644E00515453 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 3C4CF3DA2CEC644E00515453 /* SwiftKeychainWrapper */; };
 		3C4CF3DD2CEC647E00515453 /* KeyChainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4CF3DC2CEC647E00515453 /* KeyChainStore.swift */; };
-		3C4CF3E02CEC656700515453 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3C4CF3DF2CEC656700515453 /* Alamofire */; };
-		3C4CF3E22CEC656700515453 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 3C4CF3E12CEC656700515453 /* AlamofireDynamic */; };
+		3C4CF3E42CEC65C900515453 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4CF3E32CEC65C900515453 /* Auth.swift */; };
+		3C4CF3E62CEC680400515453 /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 3C4CF3E52CEC680400515453 /* KakaoSDK */; };
+		3C4CF3E82CEC680400515453 /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3C4CF3E72CEC680400515453 /* KakaoSDKAuth */; };
+		3C4CF3EA2CEC680400515453 /* KakaoSDKCert in Frameworks */ = {isa = PBXBuildFile; productRef = 3C4CF3E92CEC680400515453 /* KakaoSDKCert */; };
+		3C4CF3EC2CEC680400515453 /* KakaoSDKCertCore in Frameworks */ = {isa = PBXBuildFile; productRef = 3C4CF3EB2CEC680400515453 /* KakaoSDKCertCore */; };
+		3C4CF3EE2CEC680400515453 /* KakaoSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 3C4CF3ED2CEC680400515453 /* KakaoSDKCommon */; };
+		3C4CF3F12CEC686F00515453 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3C4CF3F02CEC686F00515453 /* Alamofire */; };
+		3C4CF3F32CECA4EC00515453 /* MainTapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4CF3F22CECA4EC00515453 /* MainTapView.swift */; };
+		3C4CF3F62CECA56E00515453 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4CF3F52CECA56E00515453 /* HomeView.swift */; };
+		3C4CF3F92CECA5B300515453 /* OrderHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4CF3F82CECA5B300515453 /* OrderHistoryView.swift */; };
+		3C4CF3FC2CECA5E700515453 /* JangbuManageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4CF3FB2CECA5E700515453 /* JangbuManageView.swift */; };
+		3C4CF3FF2CECA60D00515453 /* ReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4CF3FE2CECA60D00515453 /* ReservationView.swift */; };
+		3C4CF4022CECA63400515453 /* MyInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4CF4012CECA63400515453 /* MyInfoView.swift */; };
+		3C4CF4072CED992600515453 /* HomeTodayOrderHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4CF4062CED992600515453 /* HomeTodayOrderHistoryView.swift */; };
+		3C4CF4092CED9F9900515453 /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4CF4082CED9F9900515453 /* Reservation.swift */; };
+		3C4CF40B2CEDA18000515453 /* NowReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4CF40A2CEDA18000515453 /* NowReservationView.swift */; };
 		3C9F9DE32CEAD71000ED539E /* JTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F9DE22CEAD71000ED539E /* JTextField.swift */; };
 		3C9F9DE52CEAD72D00ED539E /* JNavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F9DE42CEAD72D00ED539E /* JNavigationButton.swift */; };
 		3C9F9DE72CEAD87A00ED539E /* OnboardingSecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F9DE62CEAD87A00ED539E /* OnboardingSecondView.swift */; };
@@ -42,10 +56,24 @@
 		3CA749262CEA4F5500ACDFEF /* ShapeStyle+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA749252CEA4F5500ACDFEF /* ShapeStyle+.swift */; };
 		3CA749282CEA529C00ACDFEF /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA749272CEA529C00ACDFEF /* LaunchView.swift */; };
 		3CA7492A2CEA52CB00ACDFEF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA749292CEA52CB00ACDFEF /* LoginView.swift */; };
-		3CA7492D2CEA6C5100ACDFEF /* NavigationPathManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA7492C2CEA6C5100ACDFEF /* NavigationPathManager.swift */; };
 		3CA7492F2CEA6CA300ACDFEF /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA7492E2CEA6CA300ACDFEF /* View+.swift */; };
 		3CA749322CEA6CCB00ACDFEF /* JBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA749312CEA6CCB00ACDFEF /* JBackButton.swift */; };
 		3CA749352CEACF6D00ACDFEF /* OnboardingFirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA749342CEACF6D00ACDFEF /* OnboardingFirstView.swift */; };
+		3CC986782CF1A47B00B40D78 /* OverlayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC986772CF1A47B00B40D78 /* OverlayManager.swift */; };
+		3CC9867A2CF1B9C800B40D78 /* OrderHistoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC986792CF1B9C800B40D78 /* OrderHistoryListView.swift */; };
+		3CC9867F2CF1CC2500B40D78 /* JangbuGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC9867E2CF1CC2500B40D78 /* JangbuGroupView.swift */; };
+		3CC986812CF1E07700B40D78 /* Jangbu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC986802CF1E07700B40D78 /* Jangbu.swift */; };
+		3CC986832CF1E29500B40D78 /* JangbuHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC986822CF1E29500B40D78 /* JangbuHistoryView.swift */; };
+		3CC986852CF1F08E00B40D78 /* JangbuGroupListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC986842CF1F08E00B40D78 /* JangbuGroupListView.swift */; };
+		3CC986872CF1F09D00B40D78 /* JangbuHistoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC986862CF1F09D00B40D78 /* JangbuHistoryListView.swift */; };
+		3CC986892CF1F7BA00B40D78 /* JangbuGroupDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC986882CF1F7BA00B40D78 /* JangbuGroupDetailView.swift */; };
+		3CC9868B2CF2070200B40D78 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC9868A2CF2070200B40D78 /* BaseResponse.swift */; };
+		3CC9868D2CF23FC700B40D78 /* TodayOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC9868C2CF23FC700B40D78 /* TodayOrder.swift */; };
+		3CC9868F2CF2404000B40D78 /* TodayOrderStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC9868E2CF2404000B40D78 /* TodayOrderStore.swift */; };
+		3CC986912CF2620700B40D78 /* PastOrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC986902CF2620700B40D78 /* PastOrderDetailView.swift */; };
+		3CC986932CF2662800B40D78 /* JangbuStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC986922CF2662800B40D78 /* JangbuStore.swift */; };
+		3CF18CF72CEEF015006A0AAA /* TodayOrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF18CF62CEEF015006A0AAA /* TodayOrderDetailView.swift */; };
+		3CF18CF92CEEF45C006A0AAA /* OrderDetailPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF18CF82CEEF45C006A0AAA /* OrderDetailPopupView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +83,16 @@
 		3C4CF3D52CEC3DAE00515453 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		3C4CF3D72CEC634000515453 /* AuthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStore.swift; sourceTree = "<group>"; };
 		3C4CF3DC2CEC647E00515453 /* KeyChainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainStore.swift; sourceTree = "<group>"; };
+		3C4CF3E32CEC65C900515453 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		3C4CF3F22CECA4EC00515453 /* MainTapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTapView.swift; sourceTree = "<group>"; };
+		3C4CF3F52CECA56E00515453 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		3C4CF3F82CECA5B300515453 /* OrderHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryView.swift; sourceTree = "<group>"; };
+		3C4CF3FB2CECA5E700515453 /* JangbuManageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JangbuManageView.swift; sourceTree = "<group>"; };
+		3C4CF3FE2CECA60D00515453 /* ReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationView.swift; sourceTree = "<group>"; };
+		3C4CF4012CECA63400515453 /* MyInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoView.swift; sourceTree = "<group>"; };
+		3C4CF4062CED992600515453 /* HomeTodayOrderHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTodayOrderHistoryView.swift; sourceTree = "<group>"; };
+		3C4CF4082CED9F9900515453 /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
+		3C4CF40A2CEDA18000515453 /* NowReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowReservationView.swift; sourceTree = "<group>"; };
 		3C9F9DE22CEAD71000ED539E /* JTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTextField.swift; sourceTree = "<group>"; };
 		3C9F9DE42CEAD72D00ED539E /* JNavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JNavigationButton.swift; sourceTree = "<group>"; };
 		3C9F9DE62CEAD87A00ED539E /* OnboardingSecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSecondView.swift; sourceTree = "<group>"; };
@@ -84,10 +122,24 @@
 		3CA749252CEA4F5500ACDFEF /* ShapeStyle+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShapeStyle+.swift"; sourceTree = "<group>"; };
 		3CA749272CEA529C00ACDFEF /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		3CA749292CEA52CB00ACDFEF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		3CA7492C2CEA6C5100ACDFEF /* NavigationPathManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPathManager.swift; sourceTree = "<group>"; };
 		3CA7492E2CEA6CA300ACDFEF /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		3CA749312CEA6CCB00ACDFEF /* JBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JBackButton.swift; sourceTree = "<group>"; };
 		3CA749342CEACF6D00ACDFEF /* OnboardingFirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFirstView.swift; sourceTree = "<group>"; };
+		3CC986772CF1A47B00B40D78 /* OverlayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayManager.swift; sourceTree = "<group>"; };
+		3CC986792CF1B9C800B40D78 /* OrderHistoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryListView.swift; sourceTree = "<group>"; };
+		3CC9867E2CF1CC2500B40D78 /* JangbuGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JangbuGroupView.swift; sourceTree = "<group>"; };
+		3CC986802CF1E07700B40D78 /* Jangbu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jangbu.swift; sourceTree = "<group>"; };
+		3CC986822CF1E29500B40D78 /* JangbuHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JangbuHistoryView.swift; sourceTree = "<group>"; };
+		3CC986842CF1F08E00B40D78 /* JangbuGroupListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JangbuGroupListView.swift; sourceTree = "<group>"; };
+		3CC986862CF1F09D00B40D78 /* JangbuHistoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JangbuHistoryListView.swift; sourceTree = "<group>"; };
+		3CC986882CF1F7BA00B40D78 /* JangbuGroupDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JangbuGroupDetailView.swift; sourceTree = "<group>"; };
+		3CC9868A2CF2070200B40D78 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
+		3CC9868C2CF23FC700B40D78 /* TodayOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayOrder.swift; sourceTree = "<group>"; };
+		3CC9868E2CF2404000B40D78 /* TodayOrderStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayOrderStore.swift; sourceTree = "<group>"; };
+		3CC986902CF2620700B40D78 /* PastOrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastOrderDetailView.swift; sourceTree = "<group>"; };
+		3CC986922CF2662800B40D78 /* JangbuStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JangbuStore.swift; sourceTree = "<group>"; };
+		3CF18CF62CEEF015006A0AAA /* TodayOrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayOrderDetailView.swift; sourceTree = "<group>"; };
+		3CF18CF82CEEF45C006A0AAA /* OrderDetailPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailPopupView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,9 +147,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C4CF3EE2CEC680400515453 /* KakaoSDKCommon in Frameworks */,
+				3C4CF3F12CEC686F00515453 /* Alamofire in Frameworks */,
 				3C4CF3DB2CEC644E00515453 /* SwiftKeychainWrapper in Frameworks */,
-				3C4CF3E22CEC656700515453 /* AlamofireDynamic in Frameworks */,
-				3C4CF3E02CEC656700515453 /* Alamofire in Frameworks */,
+				3C4CF3E62CEC680400515453 /* KakaoSDK in Frameworks */,
+				3C4CF3EA2CEC680400515453 /* KakaoSDKCert in Frameworks */,
+				3C4CF3E82CEC680400515453 /* KakaoSDKAuth in Frameworks */,
+				3C4CF3EC2CEC680400515453 /* KakaoSDKCertCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,8 +164,65 @@
 			isa = PBXGroup;
 			children = (
 				3C4CF3D52CEC3DAE00515453 /* Config.swift */,
+				3CC9868A2CF2070200B40D78 /* BaseResponse.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		3C4CF3F42CECA55D00515453 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3C4CF3F52CECA56E00515453 /* HomeView.swift */,
+				3C4CF4052CED990D00515453 /* SubViews */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		3C4CF3F72CECA59F00515453 /* OrderHistory */ = {
+			isa = PBXGroup;
+			children = (
+				3C4CF3F82CECA5B300515453 /* OrderHistoryView.swift */,
+				3CC986792CF1B9C800B40D78 /* OrderHistoryListView.swift */,
+				3CF18CF52CEEEFBF006A0AAA /* SubViews */,
+			);
+			path = OrderHistory;
+			sourceTree = "<group>";
+		};
+		3C4CF3FA2CECA5B600515453 /* JangbuManage */ = {
+			isa = PBXGroup;
+			children = (
+				3C4CF3FB2CECA5E700515453 /* JangbuManageView.swift */,
+				3CC986842CF1F08E00B40D78 /* JangbuGroupListView.swift */,
+				3CC986882CF1F7BA00B40D78 /* JangbuGroupDetailView.swift */,
+				3CC986862CF1F09D00B40D78 /* JangbuHistoryListView.swift */,
+				3CC9867D2CF1CAEC00B40D78 /* SubViews */,
+			);
+			path = JangbuManage;
+			sourceTree = "<group>";
+		};
+		3C4CF3FD2CECA5EA00515453 /* Reservation */ = {
+			isa = PBXGroup;
+			children = (
+				3C4CF3FE2CECA60D00515453 /* ReservationView.swift */,
+			);
+			path = Reservation;
+			sourceTree = "<group>";
+		};
+		3C4CF4002CECA61300515453 /* MyInfo */ = {
+			isa = PBXGroup;
+			children = (
+				3C4CF4012CECA63400515453 /* MyInfoView.swift */,
+			);
+			path = MyInfo;
+			sourceTree = "<group>";
+		};
+		3C4CF4052CED990D00515453 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				3C4CF4062CED992600515453 /* HomeTodayOrderHistoryView.swift */,
+				3C4CF40A2CEDA18000515453 /* NowReservationView.swift */,
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 		3C9F9DF62CEADAC400ED539E /* SubViews */ = {
@@ -166,8 +279,14 @@
 			children = (
 				3CA749272CEA529C00ACDFEF /* LaunchView.swift */,
 				3CA749292CEA52CB00ACDFEF /* LoginView.swift */,
-				3CA749302CEA6CB900ACDFEF /* Commons */,
+				3C4CF3F22CECA4EC00515453 /* MainTapView.swift */,
 				3CA749332CEACF1C00ACDFEF /* Onboarding */,
+				3C4CF3F42CECA55D00515453 /* Home */,
+				3C4CF3F72CECA59F00515453 /* OrderHistory */,
+				3C4CF3FA2CECA5B600515453 /* JangbuManage */,
+				3C4CF3FD2CECA5EA00515453 /* Reservation */,
+				3C4CF4002CECA61300515453 /* MyInfo */,
+				3CA749302CEA6CB900ACDFEF /* Commons */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -177,6 +296,8 @@
 			children = (
 				3C4CF3DC2CEC647E00515453 /* KeyChainStore.swift */,
 				3C4CF3D72CEC634000515453 /* AuthStore.swift */,
+				3CC9868E2CF2404000B40D78 /* TodayOrderStore.swift */,
+				3CC986922CF2662800B40D78 /* JangbuStore.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -184,7 +305,11 @@
 		3CA7490F2CEA4C2500ACDFEF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3C4CF3E32CEC65C900515453 /* Auth.swift */,
+				3CC9868C2CF23FC700B40D78 /* TodayOrder.swift */,
+				3CC986802CF1E07700B40D78 /* Jangbu.swift */,
 				3C9F9DF42CEADA3D00ED539E /* MenuItem.swift */,
+				3C4CF4082CED9F9900515453 /* Reservation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -235,7 +360,7 @@
 		3CA7492B2CEA6C3F00ACDFEF /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				3CA7492C2CEA6C5100ACDFEF /* NavigationPathManager.swift */,
+				3CC986772CF1A47B00B40D78 /* OverlayManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -269,6 +394,25 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		3CC9867D2CF1CAEC00B40D78 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				3CC9867E2CF1CC2500B40D78 /* JangbuGroupView.swift */,
+				3CC986822CF1E29500B40D78 /* JangbuHistoryView.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		3CF18CF52CEEEFBF006A0AAA /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				3CF18CF62CEEF015006A0AAA /* TodayOrderDetailView.swift */,
+				3CC986902CF2620700B40D78 /* PastOrderDetailView.swift */,
+				3CF18CF82CEEF45C006A0AAA /* OrderDetailPopupView.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -287,8 +431,12 @@
 			name = JangbuRich;
 			packageProductDependencies = (
 				3C4CF3DA2CEC644E00515453 /* SwiftKeychainWrapper */,
-				3C4CF3DF2CEC656700515453 /* Alamofire */,
-				3C4CF3E12CEC656700515453 /* AlamofireDynamic */,
+				3C4CF3E52CEC680400515453 /* KakaoSDK */,
+				3C4CF3E72CEC680400515453 /* KakaoSDKAuth */,
+				3C4CF3E92CEC680400515453 /* KakaoSDKCert */,
+				3C4CF3EB2CEC680400515453 /* KakaoSDKCertCore */,
+				3C4CF3ED2CEC680400515453 /* KakaoSDKCommon */,
+				3C4CF3F02CEC686F00515453 /* Alamofire */,
 			);
 			productName = JangbuRich;
 			productReference = 3CA748FC2CEA48F100ACDFEF /* JangbuRich.app */;
@@ -321,7 +469,7 @@
 			packageReferences = (
 				3C4CF3D22CEC39B200515453 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
 				3C4CF3D92CEC644E00515453 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
-				3C4CF3DE2CEC656700515453 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				3C4CF3EF2CEC686F00515453 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 3CA748FD2CEA48F100ACDFEF /* Products */;
 			projectDirPath = "";
@@ -357,32 +505,56 @@
 			files = (
 				3C9F9DE52CEAD72D00ED539E /* JNavigationButton.swift in Sources */,
 				3C9F9DF12CEAD92700ED539E /* JTagButton.swift in Sources */,
+				3CC9868F2CF2404000B40D78 /* TodayOrderStore.swift in Sources */,
+				3C4CF4092CED9F9900515453 /* Reservation.swift in Sources */,
 				3C4CF3D12CEBCD9B00515453 /* JLeftTextField.swift in Sources */,
 				3C9F9DE72CEAD87A00ED539E /* OnboardingSecondView.swift in Sources */,
 				3C4CF3CF2CEBCC2500515453 /* OnboardingFifthView.swift in Sources */,
+				3CC986912CF2620700B40D78 /* PastOrderDetailView.swift in Sources */,
+				3CC986872CF1F09D00B40D78 /* JangbuHistoryListView.swift in Sources */,
 				3CA749352CEACF6D00ACDFEF /* OnboardingFirstView.swift in Sources */,
+				3C4CF4072CED992600515453 /* HomeTodayOrderHistoryView.swift in Sources */,
 				3C9F9DF82CEADAD800ED539E /* MenuItemView.swift in Sources */,
+				3C4CF4022CECA63400515453 /* MyInfoView.swift in Sources */,
+				3C4CF3FF2CECA60D00515453 /* ReservationView.swift in Sources */,
 				3CA7492A2CEA52CB00ACDFEF /* LoginView.swift in Sources */,
 				3CA749322CEA6CCB00ACDFEF /* JBackButton.swift in Sources */,
 				3C9F9DEF2CEAD90D00ED539E /* JImagePicker.swift in Sources */,
 				3CA749262CEA4F5500ACDFEF /* ShapeStyle+.swift in Sources */,
+				3C4CF3F32CECA4EC00515453 /* MainTapView.swift in Sources */,
 				3CA749282CEA529C00ACDFEF /* LaunchView.swift in Sources */,
+				3C4CF3FC2CECA5E700515453 /* JangbuManageView.swift in Sources */,
+				3CC986812CF1E07700B40D78 /* Jangbu.swift in Sources */,
+				3C4CF3E42CEC65C900515453 /* Auth.swift in Sources */,
+				3CC986932CF2662800B40D78 /* JangbuStore.swift in Sources */,
 				3C9F9DFC2CEADC9500ED539E /* JPopupView.swift in Sources */,
+				3CC986782CF1A47B00B40D78 /* OverlayManager.swift in Sources */,
 				3C9F9DFA2CEADAEC00ED539E /* MenuRegisterView.swift in Sources */,
+				3C4CF3F62CECA56E00515453 /* HomeView.swift in Sources */,
 				3C9F9DF52CEADA3D00ED539E /* MenuItem.swift in Sources */,
+				3CF18CF92CEEF45C006A0AAA /* OrderDetailPopupView.swift in Sources */,
+				3CC986892CF1F7BA00B40D78 /* JangbuGroupDetailView.swift in Sources */,
 				3CA749222CEA4DBF00ACDFEF /* Font+.swift in Sources */,
 				3C4CF3D82CEC634000515453 /* AuthStore.swift in Sources */,
 				3CA7492F2CEA6CA300ACDFEF /* View+.swift in Sources */,
 				3C9F9DE32CEAD71000ED539E /* JTextField.swift in Sources */,
+				3CC9868D2CF23FC700B40D78 /* TodayOrder.swift in Sources */,
+				3CC9867A2CF1B9C800B40D78 /* OrderHistoryListView.swift in Sources */,
 				3C4CF3DD2CEC647E00515453 /* KeyChainStore.swift in Sources */,
 				3CA749242CEA4F2D00ACDFEF /* Color+.swift in Sources */,
 				3C4CF3D62CEC3DAE00515453 /* Config.swift in Sources */,
 				3C9F9DED2CEAD8D300ED539E /* OnboardingFourthView.swift in Sources */,
+				3C4CF3F92CECA5B300515453 /* OrderHistoryView.swift in Sources */,
 				3CA749002CEA48F100ACDFEF /* JangbuRichApp.swift in Sources */,
-				3CA7492D2CEA6C5100ACDFEF /* NavigationPathManager.swift in Sources */,
 				3C9F9DE92CEAD8A200ED539E /* JAgreementRowView.swift in Sources */,
+				3CC9868B2CF2070200B40D78 /* BaseResponse.swift in Sources */,
 				3C9F9DF32CEAD95100ED539E /* JDayButton.swift in Sources */,
+				3C4CF40B2CEDA18000515453 /* NowReservationView.swift in Sources */,
 				3C9F9DEB2CEAD8B900ED539E /* OnboardingThirdView.swift in Sources */,
+				3CC986832CF1E29500B40D78 /* JangbuHistoryView.swift in Sources */,
+				3CC986852CF1F08E00B40D78 /* JangbuGroupListView.swift in Sources */,
+				3CC9867F2CF1CC2500B40D78 /* JangbuGroupView.swift in Sources */,
+				3CF18CF72CEEF015006A0AAA /* TodayOrderDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,7 +798,7 @@
 				minimumVersion = 4.0.1;
 			};
 		};
-		3C4CF3DE2CEC656700515453 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		3C4CF3EF2CEC686F00515453 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -642,15 +814,35 @@
 			package = 3C4CF3D92CEC644E00515453 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
 			productName = SwiftKeychainWrapper;
 		};
-		3C4CF3DF2CEC656700515453 /* Alamofire */ = {
+		3C4CF3E52CEC680400515453 /* KakaoSDK */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3C4CF3DE2CEC656700515453 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
+			package = 3C4CF3D22CEC39B200515453 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDK;
 		};
-		3C4CF3E12CEC656700515453 /* AlamofireDynamic */ = {
+		3C4CF3E72CEC680400515453 /* KakaoSDKAuth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3C4CF3DE2CEC656700515453 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = AlamofireDynamic;
+			package = 3C4CF3D22CEC39B200515453 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKAuth;
+		};
+		3C4CF3E92CEC680400515453 /* KakaoSDKCert */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3C4CF3D22CEC39B200515453 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKCert;
+		};
+		3C4CF3EB2CEC680400515453 /* KakaoSDKCertCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3C4CF3D22CEC39B200515453 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKCertCore;
+		};
+		3C4CF3ED2CEC680400515453 /* KakaoSDKCommon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3C4CF3D22CEC39B200515453 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKCommon;
+		};
+		3C4CF3F02CEC686F00515453 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3C4CF3EF2CEC686F00515453 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
