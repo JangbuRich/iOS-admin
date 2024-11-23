@@ -58,10 +58,9 @@ struct HomeView: View {
                                 }
                                 .padding(.trailing, scaledWidth(10))
                                 
-                                Divider()
+                                RoundedRectangle(cornerRadius: scaledWidth(20))
+                                    .fill(.jOrange)
                                     .frame(width: scaledWidth(3), height: scaledHeight(43))
-                                    .background(.jOrange)
-                                    .cornerRadius(scaledWidth(20))
                                     .padding(.trailing, scaledWidth(15))
                                 
                                 VStack {
@@ -176,9 +175,9 @@ struct HomeView: View {
                     }
                     .padding(.bottom, scaledHeight(40))
                     
-                    Divider()
+                    Rectangle()
+                        .fill(.jgray80)
                         .frame(height: scaledHeight(2))
-                        .background(.jgray80)
                         .padding(.bottom, scaledHeight(30))
                     
                     HStack(spacing: scaledWidth(20)) {

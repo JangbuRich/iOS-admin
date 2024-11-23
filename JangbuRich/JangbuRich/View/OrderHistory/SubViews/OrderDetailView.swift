@@ -53,9 +53,9 @@ struct OrderDetailView: View {
         }
         .frame(height: scaledHeight(40))
         
-        Divider()
+        Rectangle()
+            .fill(.jgray80)
             .frame(height: scaledHeight(1))
-            .background(.jgray80)
             .padding(.vertical, scaledHeight(15))
     }
 }

@@ -43,9 +43,9 @@ struct OnboardingFirstView: View {
                                 .keyboardType(.numberPad)
                         }
                         
-                        Divider()
+                        Rectangle()
+                            .fill(.jgray90)
                             .frame(height: scaledHeight(1))
-                            .background(.jgray90)
                             .padding(.vertical, scaledHeight(30))
                         
                         HStack {

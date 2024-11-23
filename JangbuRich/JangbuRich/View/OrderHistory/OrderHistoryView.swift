@@ -113,9 +113,9 @@ struct OrderHistoryView: View {
                                     }
                                 }
                                 
-                                Divider()
+                                Rectangle()
+                                    .fill(.jgray90)
                                     .frame(height: scaledHeight(1))
-                                    .background(.jgray90)
                                     .padding(.vertical, scaledHeight(25))
                                 
                                 VStack(spacing: scaledHeight(30)) {

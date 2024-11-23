@@ -64,9 +64,9 @@ struct OrderDetailPopupView: View {
                 }
                 .padding(.bottom, scaledHeight(25))
                 
-                Divider()
+                Rectangle()
+                    .fill(.jgray80)
                     .frame(height: scaledHeight(1))
-                    .background(.jgray80)
                 
                 VStack(spacing: scaledWidth(20)) {
                     ForEach(orderList.orderMenus, id: \.menuTitle) { order in
@@ -111,9 +111,9 @@ struct OrderDetailPopupView: View {
                                 .foregroundStyle(.jgray20)
                         }
                         
-                        Divider()
+                        Rectangle()
+                            .fill(.jgray80)
                             .frame(height: scaledHeight(1))
-                            .background(.jgray80)
                             .padding(.vertical, scaledHeight(15))
                         
                         HStack {
@@ -150,9 +150,9 @@ struct OrderDetailPopupView: View {
                                 .foregroundStyle(.jgray30)
                         }
                         
-                        Divider()
+                        Rectangle()
+                            .fill(.jgray80)
                             .frame(height: scaledHeight(1))
-                            .background(.jgray80)
                             .padding(.vertical, scaledHeight(20))
                         
                         HStack {

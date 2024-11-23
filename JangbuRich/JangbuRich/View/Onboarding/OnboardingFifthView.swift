@@ -102,9 +102,9 @@ struct OnboardingFifthView: View {
                                 Spacer()
                             }
                             
-                            Divider()
+                            Rectangle()
+                                .fill(.jgray90)
                                 .frame(height: scaledHeight(1))
-                                .background(.jgray90)
                                 .padding(.vertical, scaledHeight(20))
                             
                             Button {
