@@ -9,7 +9,6 @@ import SwiftUI
 
 struct LoginView: View {
     
-    @EnvironmentObject var navigationPathManager: NavigationPathManager
     @EnvironmentObject var authStore: AuthStore
     
     @State private var isSuccessLogin = false
