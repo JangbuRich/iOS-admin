@@ -13,11 +13,6 @@ struct MainTapView: View {
     
     @State private var selectedIndex: Int = 0
     
-    @State var selection: Int = 1
-    @State private var rootSection1: Bool = false
-    @State private var rootSection2: Bool = false
-    @State private var rootSection3: Bool = false
-    
     var tabs: [String] = [
         "홈",
         "주문 내역",
@@ -41,24 +36,6 @@ struct MainTapView: View {
 //        Image(.tabReservationFill),
         Image(.tabMyinfoFill),
     ]
-    
-    var selectionBinding: Binding<Int> { Binding (
-        get: {
-            self.selection
-        },
-        set: {
-            if $0 == self.selection && rootSection1 {
-                rootSection1 = false
-            }
-            if $0 == self.selection && rootSection2 {
-                rootSection2 = false
-            }
-            if $0 == self.selection && rootSection3 {
-                rootSection3 = false
-            }
-            self.selection = $0
-        }
-    )}
     
     var body: some View {
         HStack {
@@ -110,9 +87,10 @@ struct MainTapView: View {
                 case 2:
                     JangbuManageView()
                 case 3:
-                    ReservationView()
-                case 4:
                     MyInfoView()
+//                    ReservationView()
+//                case 4:
+//                    MyInfoView()
                 default:
                     HomeView()
                 }
