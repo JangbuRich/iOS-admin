@@ -9,14 +9,14 @@ import SwiftUI
 
 struct OrderHistoryListView: View {
     
-    @EnvironmentObject var overlayManager: OverlayManager
     @Environment(\.dismiss) private var dismiss
+    
+    @EnvironmentObject var overlayManager: OverlayManager
+    @EnvironmentObject var todayOrderStore: TodayOrderStore
     
     @State private var searchText: String = ""
     
     var isToday: Bool
-    let orderList: [OrderDetail]
-    var orderDetail: OrderDetailList
     
     var body: some View {
         ScrollView {
@@ -72,9 +72,15 @@ struct OrderHistoryListView: View {
                 .padding(.bottom, scaledHeight(15))
                 
                 HStack {
-                    Text("총 9건")
-                        .font(.detail1)
-                        .foregroundStyle(.jgray50)
+                    if isToday {
+                        Text("총 \(todayOrderStore.todayOrderList.count)건")
+                            .font(.detail1)
+                            .foregroundStyle(.jgray50)
+                    } else {
+                        Text("총 \(todayOrderStore.pastOrderList.count)건")
+                            .font(.detail1)
+                            .foregroundStyle(.jgray50)
+                    }
                     
                     Spacer()
                     
@@ -92,27 +98,40 @@ struct OrderHistoryListView: View {
                 .padding(.bottom, scaledHeight(25))
                 
                 VStack(spacing: scaledHeight(10)) {
-                    ForEach(orderList, id: \.orderNumber) { order in
-                        HStack {
-                            OrderDetailView(order: order, isToday: isToday)
-                            
-                            if isToday {
+                    if isToday {
+                        ForEach(todayOrderStore.todayOrderList, id: \.id) { order in
+                            HStack {
+                                TodayOrderDetailView(order: order, isToday: isToday)
+                                
                                 Image(.iconRight)
                                     .resizable()
                                     .scaledToFit()
                                     .frame(height: scaledHeight(24))
+                                
+                            }
+                            .padding(.vertical, scaledHeight(20))
+                            .padding(.horizontal, scaledHeight(25))
+                            .background(.jgray100)
+                            .cornerRadius(scaledWidth(10))
+                            .onTapGesture {
+                                todayOrderStore.getOrderDetail(orderId: order.id) { result in
+                                    if result {
+                                        overlayManager.showSheet(
+                                            OrderDetailPopupView(orderDetail: todayOrderStore.orderDetailResult)
+                                        )
+                                    }
+                                }
                             }
                         }
-                        .padding(.vertical, scaledHeight(20))
-                        .padding(.horizontal, scaledHeight(25))
-                        .background(.jgray100)
-                        .cornerRadius(scaledWidth(10))
-                        .onTapGesture {
-                            if isToday {
-                                overlayManager.showSheet(
-                                    OrderDetailPopupView(orderList: orderDetail)
-                                )
+                    } else {
+                        ForEach(todayOrderStore.pastOrderList, id: \.id) { order in
+                            HStack {
+                                PastOrderDetailView(order: order, isToday: isToday)
                             }
+                            .padding(.vertical, scaledHeight(20))
+                            .padding(.horizontal, scaledHeight(25))
+                            .background(.jgray100)
+                            .cornerRadius(scaledWidth(10))
                         }
                     }
                 }
