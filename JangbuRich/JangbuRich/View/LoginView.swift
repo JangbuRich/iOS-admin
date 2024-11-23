@@ -28,11 +28,9 @@ struct LoginView: View {
                     .multilineTextAlignment(.center)
                     .padding(.top, scaledHeight(25))
                 
-                Image(.login)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(height: scaledHeight(360))
-                .padding(.top, scaledHeight(150))
+                LottieView(animationName: "Login ani 1", loopMode: .loop)
+                    .frame(width: scaledWidth(517), height: scaledHeight(365))
+                    .padding(.top, scaledHeight(40))
                 
                 Spacer()
                 
