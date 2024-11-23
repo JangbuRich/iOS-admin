@@ -11,6 +11,7 @@ struct JLeftTextField: View {
     
     let unit: String
     let placeholder: String
+    var isEditable: Bool = true
     
     @Binding var text: String
 
@@ -39,6 +40,7 @@ struct JLeftTextField: View {
                 .onChange(of: text) {
                     text = text.filter { $0.isNumber }
                 }
+                .disabled(!isEditable)
         }
     }
 }

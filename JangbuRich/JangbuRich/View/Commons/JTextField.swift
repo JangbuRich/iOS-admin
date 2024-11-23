@@ -13,6 +13,7 @@ struct JTextField: View {
     @Binding var text: String
     let isRequired: Bool
     let isNumberPad: Bool
+    var isEditable: Bool = true
 
     var body: some View {
         VStack(alignment: .leading, spacing: scaledHeight(10)) {
@@ -41,6 +42,7 @@ struct JTextField: View {
                         text = text.filter { $0.isNumber }
                     }
                 }
+                .disabled(!isEditable)
         }
     }
 }
