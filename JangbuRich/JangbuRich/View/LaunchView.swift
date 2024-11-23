@@ -9,12 +9,18 @@ import SwiftUI
 
 struct LaunchView: View {
     
+    @EnvironmentObject var authStore: AuthStore
+    
     @State private var isActive = false
     @State private var isLoading = true
     
     var body: some View {
         if isActive {
-            LoginView()
+            if authStore.isHavingToken && authStore.isFinishedOnboarding {
+                MainTapView()
+            } else {
+                LoginView()
+            }
         } else {
             if isLoading {
                 VStack {

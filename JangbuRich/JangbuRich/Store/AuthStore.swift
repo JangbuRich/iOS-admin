@@ -16,6 +16,7 @@ import KakaoSDKUser
 class AuthStore: ObservableObject {
     
     @Published var isHavingToken = false
+    @Published var isFinishedOnboarding = false
     
     init() {
         if ((KeychainStore.sharedKeychain.getAccessToken() ?? "") == "" && (KeychainStore.sharedKeychain.getRefreshToken() ?? "") == "") {
