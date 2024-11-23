@@ -15,7 +15,9 @@ struct MenuRegisterView: View {
     @Binding var menuName: String
     @Binding var menuDescription: String
     @Binding var menuPrice: String
-    @Binding var menuItems: [MenuItem]
+    
+    @Binding var menuImages: [UIImage]
+    @Binding var menuItems: [MenuCreateRequestDTO]
     
     @Binding var isRegisterMenuPresented: Bool
     @Binding var isImagePickerPresented: Bool
@@ -170,8 +172,10 @@ struct MenuRegisterView: View {
                 
                 Button {
                     if let image = selectedStoreImage {
+                        menuImages.append(image)
+                        
                         menuItems.append(
-                            MenuItem(image: Image(uiImage: image), title: menuName, subtitle: menuDescription, price: menuPrice)
+                            MenuCreateRequestDTO(name: menuName, description: menuDescription, price: Int(menuPrice) ?? 0)
                         )
                     }
                     

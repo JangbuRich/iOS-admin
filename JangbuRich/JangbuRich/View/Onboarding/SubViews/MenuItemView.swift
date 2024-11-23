@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct MenuItemView: View {
-    var item: MenuItem
+    var image: Image
+    var item: MenuCreateRequestDTO
     var isFirstItem: Bool = false
     
     var body: some View {
         HStack(spacing: scaledWidth(15)) {
-            item.image
+            image
                 .resizable()
                 .scaledToFill()
                 .frame(width: scaledWidth(100), height: scaledHeight(100))
@@ -31,57 +32,20 @@ struct MenuItemView: View {
                             .cornerRadius(scaledWidth(25))
                     }
                     
-                    Text(item.title)
+                    Text(item.name)
                         .font(.body2)
                         .foregroundStyle(.jgray30)
                         .padding(.leading, scaledWidth(5))
                     
                     Spacer()
-                    
-                    Menu {
-                        Button {
-                            print("수정하기 클릭")
-                        } label: {
-                            HStack {
-                                Image(.iconEdit)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(height: scaledHeight(24))
-                                
-                                Text("수정하기")
-                                    .font(.detail1)
-                                    .foregroundStyle(.jgray30)
-                            }
-                        }
-
-                        Button {
-                            print("삭제하기 클릭")
-                        } label: {
-                            HStack {
-                                Image(.iconDelete)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(height: scaledHeight(24))
-                                
-                                Text("삭제하기")
-                                    .font(.detail1)
-                                    .foregroundStyle(.jgray30)
-                            }
-                        }
-                    } label: {
-                        Image(.iconMore)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: scaledHeight(24))
-                    }
                 }
                 
-                Text(item.subtitle)
+                Text(item.description)
                     .font(.body3)
                     .foregroundStyle(.jgray50)
                     .padding(.top, scaledHeight(8))
                 
-                Text(item.price)
+                Text("\(item.price)원")
                     .font(.detail2)
                     .foregroundStyle(.jgray30)
                     .padding(.top, scaledHeight(10))
