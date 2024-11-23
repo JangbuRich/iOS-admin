@@ -15,7 +15,7 @@ struct LoginView: View {
     @State private var isSuccessLogin = false
     
     var body: some View {
-        NavigationStack(path: $navigationPathManager.path) {
+        NavigationStack {
             VStack {
                 Image(.jAppLogo)
                     .resizable()
@@ -39,7 +39,10 @@ struct LoginView: View {
                 
                 Button {
                     authStore.kakaoSocialLogin { result in
-                        if result {
+                        if result == .already {
+                            isSuccessLogin = true
+                            authStore.isFinishedOnboarding = true
+                        } else if result == .success {
                             isSuccessLogin = true
                         }
                     }
