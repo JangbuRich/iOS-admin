@@ -18,13 +18,19 @@ struct MainTapView: View {
     @State private var rootSection2: Bool = false
     @State private var rootSection3: Bool = false
     
-    var tabs: [String] = ["홈", "주문 내역", "장부 관리", "예약 관리", "매장 정보 관리"]
+    var tabs: [String] = [
+        "홈",
+        "주문 내역",
+        "장부 관리",
+//        "예약 관리",
+        "매장 정보 관리"
+    ]
     
     var normalImages: [Image] = [
         Image(.tabHome),
         Image(.tabOrderHistory),
         Image(.tabManage),
-        Image(.tabReservation),
+//        Image(.tabReservation),
         Image(.tabMyinfo),
     ]
     
@@ -32,7 +38,7 @@ struct MainTapView: View {
         Image(.tabHomeFill),
         Image(.tabOrderHistoryFill),
         Image(.tabManageFill),
-        Image(.tabReservationFill),
+//        Image(.tabReservationFill),
         Image(.tabMyinfoFill),
     ]
     
