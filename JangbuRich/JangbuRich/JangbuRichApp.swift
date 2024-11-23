@@ -15,6 +15,7 @@ import KakaoSDKCommon
 struct JangbuRichApp: App {
     
     @ObservedObject private var navigationPathManager = NavigationPathManager()
+    @StateObject private var overlayManager = OverlayManager()
     
     init() {
         KakaoSDK.initSDK(appKey: "YOUR_NATIVE_APP_KEY")
@@ -24,6 +25,8 @@ struct JangbuRichApp: App {
         WindowGroup {
             LaunchView()
                 .environmentObject(navigationPathManager)
+                .environmentObject(overlayManager)
+                .overlay(OverlayContainer().environmentObject(overlayManager))
                 .onOpenURL { url in
                     if AuthApi.isKakaoTalkLoginUrl(url) {
                         _ = AuthController.handleOpenUrl(url: url)
