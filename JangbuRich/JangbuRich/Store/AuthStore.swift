@@ -13,6 +13,12 @@ import KakaoSDKAuth
 import KakaoSDKCommon
 import KakaoSDKUser
 
+enum KakaoSocialResult {
+    case success
+    case already
+    case fail
+}
+
 class AuthStore: ObservableObject {
     
     @Published var isHavingToken = false
@@ -34,7 +40,7 @@ class AuthStore: ObservableObject {
     let aToken: String = KeychainStore.sharedKeychain.getAccessToken() ?? ""
     let rToken: String = KeychainStore.sharedKeychain.getRefreshToken() ?? ""
     
-    func kakaoSocialLogin(completion: @escaping (Bool) -> Void) {
+    func kakaoSocialLogin(completion: @escaping (KakaoSocialResult) -> Void) {
         if UserApi.isKakaoTalkLoginAvailable() {
             UserApi.shared.loginWithKakaoTalk { (oauthToken, error) in
                 if let error = error {
@@ -57,10 +63,14 @@ class AuthStore: ObservableObject {
                         case .success(let loginResult):
                             KeychainStore.sharedKeychain.saveAccessToken(loginResult.data?.accessToken ?? "")
                             KeychainStore.sharedKeychain.saveRefreshToken(loginResult.data?.refreshToken ?? "")
-                            completion(true)
+                            if loginResult.data?.alreadyExists == true {
+                                completion(.already)
+                            } else {
+                                completion(.success)
+                            }
                         case .failure(let error):
                             print("로그인 Error: \(error.localizedDescription)")
-                            completion(false)
+                            completion(.fail)
                         }
                     }
                 }
@@ -87,10 +97,14 @@ class AuthStore: ObservableObject {
                         case .success(let loginResult):
                             KeychainStore.sharedKeychain.saveAccessToken(loginResult.data?.accessToken ?? "")
                             KeychainStore.sharedKeychain.saveRefreshToken(loginResult.data?.refreshToken ?? "")
-                            completion(true)
+                            if loginResult.data?.alreadyExists == true {
+                                completion(.already)
+                            } else {
+                                completion(.success)
+                            }
                         case .failure(let error):
                             print("로그인 Error: \(error.localizedDescription)")
-                            completion(false)
+                            completion(.fail)
                         }
                     }
                 }
