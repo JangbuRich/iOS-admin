@@ -14,8 +14,9 @@ import KakaoSDKUser
 @main
 struct JangbuRichApp: App {
     
-    @ObservedObject private var navigationPathManager = NavigationPathManager()
     @ObservedObject var authStore = AuthStore()
+    @ObservedObject var todayOrderStore = TodayOrderStore()
+    @ObservedObject var jangbuStore = JangbuStore()
     
     @StateObject private var overlayManager = OverlayManager()
     
@@ -27,8 +28,9 @@ struct JangbuRichApp: App {
         WindowGroup {
             LaunchView()
                 .environmentObject(authStore)
+                .environmentObject(todayOrderStore)
+                .environmentObject(jangbuStore)
                 .environmentObject(overlayManager)
-                .environmentObject(navigationPathManager)
                 .overlay(OverlayContainer().environmentObject(overlayManager))
                 .onOpenURL { url in
                     if AuthApi.isKakaoTalkLoginUrl(url) {
