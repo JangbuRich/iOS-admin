@@ -67,13 +67,17 @@ class TodayOrderStore: ObservableObject {
     func getOrderDetail(orderId: Int, completion: @escaping (Bool) -> Void) {
         let url = Config.baseURL + "store/orders/\(orderId)"
         
+        let params = [
+            "orderId" : orderId
+        ]
+        
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(KeychainStore.sharedKeychain.getAccessToken() ?? "")"
         ]
         
         AF.request(url,
                    method: .get,
-                   parameters: nil,
+                   parameters: params,
                    headers: headers
         ).responseDecodable(of: BaseResponse<OrderDetailResult>.self) { response in
             switch response.result {
