@@ -1,5 +1,5 @@
 //
-//  OrderDetailView.swift
+//  TodayOrderDetailView.swift
 //  JangbuRich
 //
 //  Created by 변상우 on 11/21/24.
@@ -7,8 +7,11 @@
 
 import SwiftUI
 
-struct OrderDetailView: View {
-    var order: OrderDetail
+struct TodayOrderDetailView: View {
+    
+    @EnvironmentObject var todayOrderStore: TodayOrderStore
+    
+    var order: TodayOrderList
     var isToday: Bool
     
     var body: some View {
@@ -18,7 +21,7 @@ struct OrderDetailView: View {
                     .stroke(lineWidth: scaledWidth(2))
                     .fill(isToday ? .jOrange : .jgray50)
                 
-                Text(order.orderNumber)
+                Text("\(order.id)")
                     .font(.body2)
                     .foregroundStyle(isToday ? .jOrange : .jgray50)
             }
@@ -26,13 +29,13 @@ struct OrderDetailView: View {
             .frame(width: scaledWidth(40), height: scaledHeight(40))
             
             VStack(alignment: .leading) {
-                Text(order.menuTitle)
+                Text(order.menuNames)
                     .font(.body2)
                     .foregroundStyle(isToday ? .jgray30 : .jgray40)
                 
                 Spacer()
                 
-                Text(order.numberOfMenu)
+                Text("총 \(order.count)개")
                     .font(.label3)
                     .foregroundStyle(.jgray50)
             }
@@ -40,22 +43,29 @@ struct OrderDetailView: View {
             Spacer()
             
             VStack(alignment: .leading) {
-                Text(order.orderDate)
+                Text("\(order.date)")
                     .font(.label3)
                     .foregroundStyle(.jgray50)
                 
                 Spacer()
                 
-                Text(order.price)
+                Text("\(order.price)원")
                     .font(.label1)
                     .foregroundStyle(isToday ? .jgray20 : .jgray40)
             }
         }
         .frame(height: scaledHeight(40))
+        .onAppear {
+            todayOrderStore.getOrderDetail(orderId: order.id) { result in
+                if result {
+                    
+                }
+            }
+        }
         
-        Rectangle()
-            .fill(.jgray80)
-            .frame(height: scaledHeight(1))
-            .padding(.vertical, scaledHeight(15))
+//        Rectangle()
+//            .fill(.jgray80)
+//            .frame(height: scaledHeight(1))
+//            .padding(.vertical, scaledHeight(15))
     }
 }
