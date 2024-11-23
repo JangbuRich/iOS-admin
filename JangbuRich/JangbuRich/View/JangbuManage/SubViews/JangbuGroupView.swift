@@ -9,7 +9,7 @@ import SwiftUI
 
 struct JangbuGroupView: View {
     
-    var jangbuGroup: JangbuGroup
+    var jangbuGroup: PaymentGroup
     
     var body: some View {
         VStack(spacing: scaledHeight(20)) {
@@ -18,7 +18,7 @@ struct JangbuGroupView: View {
                     JangbuGroupDetailView()
                 } label: {
                     HStack(spacing: 0) {
-                        Text(jangbuGroup.groupName)
+                        Text(jangbuGroup.teamName)
                             .font(.detail2)
                             .foregroundStyle(.jgray20)
                         
@@ -32,7 +32,7 @@ struct JangbuGroupView: View {
                 }
                 
                 HStack {
-                    Text(jangbuGroup.groupDescription)
+                    Text(jangbuGroup.teamDescription)
                         .font(.label3)
                         .foregroundStyle(.jgray60)
                     
@@ -52,7 +52,7 @@ struct JangbuGroupView: View {
                     
                     Spacer()
                     
-                    Text(jangbuGroup.groupPeriod)
+                    Text(jangbuGroup.teamDescription)
                         .font(.body5)
                         .foregroundStyle(.jgray30)
                 }
@@ -64,7 +64,7 @@ struct JangbuGroupView: View {
                     
                     Spacer()
                     
-                    Text(jangbuGroup.groupRemainPrice)
+                    Text("\(jangbuGroup.remainPoint)원")
                         .font(.body5)
                         .foregroundStyle(.jgray30)
                 }

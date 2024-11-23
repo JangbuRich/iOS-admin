@@ -11,6 +11,8 @@ struct JangbuGroupDetailView: View {
     
     @Environment(\.dismiss) private var dismiss
     
+    @EnvironmentObject var jangbuStore: JangbuStore
+    
     let historyList: [JangbuHistory] = [
         JangbuHistory(jangbuNumber: "5", jangbuDate: "2024.11.20", jangbuGroupName: "미르미 그룹", price: "+ 100,000원"),
         JangbuHistory(jangbuNumber: "5", jangbuDate: "2024.11.20", jangbuGroupName: "미르미 그룹", price: "+ 100,000원"),
@@ -158,7 +160,7 @@ struct JangbuGroupDetailView: View {
                         .padding(.vertical, scaledHeight(15))
                     
                     VStack(spacing: scaledHeight(20)) {
-                        ForEach(historyList.prefix(10), id: \.jangbuNumber) { history in
+                        ForEach(jangbuStore.paymentHistoryList.prefix(10), id: \.id) { history in
                             JangbuHistoryView(jangbHistory: history)
                         }
                     }

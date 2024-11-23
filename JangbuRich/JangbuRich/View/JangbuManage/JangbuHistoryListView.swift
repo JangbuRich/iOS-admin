@@ -11,7 +11,9 @@ struct JangbuHistoryListView: View {
     
     @Environment(\.dismiss) private var dismiss
     
-    let historyList: [JangbuHistory]
+//    @EnvironmentObject var jangbuStore: JangbuStore
+    
+    let historyList: [PaymentHistory]
     
     var body: some View {
         ScrollView {
@@ -60,7 +62,7 @@ struct JangbuHistoryListView: View {
                         .padding(.vertical, scaledHeight(15))
                     
                     VStack(spacing: scaledHeight(20)) {
-                        ForEach(historyList.prefix(10), id: \.jangbuNumber) { history in
+                        ForEach(historyList.prefix(10), id: \.id) { history in
                             JangbuHistoryView(jangbHistory: history)
                         }
                     }

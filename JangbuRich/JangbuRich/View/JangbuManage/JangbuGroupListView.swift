@@ -11,7 +11,7 @@ struct JangbuGroupListView: View {
     
     @Environment(\.dismiss) private var dismiss
     
-    let groupList: [JangbuGroup]
+    let groupList: [PaymentGroup]
     
     let columns: [GridItem] = [
         GridItem(.flexible(), spacing: 15),
@@ -43,7 +43,7 @@ struct JangbuGroupListView: View {
                 .padding(.bottom, scaledHeight(20))
                 
                 LazyVGrid(columns: columns, spacing: 15) {
-                    ForEach(groupList, id: \.groupName) { group in
+                    ForEach(groupList, id: \.id) { group in
                         JangbuGroupView(jangbuGroup: group)
                     }
                 }
