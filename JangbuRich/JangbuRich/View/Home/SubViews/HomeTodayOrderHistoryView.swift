@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct HomeTodayOrderHistoryView: View {
-    var order: TodayOrderHistory
+    
+    var order: TodayOrderList
     
     var body: some View {
         HStack(alignment: .bottom) {
@@ -17,27 +18,27 @@ struct HomeTodayOrderHistoryView: View {
                     .stroke(lineWidth: scaledWidth(2))
                     .fill(.jOrange)
                 
-                Text(order.orderNumber)
+                Text("\(order.id)")
                     .font(.body2)
                     .foregroundStyle(.jOrange)
             }
             .frame(width: scaledWidth(40), height: scaledHeight(40))
             
             VStack(alignment: .leading) {
-                Text(order.menuTitle)
+                Text(order.menuNames)
                     .font(.body2)
                     .foregroundStyle(.jgray30)
                 
                 Spacer()
                 
-                Text(order.numberOfMenu)
+                Text("총 \(order.count)개")
                     .font(.label3)
                     .foregroundStyle(.jgray50)
             }
             
             Spacer()
             
-            Text(order.price)
+            Text("\(order.price)원")
                 .font(.label1)
                 .foregroundStyle(.jgray20)
         }
