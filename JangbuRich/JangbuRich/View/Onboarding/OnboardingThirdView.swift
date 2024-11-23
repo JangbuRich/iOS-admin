@@ -9,17 +9,17 @@ import SwiftUI
 
 struct OnboardingThirdView: View {
     
-    @EnvironmentObject var navigationPathManager: NavigationPathManager
+    @EnvironmentObject var authStore: AuthStore
     
     @Binding var isSuccessLogin: Bool
     
     @State private var selectedStoreImage: UIImage? = nil
     @State private var storeName: String = ""
     @State private var storeIntro: String = ""
-    @State private var selectedStoreTags: Set<String> = []
+    @State private var selectedStoreTag: String? = nil
     @State private var storeLocation: String = ""
     @State private var storeLocationDetail: String = ""
-    @State private var selectedDays: Set<String> = []
+    @State private var selectedDays: [String] = []
     @State private var storeStartTime: Date = Calendar.current.startOfDay(for: Date())
     @State private var storeEndTime: Date = Calendar.current.startOfDay(for: Date())
     
@@ -27,15 +27,19 @@ struct OnboardingThirdView: View {
     @State private var isStartTimeSheet: Bool = false
     @State private var isEndTimeSheet: Bool = false
     
+    var nextButtonStatus: Bool {
+        return selectedStoreImage != nil && !storeName.isEmpty && !storeIntro.isEmpty && selectedStoreTag != nil && !storeLocation.isEmpty && !selectedDays.isEmpty && !storeStartTimeString.isEmpty && !storeEndTimeString.isEmpty
+    }
+    
     private var storeStartTimeString: String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm"
+        formatter.dateFormat = "HH:mm:ss"
         return formatter.string(from: storeStartTime)
     }
     
     private var storeEndTimeString: String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm"
+        formatter.dateFormat = "HH:mm:ss"
         return formatter.string(from: storeEndTime)
     }
     
@@ -97,7 +101,7 @@ struct OnboardingThirdView: View {
                             }
                         }
                         
-                        JTextField(title: "매장명", placeholder: "매장명을 입력해주세요", text: $storeName, isRequired: true, isNumberPad: false)
+                        JTextField(title: "매장명", placeholder: "매장명을 입력해주세요", text: $storeName, isRequired: true, isNumberPad: false, isEditable: false)
                         
                         HStack(alignment: .bottom, spacing: scaledWidth(10)) {
                             JTextField(title: "매장 소개", placeholder: "간단한 매장 소개를 입력해주세요", text: $storeIntro, isRequired: true, isNumberPad: false)
@@ -129,7 +133,7 @@ struct OnboardingThirdView: View {
                             VStack(alignment: .leading) {
                                 HStack(spacing: scaledWidth(10)) {
                                     ForEach(tags.prefix(7), id: \.self) { tag in
-                                        JTagButton(tag: tag, isSelected: selectedStoreTags.contains(tag)) {
+                                        JTagButton(tag: tag, isSelected: selectedStoreTag == tag) {
                                             toggleTagSelection(tag)
                                         }
                                     }
@@ -137,7 +141,7 @@ struct OnboardingThirdView: View {
                                 
                                 HStack(spacing: scaledWidth(10)) {
                                     ForEach(tags.dropFirst(7), id: \.self) { tag in
-                                        JTagButton(tag: tag, isSelected: selectedStoreTags.contains(tag)) {
+                                        JTagButton(tag: tag, isSelected: selectedStoreTag == tag) {
                                             toggleTagSelection(tag)
                                         }
                                     }
@@ -259,7 +263,7 @@ struct OnboardingThirdView: View {
                     
                     Spacer()
                     
-                    JNavigationButton(destination: OnboardingFourthView(isSuccessLogin: $isSuccessLogin), label: "다음", isEnabled: true)
+                    JNavigationButton(destination: OnboardingFourthView(isSuccessLogin: $isSuccessLogin), label: "다음", isEnabled: nextButtonStatus)
                         .padding(.horizontal, scaledWidth(210))
                         .padding(.bottom, scaledHeight(40))
                 }
@@ -273,21 +277,36 @@ struct OnboardingThirdView: View {
         .onTapGesture {
             self.hideKeyboard()
         }
+        .onAppear {
+            storeName = authStore.onboardingUser.storeName
+        }
+        .onDisappear {
+            authStore.onboardingStoreImage = selectedStoreImage
+            authStore.onboardingUser.introduction = storeIntro
+            authStore.onboardingUser.category = "ALL"
+            authStore.onboardingUser.latitude = 0
+            authStore.onboardingUser.longitude = 0
+            authStore.onboardingUser.address = storeLocation
+            authStore.onboardingUser.location = storeLocationDetail
+            authStore.onboardingUser.dayOfWeek = ["MONDAY"]
+            authStore.onboardingUser.openTime = storeStartTimeString
+            authStore.onboardingUser.closeTime = storeEndTimeString
+        }
     }
     
     func toggleTagSelection(_ tag: String) {
-        if selectedStoreTags.contains(tag) {
-            selectedStoreTags.remove(tag)
+        if selectedStoreTag == tag {
+            selectedStoreTag = nil
         } else {
-            selectedStoreTags.insert(tag)
+            selectedStoreTag = tag
         }
     }
     
     func toggleDaySelection(_ day: String) {
-        if selectedDays.contains(day) {
-            selectedDays.remove(day)
+        if let index = selectedDays.firstIndex(of: day) {
+            selectedDays.remove(at: index)
         } else {
-            selectedDays.insert(day)
+            selectedDays.append(day)
         }
     }
 }

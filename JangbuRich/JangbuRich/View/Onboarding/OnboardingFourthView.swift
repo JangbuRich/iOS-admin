@@ -9,11 +9,11 @@ import SwiftUI
 
 struct OnboardingFourthView: View {
     
-    @EnvironmentObject var navigationPathManager: NavigationPathManager
+    @EnvironmentObject var authStore: AuthStore
     
     @Binding var isSuccessLogin: Bool
     
-    @State private var selectedStoreImage: UIImage? = nil
+    @State private var menuImage: UIImage? = nil
     @State private var menuName: String = ""
     @State private var menuDescription: String = ""
     @State private var menuPrice: String = ""
@@ -21,7 +21,12 @@ struct OnboardingFourthView: View {
     @State private var isRegisterMenuPresented: Bool = false
     @State private var isImagePickerPresented: Bool = false
     
-    @State private var menuItems: [MenuItem] = []
+    @State private var menuImages: [UIImage] = []
+    @State private var menuItems: [MenuCreateRequestDTO] = []
+    
+    var nextButtonStatus: Bool {
+        return !menuItems.isEmpty
+    }
     
 //    let menuItems = [
 //        MenuItem(image: Image(.jAppIcon), title: "대표 이탈리안 비엠티", subtitle: "페퍼로니, 살라미 그리고 햄이 만들어내는 최상의 조화!", price: "9,700원"),
@@ -47,15 +52,18 @@ struct OnboardingFourthView: View {
                         ScrollView {
                             VStack(spacing: scaledHeight(20)) {
                                 if !menuItems.isEmpty {
-                                    ForEach(menuItems, id: \.title) { item in
-                                        MenuItemView(item: item)
+                                    ForEach(menuItems, id: \.name) { item in
+                                        if let uiImage = menuImage {
+                                            MenuItemView(image: Image(uiImage: uiImage), item: item)
+                                        }
+//                                        MenuItemView(image: menuImage, item: item)
                                     }
                                 }
                                 
                                 Button {
                                     isRegisterMenuPresented.toggle()
                                     
-                                    selectedStoreImage = nil
+                                    menuImage = nil
                                     menuName = ""
                                     menuDescription = ""
                                     menuPrice = ""
@@ -94,7 +102,7 @@ struct OnboardingFourthView: View {
                 
                 Spacer()
                 
-                JNavigationButton(destination: OnboardingFifthView(isSuccessLogin: $isSuccessLogin), label: "다음", isEnabled: true)
+                JNavigationButton(destination: OnboardingFifthView(isSuccessLogin: $isSuccessLogin), label: "다음", isEnabled: nextButtonStatus)
                     .padding(.horizontal, scaledWidth(210))
                     .padding(.bottom, scaledHeight(40))
             }
@@ -102,14 +110,19 @@ struct OnboardingFourthView: View {
             .padding(.bottom, scaledHeight(40))
             
             JPopupView(isPresented: $isRegisterMenuPresented, content: {
-                MenuRegisterView(selectedStoreImage: $selectedStoreImage, menuName: $menuName, menuDescription: $menuDescription, menuPrice: $menuPrice, menuItems: $menuItems, isRegisterMenuPresented: $isRegisterMenuPresented, isImagePickerPresented: $isImagePickerPresented)
+                MenuRegisterView(selectedStoreImage: $menuImage, menuName: $menuName, menuDescription: $menuDescription, menuPrice: $menuPrice, menuImages: $menuImages, menuItems: $menuItems, isRegisterMenuPresented: $isRegisterMenuPresented, isImagePickerPresented: $isImagePickerPresented)
             })
         }
         .customNavigationBar(title: "") {
             isSuccessLogin = false
         }
+        .onDisappear {
+            authStore.onboardingMenuImage = menuImages
+            authStore.onboardingUser.menuCreateRequestDTOS = menuItems
+        }
+        
         .sheet(isPresented: $isImagePickerPresented) {
-            JImagePicker(selectedImage: $selectedStoreImage)
+            JImagePicker(selectedImage: $menuImage)
         }
     }
 }

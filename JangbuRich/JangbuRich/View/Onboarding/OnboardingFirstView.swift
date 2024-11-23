@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OnboardingFirstView: View {
     
-    @EnvironmentObject var navigationPathManager: NavigationPathManager
+    @EnvironmentObject var authStore: AuthStore
     
     @Binding var isSuccessLogin: Bool
     
@@ -20,11 +20,14 @@ struct OnboardingFirstView: View {
     @State private var selectedDate = Date()
     @State private var selectedDateString = "YY.MM.DD"
     @State private var showDatePicker = false
-    @State private var nextButtonStatus = false
+    
+    var nextButtonStatus: Bool {
+        return !storeName.isEmpty && !phoneNumber.isEmpty && !name.isEmpty && !businessNumber.isEmpty && (selectedDateString != "YY.MM.DD")
+    }
     
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yy.MM.dd"
+        formatter.dateFormat = "yyyy-MM-dd"
         return formatter
     }
     
@@ -119,7 +122,7 @@ struct OnboardingFirstView: View {
                     
                     Spacer()
                     
-                    JNavigationButton(destination: OnboardingSecondView(isSuccessLogin: $isSuccessLogin), label: "다음", isEnabled: true)
+                    JNavigationButton(destination: OnboardingSecondView(isSuccessLogin: $isSuccessLogin), label: "다음", isEnabled: nextButtonStatus)
                         .padding(.horizontal, scaledWidth(210))
                         .padding(.bottom, scaledHeight(40))
                 }
@@ -132,6 +135,15 @@ struct OnboardingFirstView: View {
         }
         .onTapGesture {
             self.hideKeyboard()
+        }
+        .onDisappear {
+            authStore.onboardingUser.storeName = storeName // 매장명
+            authStore.onboardingUser.phoneNumber = phoneNumber // 전화번호
+            authStore.onboardingUser.businessName = name // 대표자 성명
+            authStore.onboardingUser.businessRegistrationNumber = businessNumber // 사업자등록번호
+            authStore.onboardingUser.openingDate = selectedDateString // 개업일자
+            
+            print("authStore.onboardingUser: \(authStore.onboardingUser)")
         }
     }
     

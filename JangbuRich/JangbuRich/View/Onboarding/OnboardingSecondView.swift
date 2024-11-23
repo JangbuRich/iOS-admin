@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OnboardingSecondView: View {
     
-    @EnvironmentObject var navigationPathManager: NavigationPathManager
+    @EnvironmentObject var authStore: AuthStore
     
     @Binding var isSuccessLogin: Bool
     
@@ -91,6 +91,10 @@ struct OnboardingSecondView: View {
         }
         .customNavigationBar(title: "") {
             isSuccessLogin = false
+        }
+        .onDisappear {
+            authStore.onboardingUser.agreeMarketing = isChecked4
+            authStore.onboardingUser.agreeAdvertise = isChecked5
         }
     }
     

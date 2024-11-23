@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OnboardingFifthView: View {
     
-    @EnvironmentObject var navigationPathManager: NavigationPathManager
+    @EnvironmentObject var authStore: AuthStore
     
     @Binding var isSuccessLogin: Bool
     
@@ -18,6 +18,10 @@ struct OnboardingFifthView: View {
     @State private var isAvailableReservation: Bool?
     @State private var isAvailableNumber: String = ""
     @State private var isCompleteOnboarding: Bool = false
+    
+    var nextButtonStatus: Bool {
+        return !prepayment.isEmpty && !prepaymentPeriod.isEmpty && isAvailableReservation != nil && (isAvailableReservation == true && !isAvailableNumber.isEmpty)
+    }
     
     var body: some View {
         GeometryReader { geometry in
@@ -148,7 +152,7 @@ struct OnboardingFifthView: View {
                             HStack(spacing: 0) {
                                 Text("최대 예약 가능 인원수")
                                     .font(.body2)
-                                    .foregroundStyle(.jgray30)
+                                    .foregroundStyle(isAvailableReservation ?? false ? .jgray20 : .jgray40)
                                 
                                 Text("*")
                                     .font(.body2)
@@ -156,7 +160,7 @@ struct OnboardingFifthView: View {
                                 
                                 Spacer()
                                 
-                                JLeftTextField(unit: "명", placeholder: "0", text: $isAvailableNumber)
+                                JLeftTextField(unit: "명", placeholder: "0", isEditable: isAvailableReservation ?? true, text: $isAvailableNumber)
                                     .frame(width: scaledWidth(200))
                             }
                             
@@ -168,18 +172,46 @@ struct OnboardingFifthView: View {
                     Spacer()
                     
                     Button {
-                        print("온보딩 완료")
-                        isSuccessLogin = false
+                        print("회원가입 버튼 클릭")
+                        authStore.onboardingUser.minPrepayment = Int(prepayment) ?? 0
+                        authStore.onboardingUser.prepaymentDuration = Int(prepaymentPeriod) ?? 0
+                        
+                        if let isAvailableReservation = isAvailableReservation {
+                            authStore.onboardingUser.reservationAvailable = isAvailableReservation
+                            
+                            if isAvailableReservation {
+                                authStore.onboardingUser.maxReservation = Int(isAvailableNumber) ?? 0
+                            } else {
+                                authStore.onboardingUser.maxReservation = 0
+                            }
+                        }
+                        
+                        print("authStore.onboardingUser: \(authStore.onboardingUser)")
+                        
+                        if let storeImage = authStore.onboardingStoreImage,
+                           let menuImages = authStore.onboardingMenuImage {
+                            authStore.createUser(user: authStore.onboardingUser, storeImage: storeImage, menuImages: menuImages) { result in
+                                if result {
+                                    print("회원가입 성공!!")
+                                    authStore.isFinishedOnboarding = true
+                                    isSuccessLogin = false
+                                } else {
+                                    print("회원가입 서버 연동 실패...")
+                                }
+                            }
+                        } else {
+                            print("데이터가 누락, 회원가입 실패.")
+                        }
                     } label: {
                         Text("완료")
                             .font(.label1)
-                            .foregroundStyle(isCompleteOnboarding ? .jgray100 : .jgray20)
+                            .foregroundStyle(nextButtonStatus ? .jgray100 : .jgray20)
                             .frame(maxWidth: .infinity)
                             .frame(height: scaledHeight(48))
                             .cornerRadius(scaledHeight(10))
                             .background(
                                 RoundedRectangle(cornerRadius: scaledHeight(10))
-                                    .fill(isCompleteOnboarding ? .jgray20 : .jgray80)
+                                    .fill(nextButtonStatus ? .jgray20 : .jgray80)
                             )
                     }
                     .padding(.horizontal, scaledWidth(210))
