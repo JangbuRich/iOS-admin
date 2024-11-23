@@ -11,7 +11,7 @@ struct OrderDetailPopupView: View {
     
     @EnvironmentObject var overlayManager: OverlayManager
     
-    let orderList: OrderDetailList
+    let orderDetail: OrderDetailResult
     
     var body: some View {
         VStack {
@@ -40,14 +40,14 @@ struct OrderDetailPopupView: View {
                             .stroke(lineWidth: scaledWidth(2))
                             .fill(.jOrange)
                         
-                        Text(orderList.orderNumber)
+                        Text("\(orderDetail.id)")
                             .font(.body2)
                             .foregroundStyle(.jOrange)
                     }
                     .frame(width: scaledWidth(27), height: scaledHeight(27))
                     .padding(.trailing, scaledWidth(10))
                     
-                    Text(orderList.orderGroup)
+                    Text(orderDetail.teamName)
                         .font(.detail2)
                         .foregroundStyle(.jgray20)
                     
@@ -56,7 +56,7 @@ struct OrderDetailPopupView: View {
                         .foregroundStyle(.jgray60)
                         .padding(.horizontal, scaledWidth(5))
                     
-                    Text(orderList.orderName)
+                    Text(orderDetail.teamUserName)
                         .font(.detail2)
                         .foregroundStyle(.jgray20)
                     
@@ -69,15 +69,15 @@ struct OrderDetailPopupView: View {
                     .frame(height: scaledHeight(1))
                 
                 VStack(spacing: scaledWidth(20)) {
-                    ForEach(orderList.orderMenus, id: \.menuTitle) { order in
+                    ForEach(orderDetail.menus, id: \.menuName) { menu in
                         HStack {
-                            Text(order.menuTitle)
+                            Text(menu.menuName)
                                 .font(.body2)
                                 .foregroundStyle(.jgray30)
                             
                             Spacer()
                             
-                            Text(order.menuNumberOfCount)
+                            Text("\(menu.amount)")
                                 .font(.body1)
                                 .foregroundStyle(.jgray20)
                                 .padding(.trailing, scaledWidth(5))
@@ -92,7 +92,7 @@ struct OrderDetailPopupView: View {
                 VStack {
                     VStack {
                         HStack {
-                            Text(orderList.orderDate)
+                            Text(orderDetail.dateTime)
                                 .font(.detail1)
                                 .foregroundStyle(.jgray50)
                             
@@ -100,13 +100,13 @@ struct OrderDetailPopupView: View {
                                 .font(.detail4)
                                 .foregroundStyle(.jgray70)
                             
-                            Text(orderList.orderDate)
+                            Text(orderDetail.dateTime)
                                 .font(.detail1)
                                 .foregroundStyle(.jgray50)
                             
                             Spacer()
                             
-                            Text("총 \(orderList.orderTotalCount)개")
+                            Text("총 \(orderDetail.amount)개")
                                 .font(.detail1)
                                 .foregroundStyle(.jgray20)
                         }
@@ -132,7 +132,7 @@ struct OrderDetailPopupView: View {
                             
                             Spacer()
                             
-                            Text(orderList.orderTotalPrice)
+                            Text("\(orderDetail.totalPrice)")
                                 .font(.body2)
                                 .foregroundStyle(.jgray30)
                         }
@@ -162,7 +162,7 @@ struct OrderDetailPopupView: View {
                             
                             Spacer()
                             
-                            Text(orderList.orderTotalPrice)
+                            Text("\(orderDetail.totalPrice)")
                                 .font(.headline3)
                                 .foregroundStyle(.jgray30)
                         }
