@@ -14,6 +14,8 @@ extension ShapeStyle where Self == Color {
     static var jsubYellow: Self { .init(hex: "#FFD400") }
     static var jsubPYellow: Self { .init(hex: "#FFF1B8") }
     static var jsubBlue: Self { .init(hex: "#89C2FF") }
+    static var jstatusG: Self { .init(hex: "#00BF40") }
+    static var jstatusR: Self { .init(hex: "#FF4242") }
     
     // Gray Scale
     static var jgray10: Self { .init(hex: "#171719") }
