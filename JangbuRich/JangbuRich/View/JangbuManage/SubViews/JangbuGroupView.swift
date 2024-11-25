@@ -52,7 +52,7 @@ struct JangbuGroupView: View {
                     
                     Spacer()
                     
-                    Text(jangbuGroup.teamDescription)
+                    Text(jangbuGroup.period)
                         .font(.body5)
                         .foregroundStyle(.jgray30)
                 }
