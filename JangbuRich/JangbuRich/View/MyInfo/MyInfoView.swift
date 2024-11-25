@@ -41,6 +41,7 @@ struct MyInfoView: View {
                             .scaledToFit()
                             .frame(height: scaledHeight(164))
                     }
+                    .padding(.vertical, scaledHeight(10))
                     
                     VStack {
                         HStack {
@@ -50,19 +51,21 @@ struct MyInfoView: View {
                             
                             Spacer()
                         }
+                        .padding(.vertical, scaledHeight(10))
                         
                         VStack {
                             HStack {
-                                Image(.imageSubway)
+                                Image(.imageMyinfoStore)
                                     .resizable()
                                     .scaledToFit()
                                     .frame(height: scaledHeight(172))
+                                    .cornerRadius(scaledWidth(10))
                                 
                                 Spacer()
                                 
                                 VStack {
                                     VStack {
-                                        Text("써브웨이 광교엘포트점")
+                                        Text("구름스토어")
                                             .font(.detail1)
                                             .foregroundStyle(.jgray30)
                                     }
@@ -72,7 +75,7 @@ struct MyInfoView: View {
                                     .cornerRadius(scaledWidth(10))
                                     
                                     VStack {
-                                        Text("써브웨이 광교엘포트점")
+                                        Text("NO 1, 달달 폭신 스토어")
                                             .font(.detail1)
                                             .foregroundStyle(.jgray30)
                                     }
@@ -84,6 +87,7 @@ struct MyInfoView: View {
                                 .frame(maxWidth: .infinity)
                             }
                         }
+                        .padding(.vertical, scaledHeight(10))
                     }
                     
                     HStack {
@@ -95,6 +99,7 @@ struct MyInfoView: View {
                                 
                                 Spacer()
                             }
+                            .padding(.vertical, scaledHeight(10))
                             
                             VStack {
                                 VStack {
@@ -118,6 +123,7 @@ struct MyInfoView: View {
                                 .background(.jgray90)
                                 .cornerRadius(scaledWidth(10))
                             }
+                            .padding(.vertical, scaledHeight(10))
                         }
                         
                         VStack {
@@ -128,6 +134,7 @@ struct MyInfoView: View {
                                 
                                 Spacer()
                             }
+                            .padding(.vertical, scaledHeight(10))
                             
                             VStack {
                                 VStack {
@@ -151,7 +158,9 @@ struct MyInfoView: View {
                                 .cornerRadius(scaledWidth(10))
                             }
                         }
-                        
+                    }
+
+                    VStack {
                         VStack {
                             HStack {
                                 Text("메뉴")
@@ -160,57 +169,55 @@ struct MyInfoView: View {
                                 
                                 Spacer()
                             }
-                            
-                            
+                        }
+                        
+                        LazyVGrid(columns: columns, spacing: 15) {
+                            ForEach(0..<4, id: \.self) { _ in
+                                VStack {
+                                    HStack {
+                                        Image(.myinfoMenus)
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(height: scaledHeight(100))
+                                            .cornerRadius(10)
+                                        
+                                        Spacer()
+                                        
+                                        VStack {
+                                            HStack {
+                                                Text("대표")
+                                                    .font(.label3)
+                                                    .foregroundStyle(.jgray100)
+                                                    .padding(.vertical, scaledHeight(2))
+                                                    .padding(.horizontal, scaledWidth(10))
+                                                    .background(.jOrange)
+                                                    .cornerRadius(scaledWidth(25))
+                                                
+                                                Text("구름 정식")
+                                                    .font(.body2)
+                                                    .foregroundStyle(.jgray20)
+                                            }
+                                            
+                                            Text("든든한 한끼를 위한 구름 정식")
+                                                .font(.body3)
+                                                .foregroundStyle(.jgray50)
+                                            
+                                            Text("8,700원")
+                                                .font(.detail2)
+                                                .foregroundStyle(.jgray20)
+                                        }
+                                    }
+                                }
+                                .frame(maxWidth: .infinity)
+                                .background(.jgray100)
+                                .cornerRadius(scaledWidth(10))
+                            }
                         }
                     }
-
+                    .padding(.bottom, scaledHeight(76))
                 }
                 .padding(.leading, scaledWidth(44))
                 .padding(.trailing, scaledWidth(45))
-                
-                VStack {
-                    LazyVGrid(columns: columns, spacing: 15) {
-                        ForEach(0..<4, id: \.self) { _ in
-                            VStack {
-                                HStack {
-                                    Image(.imageBmt)
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(height: scaledHeight(100))
-                                    
-                                    VStack {
-                                        HStack {
-                                            Text("대표")
-                                                .font(.label3)
-                                                .foregroundStyle(.jgray100)
-                                                .padding(.vertical, scaledHeight(2))
-                                                .padding(.horizontal, scaledWidth(10))
-                                                .background(.jOrange)
-                                                .cornerRadius(scaledWidth(25))
-                                            
-                                            Text("이탈리안 비엠티")
-                                                .font(.body2)
-                                                .foregroundStyle(.jgray20)
-                                        }
-                                        
-                                        Text("페퍼로니, 살라미 그리고 햄이 만들어내는 최상의 조화!")
-                                            .font(.body3)
-                                            .foregroundStyle(.jgray50)
-                                        
-                                        Text("9,700원")
-                                            .font(.detail2)
-                                            .foregroundStyle(.jgray20)
-                                    }
-                                }
-                            }
-                            .frame(maxWidth: .infinity)
-                            .background(.jgray100)
-                            .cornerRadius(scaledWidth(10))
-                        }
-                    }
-                }
-                .padding(.bottom, scaledHeight(76))
             }
             .scrollIndicators(.hidden)
             .background(.jgray95)
