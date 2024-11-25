@@ -131,68 +131,79 @@ struct HomeView: View {
                                 NavigationLink {
                                     MyInfoView()
                                 } label: {
-                                    HStack {
-                                        Text("내 매장 정보")
-                                            .font(.headline4)
-                                            .foregroundStyle(.jgray20)
-                                        
-                                        Spacer()
-                                    }
-                                    
-                                    HStack {
-                                        HStack(spacing: scaledWidth(20)) {
-                                            AsyncImage(url: URL(string: myInfoStore.storeInfo.representativeImage)) { phase in
-                                                switch phase {
-                                                case .empty:
-                                                    ProgressView()
-                                                case .success(let image):
-                                                    image
-                                                        .resizable()
-                                                        .scaledToFit()
-                                                case .failure:
-                                                    Image(systemName: "photo") // 오류 시 기본 이미지
-                                                        .resizable()
-                                                        .scaledToFit()
-                                                @unknown default:
-                                                    EmptyView()
-                                                }
-                                            }
-                                            .scaledToFit()
-                                            .frame(height: scaledHeight(99))
-                                            .cornerRadius(scaledWidth(8))
+                                    VStack {
+                                        HStack {
+                                            Text("내 매장 정보")
+                                                .font(.headline4)
+                                                .foregroundStyle(.jgray20)
                                             
-                                            VStack {
-                                                Text("써브웨이 광교엘포트점")
-                                                    .font(.headline3)
-                                                    .foregroundStyle(.jgray20)
+                                            Spacer()
+                                        }
+                                        .padding(.bottom, scaledHeight(10))
+                                        
+                                        HStack {
+                                            HStack(spacing: scaledWidth(20)) {
+                                                AsyncImage(url: URL(string: myInfoStore.storeInfo.representativeImage)) { phase in
+                                                    switch phase {
+                                                    case .empty:
+                                                        ProgressView()
+                                                    case .success(let image):
+                                                        image
+                                                            .resizable()
+                                                            .scaledToFit()
+                                                    case .failure:
+                                                        Image(systemName: "photo") // 오류 시 기본 이미지
+                                                            .resizable()
+                                                            .scaledToFit()
+                                                    @unknown default:
+                                                        EmptyView()
+                                                    }
+                                                }
+                                                .scaledToFit()
+                                                .frame(height: scaledHeight(99))
+                                                .cornerRadius(scaledWidth(8))
                                                 
-                                                Text("음식점 • 서울 종로구 수표로")
-                                                    .font(.body4)
-                                                    .foregroundStyle(.jgray40)
-                                                
-                                                Spacer()
-                                                
-                                                HStack {
-                                                    Image(.reservationRed)
-                                                        .resizable()
-                                                        .scaledToFit()
-                                                        .frame(height: scaledHeight(24))
+                                                VStack {
+                                                    HStack {
+                                                        Text("구름스토어")
+                                                            .font(.headline3)
+                                                            .foregroundStyle(.jgray20)
+                                                        
+                                                        Spacer()
+                                                    }
+                                                    
+                                                    HStack {
+                                                        Text("음식점 • 서울특별시 구름구 하늘로")
+                                                            .font(.body4)
+                                                            .foregroundStyle(.jgray40)
+                                                        
+                                                        Spacer()
+                                                    }
                                                     
                                                     Spacer()
+                                                    
+                                                    HStack {
+                                                        Image(.reservationRed)
+                                                            .resizable()
+                                                            .scaledToFit()
+                                                            .frame(height: scaledHeight(24))
+                                                        
+                                                        Spacer()
+                                                    }
                                                 }
+                                                
+                                                Image(.iconRightFill)
+                                                    .resizable()
+                                                    .scaledToFit()
+                                                    .frame(height: scaledHeight(34))
+                                                    .padding(.trailing, scaledWidth(5))
                                             }
-                                            
-                                            Image(.iconRightFill)
-                                                .resizable()
-                                                .scaledToFit()
-                                                .frame(height: scaledHeight(34))
-                                                .padding(.trailing, scaledWidth(5))
+                                            .padding(scaledWidth(20))
                                         }
-                                        .padding(scaledWidth(20))
+                                        .frame(height: scaledHeight(139))
+                                        .background(.jgray100)
+                                        .cornerRadius(scaledWidth(10))
                                     }
-                                    .frame(height: scaledHeight(139))
-                                    .background(.jgray100)
-                                    .cornerRadius(scaledWidth(10))
                                 }
                             }
                             .padding(.bottom, scaledHeight(40))
@@ -228,24 +239,10 @@ struct HomeView: View {
                                                 HomeTodayOrderHistoryView(order: order)
                                             }
                                             
-                                            HStack {
-                                                Circle()
-                                                    .fill(.jgray95)
-                                                    .frame(width: scaledWidth(26), height: scaledHeight(26))
-                                                
-                                                Spacer()
-                                                
-                                                Image(.buttonKakao)
-                                                    .resizable()
-                                                    .scaledToFit()
-                                                    .frame(height: scaledHeight(1))
-                                                
-                                                Spacer()
-                                                
-                                                Circle()
-                                                    .fill(.jgray95)
-                                                    .frame(width: scaledWidth(26), height: scaledHeight(26))
-                                            }
+                                            Image(.imageCouponLine)
+                                                .resizable()
+                                                .scaledToFit()
+                                                .frame(height: scaledHeight(26))
                                             
                                             HStack(spacing: scaledWidth(10)) {
                                                 Image(.iconCoupon)
