@@ -13,26 +13,6 @@ struct JangbuGroupDetailView: View {
     
     @EnvironmentObject var jangbuStore: JangbuStore
     
-    let historyList: [JangbuHistory] = [
-        JangbuHistory(jangbuNumber: "5", jangbuDate: "2024.11.20", jangbuGroupName: "미르미 그룹", price: "+ 100,000원"),
-        JangbuHistory(jangbuNumber: "5", jangbuDate: "2024.11.20", jangbuGroupName: "미르미 그룹", price: "+ 100,000원"),
-        JangbuHistory(jangbuNumber: "5", jangbuDate: "2024.11.20", jangbuGroupName: "미르미 그룹", price: "+ 100,000원"),
-        JangbuHistory(jangbuNumber: "5", jangbuDate: "2024.11.20", jangbuGroupName: "미르미 그룹", price: "+ 100,000원"),
-        JangbuHistory(jangbuNumber: "5", jangbuDate: "2024.11.20", jangbuGroupName: "미르미 그룹", price: "+ 100,000원"),
-        JangbuHistory(jangbuNumber: "5", jangbuDate: "2024.11.20", jangbuGroupName: "미르미 그룹", price: "+ 100,000원"),
-        JangbuHistory(jangbuNumber: "5", jangbuDate: "2024.11.20", jangbuGroupName: "미르미 그룹", price: "+ 100,000원"),
-        JangbuHistory(jangbuNumber: "5", jangbuDate: "2024.11.20", jangbuGroupName: "미르미 그룹", price: "+ 100,000원"),
-        JangbuHistory(jangbuNumber: "5", jangbuDate: "2024.11.20", jangbuGroupName: "미르미 그룹", price: "+ 100,000원"),
-        JangbuHistory(jangbuNumber: "5", jangbuDate: "2024.11.20", jangbuGroupName: "미르미 그룹", price: "+ 100,000원"),
-        JangbuHistory(jangbuNumber: "5", jangbuDate: "2024.11.20", jangbuGroupName: "미르미 그룹", price: "+ 100,000원"),
-        JangbuHistory(jangbuNumber: "5", jangbuDate: "2024.11.20", jangbuGroupName: "미르미 그룹", price: "+ 100,000원"),
-        JangbuHistory(jangbuNumber: "5", jangbuDate: "2024.11.20", jangbuGroupName: "미르미 그룹", price: "+ 100,000원"),
-        JangbuHistory(jangbuNumber: "5", jangbuDate: "2024.11.20", jangbuGroupName: "미르미 그룹", price: "+ 100,000원"),
-        JangbuHistory(jangbuNumber: "5", jangbuDate: "2024.11.20", jangbuGroupName: "미르미 그룹", price: "+ 100,000원"),
-        JangbuHistory(jangbuNumber: "5", jangbuDate: "2024.11.20", jangbuGroupName: "미르미 그룹", price: "+ 100,000원"),
-        JangbuHistory(jangbuNumber: "5", jangbuDate: "2024.11.20", jangbuGroupName: "미르미 그룹", price: "+ 100,000원"),
-    ]
-    
     var body: some View {
         ScrollView {
             VStack {
