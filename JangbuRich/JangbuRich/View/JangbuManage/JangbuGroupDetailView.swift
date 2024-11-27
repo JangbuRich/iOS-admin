@@ -13,6 +13,8 @@ struct JangbuGroupDetailView: View {
     
     @EnvironmentObject var jangbuStore: JangbuStore
     
+    let teamID: String
+    
     var body: some View {
         ScrollView {
             VStack {
@@ -40,7 +42,7 @@ struct JangbuGroupDetailView: View {
                 VStack(spacing: scaledHeight(25)) {
                     HStack {
                         VStack(alignment: .leading, spacing: scaledHeight(10)) {
-                            Text("미르미 그룹")
+                            Text(jangbuStore.groupDetail.teamName)
                                 .font(.detail2)
                                 .foregroundStyle(.jgray20)
                             
@@ -61,7 +63,7 @@ struct JangbuGroupDetailView: View {
                                 .font(.detail6)
                                 .foregroundStyle(.jgray40)
                             
-                            Text("50,000원")
+                            Text("\(jangbuStore.groupDetail.remainPoint)")
                                 .font(.headline2)
                                 .foregroundStyle(.jgray20)
                         }
@@ -73,7 +75,7 @@ struct JangbuGroupDetailView: View {
                                 .font(.detail6)
                                 .foregroundStyle(.jgray40)
                             
-                            Text("350,000원")
+                            Text("\(jangbuStore.groupDetail.point)")
                                 .font(.headline2)
                                 .foregroundStyle(.jgray20)
                         }
@@ -100,11 +102,11 @@ struct JangbuGroupDetailView: View {
                                 .scaledToFit()
                                 .frame(height: scaledHeight(45))
                             
-                            Text("김장부")
+                            Text(jangbuStore.groupDetail.teamLeaderName)
                                 .font(.label1)
                                 .foregroundStyle(.jgray20)
                             
-                            Text("010 1234 5678")
+                            Text(jangbuStore.groupDetail.teamLeaderPhoneNum ?? "010-1234-5678")
                                 .font(.label1)
                                 .foregroundStyle(.jgray50)
                             
@@ -140,8 +142,8 @@ struct JangbuGroupDetailView: View {
                         .padding(.vertical, scaledHeight(15))
                     
                     VStack(spacing: scaledHeight(20)) {
-                        ForEach(jangbuStore.paymentHistoryList.prefix(10), id: \.id) { history in
-                            JangbuHistoryView(jangbHistory: history)
+                        ForEach(jangbuStore.groupDetail.historyResponses, id: \.date) { history in
+                            JangbuDetailHistoryView(jangbuDetailHistory: history)
                         }
                     }
                 }
@@ -155,9 +157,8 @@ struct JangbuGroupDetailView: View {
         .navigationBarBackButtonHidden(true)
         .scrollIndicators(.hidden)
         .background(.jgray95)
+        .onAppear {
+            jangbuStore.getPaymentGroupDetail(teamId: teamID)
+        }
     }
-}
-
-#Preview {
-    JangbuGroupDetailView()
 }
