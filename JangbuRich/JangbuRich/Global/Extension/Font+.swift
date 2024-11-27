@@ -26,8 +26,9 @@ extension Font {
     static let body4: Font = .custom("Pretendard-Regular", size: 16)
     static let body5: Font = .custom("Pretendard-SemiBold", size: 12)
     static let body6: Font = .custom("Pretendard-Bold", size: 18)
-    static let body7: Font = .custom("Pretendard-Medium", size: 18)
+    static let body7: Font = .custom("Pretendard-Medium", size: 12)
     static let body8: Font = .custom("Pretendard-Medium", size: 22)
+    static let body9: Font = .custom("Pretendard-Medium", size: 18)
     
     // Detail
     static let detail1: Font = .custom("Pretendard-Medium", size: 14)
