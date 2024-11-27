@@ -17,6 +17,7 @@ extension Font {
     static let headline5: Font = .custom("Pretendard-SemiBold", size: 16)
     static let headline6: Font = .custom("Pretendard-Bold", size: 22)
     static let headline7: Font = .custom("Pretendard-SemiBold", size: 22)
+    static let headline8: Font = .custom("Pretendard-SemiBold", size: 24)
     
     // Body
     static let body1: Font = .custom("Pretendard-SemiBold", size: 15)
