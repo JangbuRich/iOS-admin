@@ -22,7 +22,17 @@ struct StoreResult: Codable {
     let longitude: Double
     let address: String
     let location: String?
-    let dayOfWeek: [String]
-    let openTime: String
-    let closeTime: String
+    let dayOfWeek: String
+    var openTime: String
+    var closeTime: String
+    let menuResponses: [MenuItems]
+}
+
+struct MenuItems: Codable {
+    let id: Int
+    let storeId: Int
+    let name: String
+    let description: String
+    let imageUrl: String
+    let price: Int
 }

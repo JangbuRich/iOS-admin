@@ -11,7 +11,7 @@ import Alamofire
 
 class MyInfoStore: ObservableObject {
     
-    @Published var storeInfo: StoreResult = StoreResult(id: 0, ownerId: "", name: "", category: "", representativeImage: "", reservationAvailable: false, maxReservation: 0, minPrepayment: 0, prepaymentDuration: 0, introduction: "", latitude: 0, longitude: 0, address: "", location: "", dayOfWeek: [], openTime: "", closeTime: "")
+    @Published var storeInfo: StoreResult = StoreResult(id: 0, ownerId: "", name: "", category: "", representativeImage: "", reservationAvailable: false, maxReservation: 0, minPrepayment: 0, prepaymentDuration: 0, introduction: "", latitude: 0, longitude: 0, address: "", location: "", dayOfWeek: "", openTime: "", closeTime: "", menuResponses: [])
     
     func getMyStoreInfo() {
         let url = Config.baseURL + "store"
