@@ -11,6 +11,8 @@ struct JangbuGroupListView: View {
     
     @Environment(\.dismiss) private var dismiss
     
+    @AppStorage("isSimpleMode") var isSimpleMode: Bool = false
+    
     let groupList: [PaymentGroup]
     
     let columns: [GridItem] = [
@@ -32,7 +34,7 @@ struct JangbuGroupListView: View {
                                 .frame(height: scaledHeight(24))
                             
                             Text("전체 결제 그룹")
-                                .font(.headline6)
+                                .font(isSimpleMode ? .headline1 : .headline6)
                                 .foregroundStyle(.jgray20)
                         }
                     }

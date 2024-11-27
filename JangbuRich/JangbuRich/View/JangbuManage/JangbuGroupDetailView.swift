@@ -13,6 +13,8 @@ struct JangbuGroupDetailView: View {
     
     @EnvironmentObject var jangbuStore: JangbuStore
     
+    @AppStorage("isSimpleMode") var isSimpleMode: Bool = false
+    
     let teamID: String
     
     var body: some View {
@@ -28,8 +30,8 @@ struct JangbuGroupDetailView: View {
                                 .scaledToFit()
                                 .frame(height: scaledHeight(24))
                             
-                            Text("결제 그룹")
-                                .font(.headline6)
+                            Text(isSimpleMode ? jangbuStore.groupDetail.teamName : "결제 그룹")
+                                .font(isSimpleMode ? .headline1 : .headline6)
                                 .foregroundStyle(.jgray20)
                         }
                     }
@@ -41,30 +43,33 @@ struct JangbuGroupDetailView: View {
                 
                 VStack(spacing: scaledHeight(25)) {
                     HStack {
-                        VStack(alignment: .leading, spacing: scaledHeight(10)) {
-                            Text(jangbuStore.groupDetail.teamName)
-                                .font(.detail2)
-                                .foregroundStyle(.jgray20)
+                        if !isSimpleMode {
+                            VStack(alignment: .leading, spacing: scaledHeight(10)) {
+                                Text(jangbuStore.groupDetail.teamName)
+                                    .font(.detail2)
+                                    .foregroundStyle(.jgray20)
+                                
+                                Text("3기 구름톤 유니브 팀의 장부입니다!")
+                                    .font(.label3)
+                                    .foregroundStyle(.jgray60)
+                            }
                             
-                            Text("3기 구름톤 유니브 팀의 장부입니다!")
-                                .font(.label3)
-                                .foregroundStyle(.jgray60)
+                            Spacer()
+                            
+                            
+                            Rectangle()
+                                .fill(.jgray80)
+                                .frame(width: scaledWidth(1))
+                                .padding(.horizontal, scaledWidth(20))
                         }
-                        
-                        Spacer()
-                        
-                        Rectangle()
-                            .fill(.jgray80)
-                            .frame(width: scaledWidth(1))
-                            .padding(.horizontal, scaledWidth(20))
                         
                         VStack(alignment: .leading, spacing: 0) {
                             Text("남은 선결제 금액")
-                                .font(.detail6)
+                                .font(isSimpleMode ? .label1 : .detail6)
                                 .foregroundStyle(.jgray40)
                             
                             Text("\(jangbuStore.groupDetail.remainPoint)")
-                                .font(.headline2)
+                                .font(isSimpleMode ? .headline1 : .headline2)
                                 .foregroundStyle(.jgray20)
                         }
                         
@@ -72,15 +77,15 @@ struct JangbuGroupDetailView: View {
                         
                         VStack(alignment: .leading, spacing: 0) {
                             Text("전체 선결제 금액")
-                                .font(.detail6)
+                                .font(isSimpleMode ? .label1 : .detail6)
                                 .foregroundStyle(.jgray40)
                             
                             Text("\(jangbuStore.groupDetail.point)")
-                                .font(.headline2)
+                                .font(isSimpleMode ? .headline1 : .headline2)
                                 .foregroundStyle(.jgray20)
                         }
                         
-                        Spacer()
+//                        Spacer()
                     }
                     
                     Rectangle()
@@ -90,7 +95,7 @@ struct JangbuGroupDetailView: View {
                     VStack(spacing: scaledHeight(10)) {
                         HStack {
                             Text("그룹장")
-                                .font(.label1)
+                                .font(isSimpleMode ? .body9 : .label1)
                                 .foregroundStyle(.jgray20)
                             
                             Spacer()
@@ -103,11 +108,11 @@ struct JangbuGroupDetailView: View {
                                 .frame(height: scaledHeight(45))
                             
                             Text(jangbuStore.groupDetail.teamLeaderName)
-                                .font(.label1)
+                                .font(isSimpleMode ? .body9 : .label1)
                                 .foregroundStyle(.jgray20)
                             
                             Text(jangbuStore.groupDetail.teamLeaderPhoneNum ?? "010-1234-5678")
-                                .font(.label1)
+                                .font(isSimpleMode ? .body9 : .label1)
                                 .foregroundStyle(.jgray50)
                             
                             Spacer()
@@ -133,7 +138,7 @@ struct JangbuGroupDetailView: View {
                         Text("결제 금액")
                             .frame(maxWidth: .infinity, alignment: .leading)
                     }
-                    .font(.body2)
+                    .font(isSimpleMode ? .headline4 : .body2)
                     .foregroundStyle(.jgray30)
                     
                     Rectangle()

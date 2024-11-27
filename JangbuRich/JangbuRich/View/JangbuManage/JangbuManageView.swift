@@ -11,6 +11,8 @@ struct JangbuManageView: View {
     
     @EnvironmentObject var jangbuStore: JangbuStore
     
+    @AppStorage("isSimpleMode") var isSimpleMode: Bool = false
+    
     let columns: [GridItem] = [
         GridItem(.flexible(), spacing: 15),
         GridItem(.flexible(), spacing: 15)
@@ -25,10 +27,10 @@ struct JangbuManageView: View {
                             Image(.iconManageJangbu)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: scaledHeight(24))
+                                .frame(height: isSimpleMode ? scaledHeight(30) : scaledHeight(24))
                             
                             Text("장부 관리")
-                                .font(.headline6)
+                                .font(isSimpleMode ? .headline1 : .headline6)
                                 .foregroundStyle(.jgray20)
                             
                             Spacer()
@@ -43,13 +45,13 @@ struct JangbuManageView: View {
                         } label: {
                             HStack(spacing: 0) {
                                 Text("결제 그룹")
-                                    .font(.headline4)
+                                    .font(isSimpleMode ? .headline1 : .headline4)
                                     .foregroundStyle(.jgray20)
                                 
                                 Image(.iconRight)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(height: scaledHeight(24))
+                                    .frame(height: isSimpleMode ? scaledHeight(30) : scaledHeight(24))
                                 
                                 Spacer()
                             }
@@ -70,13 +72,13 @@ struct JangbuManageView: View {
                         } label: {
                             HStack(spacing: 0) {
                                 Text("결제 내역")
-                                    .font(.headline4)
+                                    .font(isSimpleMode ? .headline1 : .headline4)
                                     .foregroundStyle(.jgray20)
                                 
                                 Image(.iconRight)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(height: scaledHeight(24))
+                                    .frame(height: isSimpleMode ? scaledHeight(30) : scaledHeight(24))
                                 
                                 Spacer()
                             }
@@ -97,7 +99,7 @@ struct JangbuManageView: View {
                                 Text("결제 금액")
                                     .frame(maxWidth: .infinity, alignment: .leading)
                             }
-                            .font(.body2)
+                            .font(isSimpleMode ? .headline4 : .body2)
                             .foregroundStyle(.jgray30)
                             
                             Rectangle()

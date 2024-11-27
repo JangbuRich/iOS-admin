@@ -9,6 +9,8 @@ import SwiftUI
 
 struct JangbuGroupView: View {
     
+    @AppStorage("isSimpleMode") var isSimpleMode: Bool = false
+    
     var jangbuGroup: PaymentGroup
     
     var body: some View {
@@ -19,7 +21,7 @@ struct JangbuGroupView: View {
                 } label: {
                     HStack(spacing: 0) {
                         Text(jangbuGroup.teamName)
-                            .font(.detail2)
+                            .font(isSimpleMode ? .headline3 : .detail2)
                             .foregroundStyle(.jgray20)
                         
                         Image(.iconRight)
@@ -33,7 +35,7 @@ struct JangbuGroupView: View {
                 
                 HStack {
                     Text(jangbuGroup.teamDescription)
-                        .font(.label3)
+                        .font(isSimpleMode ? .label1 : .label3)
                         .foregroundStyle(.jgray60)
                     
                     Spacer()
@@ -47,25 +49,25 @@ struct JangbuGroupView: View {
             VStack(spacing: scaledHeight(5)) {
                 HStack {
                     Text("기간")
-                        .font(.label3)
+                        .font(isSimpleMode ? .label1 : .label3)
                         .foregroundStyle(.jgray60)
                     
                     Spacer()
                     
                     Text(jangbuGroup.period)
-                        .font(.body5)
+                        .font(isSimpleMode ? .headline4 : .body5)
                         .foregroundStyle(.jgray30)
                 }
                 
                 HStack {
                     Text("잔여금액")
-                        .font(.label3)
+                        .font(isSimpleMode ? .label1 : .label3)
                         .foregroundStyle(.jgray60)
                     
                     Spacer()
                     
                     Text("\(jangbuGroup.remainPoint)원")
-                        .font(.body5)
+                        .font(isSimpleMode ? .headline4 : .body5)
                         .foregroundStyle(.jgray30)
                 }
             }
