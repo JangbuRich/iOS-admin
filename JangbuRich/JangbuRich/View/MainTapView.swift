@@ -81,7 +81,7 @@ struct MainTapView: View {
             ZStack {
                 switch selectedIndex {
                 case 0:
-                    HomeView()
+                    HomeView(selectedIndex: $selectedIndex)
                 case 1:
                     OrderHistoryView()
                 case 2:
@@ -92,7 +92,7 @@ struct MainTapView: View {
 //                case 4:
 //                    MyInfoView()
                 default:
-                    HomeView()
+                    HomeView(selectedIndex: $selectedIndex)
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
