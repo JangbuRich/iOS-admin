@@ -15,7 +15,7 @@ struct JangbuGroupView: View {
         VStack(spacing: scaledHeight(20)) {
             VStack(spacing: 0) {
                 NavigationLink {
-                    JangbuGroupDetailView()
+                    JangbuGroupDetailView(teamID: String(jangbuGroup.teamId))
                 } label: {
                     HStack(spacing: 0) {
                         Text(jangbuGroup.teamName)
