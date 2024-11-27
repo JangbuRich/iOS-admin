@@ -14,6 +14,8 @@ struct OrderHistoryListView: View {
     @EnvironmentObject var overlayManager: OverlayManager
     @EnvironmentObject var todayOrderStore: TodayOrderStore
     
+    @AppStorage("isSimpleMode") var isSimpleMode: Bool = false
+    
     @State private var searchText: String = ""
     
     var isToday: Bool
@@ -32,7 +34,7 @@ struct OrderHistoryListView: View {
                                 .frame(height: scaledHeight(24))
                             
                             Text(isToday ? "오늘의 주문 내역" : "지난 주문 내역")
-                                .font(.headline6)
+                                .font(isSimpleMode ? .headline1 : .headline6)
                                 .foregroundStyle(.jgray20)
                         }
                     }
@@ -55,10 +57,10 @@ struct OrderHistoryListView: View {
                             Spacer()
                             
                             TextField(isToday ? "오늘의 주문 내역을 검색하세요" : "지난 주문 내역을 검색하세요", text: $searchText)
-                                .font(.label1)
+                                .font(isSimpleMode ? .headline3 : .label1)
                                 .foregroundStyle(.jgray20)
                                 .padding()
-                                .frame(width: scaledWidth(320), height: scaledHeight(44))
+                                .frame(width: scaledWidth(320), height: isSimpleMode ? scaledHeight(50) : scaledHeight(44))
                                 .background(.jgray100)
                                 .cornerRadius(scaledHeight(10))
                                 .background(
@@ -74,11 +76,11 @@ struct OrderHistoryListView: View {
                 HStack {
                     if isToday {
                         Text("총 \(todayOrderStore.todayOrderList.count)건")
-                            .font(.detail1)
+                            .font(isSimpleMode ? .headline4 : .detail1)
                             .foregroundStyle(.jgray50)
                     } else {
                         Text("총 \(todayOrderStore.pastOrderList.count)건")
-                            .font(.detail1)
+                            .font(isSimpleMode ? .headline4 : .detail1)
                             .foregroundStyle(.jgray50)
                     }
                     
@@ -86,7 +88,7 @@ struct OrderHistoryListView: View {
                     
                     HStack(spacing: 0) {
                         Text("최신순")
-                            .font(.detail1)
+                            .font(isSimpleMode ? .headline4 : .detail1)
                             .foregroundStyle(.jgray30)
                         
                         Image(.iconDropdown)

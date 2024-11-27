@@ -9,6 +9,8 @@ import SwiftUI
 
 struct HomeTodayOrderHistoryView: View {
     
+    @AppStorage("isSimpleMode") var isSimpleMode: Bool = false
+    
     var order: TodayOrderList
     
     var body: some View {
@@ -19,27 +21,27 @@ struct HomeTodayOrderHistoryView: View {
                     .fill(.jOrange)
                 
                 Text("\(order.id)")
-                    .font(.body2)
+                    .font(isSimpleMode ? .headline2 : .body2)
                     .foregroundStyle(.jOrange)
             }
             .frame(width: scaledWidth(40), height: scaledHeight(40))
             
             VStack(alignment: .leading) {
                 Text(order.menuNames)
-                    .font(.body2)
+                    .font(isSimpleMode ? .headline5 : .body2)
                     .foregroundStyle(.jgray30)
                 
                 Spacer()
                 
                 Text("총 \(order.count)개")
-                    .font(.label3)
+                    .font(isSimpleMode ? .label1 : .label3)
                     .foregroundStyle(.jgray50)
             }
             
             Spacer()
             
             Text("\(order.price)원")
-                .font(.label1)
+                .font(isSimpleMode ? .headline3 : .label1)
                 .foregroundStyle(.jgray20)
         }
         .frame(height: scaledHeight(40))

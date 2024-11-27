@@ -256,7 +256,7 @@ struct HomeView: View {
                                                 HStack(spacing: scaledWidth(29)) {
                                                     VStack {
                                                         Text("오늘 총 주문")
-                                                            .font(.detail2)
+                                                            .font(isSimpleMode ? .headline3 : .detail2)
                                                             .foregroundStyle(.jgray30)
                                                     }
                                                     
@@ -264,11 +264,11 @@ struct HomeView: View {
                                                     
                                                     VStack(alignment: .trailing) {
                                                         Text("총 \(todayOrderStore.todayOrderList.count)건")
-                                                            .font(.label3)
+                                                            .font(isSimpleMode ? .label1 : .label3)
                                                             .foregroundStyle(.jgray50)
                                                         
                                                         Text("\(todayOrderStore.todayTotalPrice)원")
-                                                            .font(.headline2)
+                                                            .font(isSimpleMode ? .headline6 : .headline2)
                                                             .foregroundStyle(.jgray20)
                                                     }
                                                 }
