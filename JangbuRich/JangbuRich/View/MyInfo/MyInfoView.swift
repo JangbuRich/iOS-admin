@@ -10,10 +10,11 @@ import SwiftUI
 struct MyInfoView: View {
     
     @EnvironmentObject var authStore: AuthStore
+    @EnvironmentObject var myInfoStore: MyInfoStore
     
     let columns: [GridItem] = [
-        GridItem(.flexible(), spacing: 15),
-        GridItem(.flexible(), spacing: 15)
+        GridItem(.flexible(), spacing: 20),
+        GridItem(.flexible(), spacing: 20)
     ]
     
     var body: some View {
@@ -33,7 +34,7 @@ struct MyInfoView: View {
                         Spacer()
                     }
                     .padding(.top, scaledHeight(80))
-                    .padding(.bottom, scaledHeight(20))
+                    .padding(.bottom, scaledHeight(29))
                     
                     VStack {
                         Image(.imageMypage)
@@ -41,7 +42,7 @@ struct MyInfoView: View {
                             .scaledToFit()
                             .frame(height: scaledHeight(164))
                     }
-                    .padding(.vertical, scaledHeight(10))
+                    .padding(.bottom, scaledHeight(20))
                     
                     VStack {
                         HStack {
@@ -51,23 +52,21 @@ struct MyInfoView: View {
                             
                             Spacer()
                         }
-                        .padding(.vertical, scaledHeight(10))
+                        .padding(.bottom, scaledHeight(15))
                         
                         VStack {
-                            HStack {
-                                Image(.imageMyinfoStore)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(height: scaledHeight(172))
+                            HStack(alignment: .top) {
+                                JKFImage(imageUrl: myInfoStore.storeInfo.representativeImage, height: 172)
                                     .cornerRadius(scaledWidth(10))
                                 
-                                Spacer()
-                                
                                 VStack {
-                                    VStack {
-                                        Text("구름스토어")
+                                    HStack {
+                                        Text(myInfoStore.storeInfo.name)
                                             .font(.detail1)
                                             .foregroundStyle(.jgray30)
+                                            .padding(.leading, scaledWidth(25))
+                                        
+                                        Spacer()
                                     }
                                     .frame(maxWidth: .infinity)
                                     .frame(height: scaledHeight(42))
@@ -75,9 +74,17 @@ struct MyInfoView: View {
                                     .cornerRadius(scaledWidth(10))
                                     
                                     VStack {
-                                        Text("NO 1, 달달 폭신 스토어")
-                                            .font(.detail1)
-                                            .foregroundStyle(.jgray30)
+                                        HStack {
+                                            Text(myInfoStore.storeInfo.introduction)
+                                                .font(.detail1)
+                                                .foregroundStyle(.jgray30)
+                                                .padding(.top, scaledHeight(12))
+                                                .padding(.leading, scaledWidth(25))
+                                            
+                                            Spacer()
+                                        }
+                                        
+                                        Spacer()
                                     }
                                     .frame(maxWidth: .infinity)
                                     .frame(height: scaledHeight(150))
@@ -85,13 +92,14 @@ struct MyInfoView: View {
                                     .cornerRadius(scaledWidth(10))
                                 }
                                 .frame(maxWidth: .infinity)
+                                .padding(.leading, scaledWidth(20))
                             }
                         }
-                        .padding(.vertical, scaledHeight(10))
+                        .padding(.bottom, scaledHeight(35))
                     }
                     
-                    HStack {
-                        VStack {
+                    HStack(spacing: scaledWidth(20)) {
+                        VStack(spacing: scaledHeight(10)) {
                             HStack {
                                 Text("매장 위치")
                                     .font(.headline4)
@@ -99,34 +107,38 @@ struct MyInfoView: View {
                                 
                                 Spacer()
                             }
-                            .padding(.vertical, scaledHeight(10))
+                            .padding(.bottom, scaledHeight(15))
                             
-                            VStack {
-                                VStack {
-                                    Text("경기 수원시 영통구 광교중앙로 145")
+                            VStack(spacing: scaledHeight(10)) {
+                                HStack {
+                                    Text(myInfoStore.storeInfo.address)
                                         .font(.detail1)
                                         .foregroundStyle(.jgray30)
-                                        .frame(maxWidth: .infinity)
+                                        .padding(.leading, scaledWidth(25))
+                                    
+                                    Spacer()
                                 }
                                 .frame(maxWidth: .infinity)
                                 .frame(height: scaledHeight(42))
                                 .background(.jgray90)
                                 .cornerRadius(scaledWidth(10))
                                 
-                                VStack {
-                                    Text("광교엘포트아이파크 1층")
+                                HStack {
+                                    Text(myInfoStore.storeInfo.location ?? "dd")
                                         .font(.detail1)
                                         .foregroundStyle(.jgray30)
-                                        .frame(maxWidth: .infinity)
+                                        .padding(.leading, scaledWidth(25))
+                                    
+                                    Spacer()
                                 }
+                                .frame(maxWidth: .infinity)
                                 .frame(height: scaledHeight(42))
                                 .background(.jgray90)
                                 .cornerRadius(scaledWidth(10))
                             }
-                            .padding(.vertical, scaledHeight(10))
                         }
                         
-                        VStack {
+                        VStack(spacing: scaledHeight(10)) {
                             HStack {
                                 Text("매장 운영 시간")
                                     .font(.headline4)
@@ -134,23 +146,29 @@ struct MyInfoView: View {
                                 
                                 Spacer()
                             }
-                            .padding(.vertical, scaledHeight(10))
+                            .padding(.bottom, scaledHeight(15))
                             
-                            VStack {
-                                VStack {
-                                    Text("매일")
+                            VStack(spacing: scaledHeight(10)) {
+                                HStack {
+                                    Text(myInfoStore.storeInfo.dayOfWeek)
                                         .font(.detail1)
                                         .foregroundStyle(.jgray30)
+                                        .padding(.leading, scaledWidth(25))
+                                    
+                                    Spacer()
                                 }
                                 .frame(maxWidth: .infinity)
                                 .frame(height: scaledHeight(42))
                                 .background(.jgray90)
                                 .cornerRadius(scaledWidth(10))
                                 
-                                VStack {
-                                    Text("08:00 - 22:00")
+                                HStack {
+                                    Text(myInfoStore.storeInfo.openTime + " - " + myInfoStore.storeInfo.closeTime)
                                         .font(.detail1)
                                         .foregroundStyle(.jgray30)
+                                        .padding(.leading, scaledWidth(25))
+                                    
+                                    Spacer()
                                 }
                                 .frame(maxWidth: .infinity)
                                 .frame(height: scaledHeight(42))
@@ -159,31 +177,33 @@ struct MyInfoView: View {
                             }
                         }
                     }
+                    .padding(.bottom, scaledHeight(35))
 
                     VStack {
                         VStack {
-                            HStack {
+                            HStack(spacing: 0) {
                                 Text("메뉴")
                                     .font(.headline4)
                                     .foregroundStyle(.jgray20)
                                 
+                                Image(.iconRight)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(height: scaledHeight(24))
+                                
                                 Spacer()
                             }
                         }
+                        .padding(.bottom, scaledHeight(15))
                         
-                        LazyVGrid(columns: columns, spacing: 15) {
-                            ForEach(0..<4, id: \.self) { _ in
+                        LazyVGrid(columns: columns, spacing: scaledHeight(15)) {
+                            ForEach(myInfoStore.storeInfo.menuResponses, id: \.id) { menuItem in
                                 VStack {
-                                    HStack {
-                                        Image(.myinfoMenus)
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(height: scaledHeight(100))
+                                    HStack(alignment: .top) {
+                                        JKFImage(imageUrl: menuItem.imageUrl, height: 100)
                                             .cornerRadius(10)
                                         
-                                        Spacer()
-                                        
-                                        VStack {
+                                        VStack(alignment: .leading) {
                                             HStack {
                                                 Text("대표")
                                                     .font(.label3)
@@ -193,21 +213,28 @@ struct MyInfoView: View {
                                                     .background(.jOrange)
                                                     .cornerRadius(scaledWidth(25))
                                                 
-                                                Text("구름 정식")
+                                                Text(menuItem.name)
                                                     .font(.body2)
                                                     .foregroundStyle(.jgray20)
+                                                
+                                                Spacer()
                                             }
+                                            .padding(.bottom, scaledHeight(8))
                                             
-                                            Text("든든한 한끼를 위한 구름 정식")
+                                            Text(menuItem.description)
                                                 .font(.body3)
                                                 .foregroundStyle(.jgray50)
+                                                .padding(.bottom, scaledHeight(10))
                                             
-                                            Text("8,700원")
+                                            Text("\(menuItem.price)원")
                                                 .font(.detail2)
                                                 .foregroundStyle(.jgray20)
                                         }
+                                        .padding(.leading, scaledWidth(15))
                                     }
                                 }
+                                .padding(.vertical, scaledHeight(20))
+                                .padding(.horizontal, scaledWidth(20))
                                 .frame(maxWidth: .infinity)
                                 .background(.jgray100)
                                 .cornerRadius(scaledWidth(10))
@@ -221,6 +248,9 @@ struct MyInfoView: View {
             }
             .scrollIndicators(.hidden)
             .background(.jgray95)
+            .onAppear {
+                myInfoStore.getMyStoreInfo()
+            }
         }
     }
 }
