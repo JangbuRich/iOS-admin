@@ -13,7 +13,7 @@ class JangbuStore: ObservableObject {
     
     @Published var groupList: [PaymentGroup] = []
     @Published var paymentHistoryList: [PaymentHistory] = []
-    @Published var groupDetail: JangbuGroupDetail = JangbuGroupDetail(teamName: "", point: 0, remainPoint: 0, teamLeaderName: "", historyResponses: [])
+    @Published var groupDetail: JangbuGroupDetail = JangbuGroupDetail(teamName: "", teamDescription: "", point: 0, remainPoint: 0, teamLeaderName: "", teamLeaderPhoneNum: "", historyResponses: [])
     
     func getPaymentGroup() {
         let url = Config.baseURL + "store/payment_group"

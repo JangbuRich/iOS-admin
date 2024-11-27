@@ -40,10 +40,11 @@ struct PaymentHistory: Codable {
 
 struct JangbuGroupDetail: Codable {
     var teamName: String
+    var teamDescription: String
     var point: Int
     var remainPoint: Int
     var teamLeaderName: String
-    var teamLeaderPhoneNum: String?
+    var teamLeaderPhoneNum: String
     var historyResponses: [JangbuGroupDetailHistory]
 }
 
