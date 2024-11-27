@@ -37,3 +37,18 @@ struct PaymentHistory: Codable {
     let teamName: String
     let transactionedPoint: Int
 }
+
+struct JangbuGroupDetail: Codable {
+    var teamName: String
+    var point: Int
+    var remainPoint: Int
+    var teamLeaderName: String
+    var teamLeaderPhoneNum: String?
+    var historyResponses: [JangbuGroupDetailHistory]
+}
+
+struct JangbuGroupDetailHistory: Codable {
+    var userName: String
+    var date: String
+    var price: String
+}
