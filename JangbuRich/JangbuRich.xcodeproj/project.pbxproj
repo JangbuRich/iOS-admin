@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C1F4C112CF732CA003B5962 /* JangbuDetailHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1F4C102CF732CA003B5962 /* JangbuDetailHistoryView.swift */; };
+		3C1F4C132CF76F60003B5962 /* JKFImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1F4C122CF76F60003B5962 /* JKFImage.swift */; };
+		3C1F4C162CF76F7D003B5962 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3C1F4C152CF76F7D003B5962 /* Kingfisher */; };
 		3C4CF3CF2CEBCC2500515453 /* OnboardingFifthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4CF3CE2CEBCC2500515453 /* OnboardingFifthView.swift */; };
 		3C4CF3D12CEBCD9B00515453 /* JLeftTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4CF3D02CEBCD9B00515453 /* JLeftTextField.swift */; };
 		3C4CF3D62CEC3DAE00515453 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4CF3D52CEC3DAE00515453 /* Config.swift */; };
@@ -83,6 +86,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C1F4C102CF732CA003B5962 /* JangbuDetailHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JangbuDetailHistoryView.swift; sourceTree = "<group>"; };
+		3C1F4C122CF76F60003B5962 /* JKFImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JKFImage.swift; sourceTree = "<group>"; };
 		3C4CF3CE2CEBCC2500515453 /* OnboardingFifthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFifthView.swift; sourceTree = "<group>"; };
 		3C4CF3D02CEBCD9B00515453 /* JLeftTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLeftTextField.swift; sourceTree = "<group>"; };
 		3C4CF3D32CEC3AD700515453 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
@@ -161,6 +166,7 @@
 				3C4CF3EE2CEC680400515453 /* KakaoSDKCommon in Frameworks */,
 				3C4CF3F12CEC686F00515453 /* Alamofire in Frameworks */,
 				3C4CF3DB2CEC644E00515453 /* SwiftKeychainWrapper in Frameworks */,
+				3C1F4C162CF76F7D003B5962 /* Kingfisher in Frameworks */,
 				3C4CF3E62CEC680400515453 /* KakaoSDK in Frameworks */,
 				3C4CF3EA2CEC680400515453 /* KakaoSDKCert in Frameworks */,
 				3C4CF3E82CEC680400515453 /* KakaoSDKAuth in Frameworks */,
@@ -401,6 +407,7 @@
 				3C9F9DF02CEAD92700ED539E /* JTagButton.swift */,
 				3C9F9DF22CEAD95100ED539E /* JDayButton.swift */,
 				3C9F9DFB2CEADC9500ED539E /* JPopupView.swift */,
+				3C1F4C122CF76F60003B5962 /* JKFImage.swift */,
 				3CC986972CF27A7B00B40D78 /* LottieView.swift */,
 			);
 			path = Commons;
@@ -424,6 +431,7 @@
 			children = (
 				3CC9867E2CF1CC2500B40D78 /* JangbuGroupView.swift */,
 				3CC986822CF1E29500B40D78 /* JangbuHistoryView.swift */,
+				3C1F4C102CF732CA003B5962 /* JangbuDetailHistoryView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -463,6 +471,7 @@
 				3C4CF3ED2CEC680400515453 /* KakaoSDKCommon */,
 				3C4CF3F02CEC686F00515453 /* Alamofire */,
 				3C6AA5B12CF27B10000A4D49 /* Lottie */,
+				3C1F4C152CF76F7D003B5962 /* Kingfisher */,
 			);
 			productName = JangbuRich;
 			productReference = 3CA748FC2CEA48F100ACDFEF /* JangbuRich.app */;
@@ -497,6 +506,7 @@
 				3C4CF3D92CEC644E00515453 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
 				3C4CF3EF2CEC686F00515453 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				3C6AA5B02CF27B10000A4D49 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				3C1F4C142CF76F7D003B5962 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 3CA748FD2CEA48F100ACDFEF /* Products */;
 			projectDirPath = "";
@@ -563,6 +573,7 @@
 				3C9F9DFA2CEADAEC00ED539E /* MenuRegisterView.swift in Sources */,
 				3C4CF3F62CECA56E00515453 /* HomeView.swift in Sources */,
 				3C9F9DF52CEADA3D00ED539E /* MenuItem.swift in Sources */,
+				3C1F4C112CF732CA003B5962 /* JangbuDetailHistoryView.swift in Sources */,
 				3CF18CF92CEEF45C006A0AAA /* OrderDetailPopupView.swift in Sources */,
 				3CC986892CF1F7BA00B40D78 /* JangbuGroupDetailView.swift in Sources */,
 				3CA749222CEA4DBF00ACDFEF /* Font+.swift in Sources */,
@@ -579,6 +590,7 @@
 				3CA749002CEA48F100ACDFEF /* JangbuRichApp.swift in Sources */,
 				3C9F9DE92CEAD8A200ED539E /* JAgreementRowView.swift in Sources */,
 				3CC9868B2CF2070200B40D78 /* BaseResponse.swift in Sources */,
+				3C1F4C132CF76F60003B5962 /* JKFImage.swift in Sources */,
 				3C9F9DF32CEAD95100ED539E /* JDayButton.swift in Sources */,
 				3C6AA5BD2CF280B2000A4D49 /* MyInfoStore.swift in Sources */,
 				3C4CF40B2CEDA18000515453 /* NowReservationView.swift in Sources */,
@@ -814,6 +826,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		3C1F4C142CF76F7D003B5962 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.1.1;
+			};
+		};
 		3C4CF3D22CEC39B200515453 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kakao/kakao-ios-sdk";
@@ -849,6 +869,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3C1F4C152CF76F7D003B5962 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3C1F4C142CF76F7D003B5962 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		3C4CF3DA2CEC644E00515453 /* SwiftKeychainWrapper */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3C4CF3D92CEC644E00515453 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
