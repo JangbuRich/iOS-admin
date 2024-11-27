@@ -12,6 +12,8 @@ struct OrderHistoryView: View {
     @EnvironmentObject var overlayManager: OverlayManager
     @EnvironmentObject var todayOrderStore: TodayOrderStore
     
+    @AppStorage("isSimpleMode") var isSimpleMode: Bool = false
+    
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -20,10 +22,10 @@ struct OrderHistoryView: View {
                         Image(.iconOrderHistory)
                             .resizable()
                             .scaledToFit()
-                            .frame(height: scaledHeight(24))
+                            .frame(height: isSimpleMode ? scaledHeight(30) : scaledHeight(24))
                         
                         Text("주문 내역")
-                            .font(.headline6)
+                            .font(isSimpleMode ? .headline1 : .headline6)
                             .foregroundStyle(.jgray20)
                         
                         Spacer()
@@ -37,13 +39,13 @@ struct OrderHistoryView: View {
                         } label: {
                             HStack(spacing: 0) {
                                 Text("오늘의 주문 내역")
-                                    .font(.headline4)
+                                    .font(isSimpleMode ? .headline1 : .headline4)
                                     .foregroundStyle(.jgray20)
                                 
                                 Image(.iconRight)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(height: scaledHeight(24))
+                                    .frame(height: isSimpleMode ? scaledHeight(30) : scaledHeight(24))
                                 
                                 Spacer()
                             }
@@ -61,7 +63,7 @@ struct OrderHistoryView: View {
                                     HStack(spacing: scaledWidth(29)) {
                                         VStack {
                                             Text("오늘 총 주문")
-                                                .font(.detail2)
+                                                .font(isSimpleMode ? .headline3 : .detail2)
                                                 .foregroundStyle(.jgray30)
                                         }
                                         
@@ -69,20 +71,16 @@ struct OrderHistoryView: View {
                                         
                                         VStack(alignment: .trailing) {
                                             Text("총 \(todayOrderStore.todayOrderList.count)건")
-                                                .font(.label3)
+                                                .font(isSimpleMode ? .label1 : .label3)
                                                 .foregroundStyle(.jgray50)
                                             
                                             Text("\(todayOrderStore.todayTotalPrice)원")
-                                                .font(.headline2)
+                                                .font(isSimpleMode ? .headline6 : .headline2)
                                                 .foregroundStyle(.jgray20)
                                         }
                                     }
                                 }
-                                
-                                Rectangle()
-                                    .fill(.jgray90)
-                                    .frame(height: scaledHeight(1))
-                                    .padding(.vertical, scaledHeight(25))
+                                .padding(.vertical, scaledHeight(25))
                                 
                                 VStack(spacing: scaledHeight(30)) {
                                     ForEach(todayOrderStore.todayOrderList.prefix(5), id: \.id) { order in
@@ -92,7 +90,7 @@ struct OrderHistoryView: View {
                                             Image(.iconRight)
                                                 .resizable()
                                                 .scaledToFit()
-                                                .frame(height: scaledHeight(24))
+                                                .frame(height: isSimpleMode ? scaledHeight(30) : scaledHeight(24))
                                         }
                                         .onTapGesture {
                                             todayOrderStore.getOrderDetail(orderId: order.id) { result in
@@ -118,13 +116,13 @@ struct OrderHistoryView: View {
                         } label: {
                             HStack(spacing: 0) {
                                 Text("지난 주문 내역")
-                                    .font(.headline4)
+                                    .font(isSimpleMode ? .headline1 : .headline4)
                                     .foregroundStyle(.jgray20)
                                 
                                 Image(.iconRight)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(height: scaledHeight(24))
+                                    .frame(height: isSimpleMode ? scaledHeight(30) : scaledHeight(24))
                                 
                                 Spacer()
                             }
@@ -132,7 +130,7 @@ struct OrderHistoryView: View {
                         .padding(.bottom, scaledHeight(15))
                         
                         VStack {
-                            VStack {
+                            VStack(spacing: scaledHeight(30)) {
                                 ForEach(todayOrderStore.pastOrderList.prefix(5), id: \.id) { order in
                                     PastOrderDetailView(order: order, isToday: false)
                                 }

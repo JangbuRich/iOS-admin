@@ -11,13 +11,15 @@ struct OrderDetailPopupView: View {
     
     @EnvironmentObject var overlayManager: OverlayManager
     
+    @AppStorage("isSimpleMode") var isSimpleMode: Bool = false
+    
     let orderDetail: OrderDetailResult
     
     var body: some View {
         VStack {
             HStack {
                 Text("주문 내역")
-                    .font(.body6)
+                    .font(isSimpleMode ? .headline7 : .body6)
                     .foregroundStyle(.jgray20)
                 
                 Spacer()
@@ -28,7 +30,7 @@ struct OrderDetailPopupView: View {
                     Image(.xButton)
                         .resizable()
                         .scaledToFit()
-                        .frame(height: scaledHeight(24))
+                        .frame(height: isSimpleMode ? scaledHeight(30) : scaledHeight(24))
                 }
             }
             .padding(.bottom, scaledHeight(25))
@@ -41,23 +43,23 @@ struct OrderDetailPopupView: View {
                             .fill(.jOrange)
                         
                         Text("\(orderDetail.id)")
-                            .font(.body2)
+                            .font(isSimpleMode ? .headline4 : .body2)
                             .foregroundStyle(.jOrange)
                     }
                     .frame(width: scaledWidth(27), height: scaledHeight(27))
                     .padding(.trailing, scaledWidth(10))
                     
                     Text(orderDetail.teamName)
-                        .font(.detail2)
+                        .font(isSimpleMode ? .headline3 : .detail2)
                         .foregroundStyle(.jgray20)
                     
                     Text("|")
-                        .font(.body4)
+                        .font(isSimpleMode ? .headline3 : .body4)
                         .foregroundStyle(.jgray60)
                         .padding(.horizontal, scaledWidth(5))
                     
                     Text(orderDetail.teamUserName)
-                        .font(.detail2)
+                        .font(isSimpleMode ? .headline3 : .detail2)
                         .foregroundStyle(.jgray20)
                     
                     Spacer()
@@ -72,18 +74,18 @@ struct OrderDetailPopupView: View {
                     ForEach(orderDetail.menus, id: \.menuName) { menu in
                         HStack {
                             Text(menu.menuName)
-                                .font(.body2)
+                                .font(isSimpleMode ? .headline4 : .body2)
                                 .foregroundStyle(.jgray30)
                             
                             Spacer()
                             
                             Text("\(menu.amount)")
-                                .font(.body1)
+                                .font(isSimpleMode ? .headline4 : .body1)
                                 .foregroundStyle(.jgray20)
                                 .padding(.trailing, scaledWidth(5))
                             
                             Text("개")
-                                .font(.detail1)
+                                .font(isSimpleMode ? .label1 : .detail1)
                                 .foregroundStyle(.jgray50)
                         }
                     }
@@ -93,7 +95,7 @@ struct OrderDetailPopupView: View {
                     VStack {
                         HStack {
                             Text(formatDate(orderDetail.dateTime))
-                                .font(.detail1)
+                                .font(isSimpleMode ? .label1 : .detail1)
                                 .foregroundStyle(.jgray50)
                             
 //                            Text("|")
@@ -107,7 +109,7 @@ struct OrderDetailPopupView: View {
                             Spacer()
                             
                             Text("총 \(orderDetail.amount)개")
-                                .font(.detail1)
+                                .font(isSimpleMode ? .detail2 : .detail1)
                                 .foregroundStyle(.jgray20)
                         }
                         
@@ -118,7 +120,7 @@ struct OrderDetailPopupView: View {
                         
                         HStack {
                             Text("합계 금액")
-                                .font(.detail2)
+                                .font(isSimpleMode ? .headline4 : .detail2)
                                 .foregroundStyle(.jgray20)
                             
                             Spacer()
@@ -127,26 +129,26 @@ struct OrderDetailPopupView: View {
                         
                         HStack {
                             Text("상품 금액")
-                                .font(.detail1)
+                                .font(isSimpleMode ? .headline4 : .detail1)
                                 .foregroundStyle(.jgray50)
                             
                             Spacer()
                             
                             Text("\(orderDetail.totalPrice)")
-                                .font(.body2)
+                                .font(isSimpleMode ? .headline7 : .body2)
                                 .foregroundStyle(.jgray30)
                         }
                         .padding(.bottom, scaledHeight(10))
                         
                         HStack {
                             Text("할인 금액")
-                                .font(.detail1)
+                                .font(isSimpleMode ? .headline4 : .detail1)
                                 .foregroundStyle(.jgray50)
                             
                             Spacer()
                             
                             Text("0원")
-                                .font(.body2)
+                                .font(isSimpleMode ? .headline7 : .body2)
                                 .foregroundStyle(.jgray30)
                         }
                         
@@ -157,13 +159,13 @@ struct OrderDetailPopupView: View {
                         
                         HStack {
                             Text("총 결제 금액")
-                                .font(.detail2)
+                                .font(isSimpleMode ? .headline4 : .detail2)
                                 .foregroundStyle(.jgray20)
                             
                             Spacer()
                             
                             Text("\(orderDetail.totalPrice)")
-                                .font(.headline3)
+                                .font(isSimpleMode ? .headline1 : .headline3)
                                 .foregroundStyle(.jgray30)
                         }
                     }
@@ -179,7 +181,7 @@ struct OrderDetailPopupView: View {
                 overlayManager.hideSheet()
             } label: {
                 Text("확인")
-                    .font(.label1)
+                    .font(isSimpleMode ? .headline8 : .label1)
                     .foregroundStyle(.jgray100)
                     .padding(.vertical, scaledHeight(12))
                     .frame(maxWidth: .infinity)
@@ -190,33 +192,5 @@ struct OrderDetailPopupView: View {
             }
         }
         .padding(scaledWidth(20))
-    }
-    
-    func formatDate(_ dateString: String) -> String {
-        // 초 소수점 자릿수를 3자리로 줄임
-        let trimmedDateString = trimMilliseconds(dateString)
-
-        let inputFormatter = DateFormatter()
-        inputFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS" // 수정된 입력 포맷
-        inputFormatter.locale = Locale(identifier: "en_US_POSIX")
-        inputFormatter.timeZone = TimeZone(abbreviation: "UTC")
-
-        let outputFormatter = DateFormatter()
-        outputFormatter.dateFormat = "yyyy.MM.dd" // 원하는 출력 포맷
-
-        if let date = inputFormatter.date(from: trimmedDateString) {
-            return outputFormatter.string(from: date)
-        } else {
-            return "Invalid Date"
-        }
-    }
-
-    func trimMilliseconds(_ dateString: String) -> String {
-        if let range = dateString.range(of: "\\.\\d+", options: .regularExpression) {
-            let milliseconds = dateString[range] // ".242411" 추출
-            let trimmedMilliseconds = String(milliseconds.prefix(4)) // ".242"
-            return dateString.replacingCharacters(in: range, with: trimmedMilliseconds)
-        }
-        return dateString // 변경하지 않고 반환
     }
 }

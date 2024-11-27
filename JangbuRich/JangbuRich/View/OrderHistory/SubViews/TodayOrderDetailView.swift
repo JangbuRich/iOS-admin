@@ -44,7 +44,7 @@ struct TodayOrderDetailView: View {
             
             Spacer()
             
-            VStack(alignment: .leading) {
+            VStack(alignment: .trailing) {
                 Text("\(formatDate(order.date))")
                     .font(isSimpleMode ? .label2 : .label3)
                     .foregroundStyle(.jgray50)
@@ -56,7 +56,6 @@ struct TodayOrderDetailView: View {
                     .foregroundStyle(isToday ? .jgray20 : .jgray40)
             }
         }
-        .frame(height: scaledHeight(40))
         .onAppear {
             todayOrderStore.getOrderDetail(orderId: order.id) { result in
                 if result {
