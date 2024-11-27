@@ -10,6 +10,7 @@
 		3C1F4C112CF732CA003B5962 /* JangbuDetailHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1F4C102CF732CA003B5962 /* JangbuDetailHistoryView.swift */; };
 		3C1F4C132CF76F60003B5962 /* JKFImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1F4C122CF76F60003B5962 /* JKFImage.swift */; };
 		3C1F4C162CF76F7D003B5962 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3C1F4C152CF76F7D003B5962 /* Kingfisher */; };
+		3C1F4C182CF77AE4003B5962 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1F4C172CF77AE4003B5962 /* Functions.swift */; };
 		3C4CF3CF2CEBCC2500515453 /* OnboardingFifthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4CF3CE2CEBCC2500515453 /* OnboardingFifthView.swift */; };
 		3C4CF3D12CEBCD9B00515453 /* JLeftTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4CF3D02CEBCD9B00515453 /* JLeftTextField.swift */; };
 		3C4CF3D62CEC3DAE00515453 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4CF3D52CEC3DAE00515453 /* Config.swift */; };
@@ -88,6 +89,7 @@
 /* Begin PBXFileReference section */
 		3C1F4C102CF732CA003B5962 /* JangbuDetailHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JangbuDetailHistoryView.swift; sourceTree = "<group>"; };
 		3C1F4C122CF76F60003B5962 /* JKFImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JKFImage.swift; sourceTree = "<group>"; };
+		3C1F4C172CF77AE4003B5962 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		3C4CF3CE2CEBCC2500515453 /* OnboardingFifthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFifthView.swift; sourceTree = "<group>"; };
 		3C4CF3D02CEBCD9B00515453 /* JLeftTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLeftTextField.swift; sourceTree = "<group>"; };
 		3C4CF3D32CEC3AD700515453 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
@@ -409,6 +411,7 @@
 				3C9F9DFB2CEADC9500ED539E /* JPopupView.swift */,
 				3C1F4C122CF76F60003B5962 /* JKFImage.swift */,
 				3CC986972CF27A7B00B40D78 /* LottieView.swift */,
+				3C1F4C172CF77AE4003B5962 /* Functions.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				3C4CF4092CED9F9900515453 /* Reservation.swift in Sources */,
 				3C4CF3D12CEBCD9B00515453 /* JLeftTextField.swift in Sources */,
 				3C9F9DE72CEAD87A00ED539E /* OnboardingSecondView.swift in Sources */,
+				3C1F4C182CF77AE4003B5962 /* Functions.swift in Sources */,
 				3C4CF3CF2CEBCC2500515453 /* OnboardingFifthView.swift in Sources */,
 				3CC986912CF2620700B40D78 /* PastOrderDetailView.swift in Sources */,
 				3CC986872CF1F09D00B40D78 /* JangbuHistoryListView.swift in Sources */,
