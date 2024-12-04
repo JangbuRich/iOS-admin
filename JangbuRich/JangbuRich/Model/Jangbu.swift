@@ -49,6 +49,7 @@ struct JangbuGroupDetail: Codable {
 }
 
 struct JangbuGroupDetailHistory: Codable {
+    let id: Int
     var userName: String
     var date: String
     var price: String
