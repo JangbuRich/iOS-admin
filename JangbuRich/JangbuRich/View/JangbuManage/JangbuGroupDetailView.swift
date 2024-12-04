@@ -49,7 +49,7 @@ struct JangbuGroupDetailView: View {
                                     .font(.detail2)
                                     .foregroundStyle(.jgray20)
                                 
-                                Text("3기 구름톤 유니브 팀의 장부입니다!")
+                                Text(jangbuStore.groupDetail.teamDescription)
                                     .font(.label3)
                                     .foregroundStyle(.jgray60)
                             }
@@ -84,8 +84,6 @@ struct JangbuGroupDetailView: View {
                                 .font(isSimpleMode ? .headline1 : .headline2)
                                 .foregroundStyle(.jgray20)
                         }
-                        
-//                        Spacer()
                     }
                     
                     Rectangle()
@@ -111,7 +109,7 @@ struct JangbuGroupDetailView: View {
                                 .font(isSimpleMode ? .body9 : .label1)
                                 .foregroundStyle(.jgray20)
                             
-                            Text(jangbuStore.groupDetail.teamLeaderPhoneNum ?? "010-1234-5678")
+                            Text(jangbuStore.groupDetail.teamLeaderPhoneNum)
                                 .font(isSimpleMode ? .body9 : .label1)
                                 .foregroundStyle(.jgray50)
                             

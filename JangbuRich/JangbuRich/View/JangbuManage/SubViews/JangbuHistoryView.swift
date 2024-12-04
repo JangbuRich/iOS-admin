@@ -25,7 +25,7 @@ struct JangbuHistoryView: View {
                 Text(jangbHistory.teamName)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
-                Text("+ \(jangbHistory.transactionedPoint)원")
+                Text("\(jangbHistory.transactionedPoint)원")
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             .font(isSimpleMode ? .body9 : .label2)

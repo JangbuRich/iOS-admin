@@ -16,7 +16,7 @@ struct JangbuDetailHistoryView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("\(jangbuDetailHistory.userName)")
+                Text("\(jangbuDetailHistory.id)")
                     .frame(maxWidth: scaledWidth(49), alignment: .leading)
                 
                 Text(formatDate(jangbuDetailHistory.date))
@@ -25,7 +25,7 @@ struct JangbuDetailHistoryView: View {
                 Text(jangbuDetailHistory.userName)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
-                Text("+ \(jangbuDetailHistory.price)원")
+                Text("\(jangbuDetailHistory.price)원")
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             .font(isSimpleMode ? .body9 : .label2)
