@@ -120,7 +120,7 @@ struct JangbuGroupDetailView: View {
                         }
                         
                         HStack(spacing: scaledWidth(15)) {
-                            Image(.aiHelperButton)
+                            Image(.imageProfile)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: scaledHeight(45))

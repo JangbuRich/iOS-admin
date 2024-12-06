@@ -69,7 +69,7 @@ struct MainTapView: View {
                 
                 Spacer()
                 
-                Image(.jAppIcon)
+                Image(.imageProfile)
                     .resizable()
                     .scaledToFit()
                     .frame(height: scaledHeight(45))
