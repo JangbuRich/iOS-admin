@@ -89,6 +89,7 @@
 		3CFB59832D03674500602D7C /* jangbu.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CFB59812D03674400602D7C /* jangbu.json */; };
 		3CFB59852D03695700602D7C /* Coin animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CFB59842D03695700602D7C /* Coin animation.json */; };
 		3CFB59872D03700100602D7C /* JDashedDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFB59862D03700100602D7C /* JDashedDivider.swift */; };
+		3CFB59892D037BD700602D7C /* JHalfCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFB59882D037BD700602D7C /* JHalfCircle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -168,6 +169,7 @@
 		3CFB59812D03674400602D7C /* jangbu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = jangbu.json; path = "../../../../../../../../Downloads/관리자(아이패드)/jangbu.json"; sourceTree = "<group>"; };
 		3CFB59842D03695700602D7C /* Coin animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "Coin animation.json"; path = "../../../../../../../../Downloads/Coin animation.json"; sourceTree = "<group>"; };
 		3CFB59862D03700100602D7C /* JDashedDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JDashedDivider.swift; sourceTree = "<group>"; };
+		3CFB59882D037BD700602D7C /* JHalfCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JHalfCircle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -424,6 +426,7 @@
 				3C1F4C122CF76F60003B5962 /* JKFImage.swift */,
 				3CC986972CF27A7B00B40D78 /* LottieView.swift */,
 				3C1F4C172CF77AE4003B5962 /* Functions.swift */,
+				3CFB59882D037BD700602D7C /* JHalfCircle.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -593,6 +596,7 @@
 				3CC986932CF2662800B40D78 /* JangbuStore.swift in Sources */,
 				3C9F9DFC2CEADC9500ED539E /* JPopupView.swift in Sources */,
 				3CC986782CF1A47B00B40D78 /* OverlayManager.swift in Sources */,
+				3CFB59892D037BD700602D7C /* JHalfCircle.swift in Sources */,
 				3C9F9DFA2CEADAEC00ED539E /* MenuRegisterView.swift in Sources */,
 				3C4CF3F62CECA56E00515453 /* HomeView.swift in Sources */,
 				3C9F9DF52CEADA3D00ED539E /* MenuItem.swift in Sources */,
