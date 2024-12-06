@@ -36,7 +36,7 @@ struct OrderDetailPopupView: View {
             .padding(.bottom, scaledHeight(25))
             
             VStack(spacing: scaledHeight(20)) {
-                HStack {
+                HStack(spacing: 0) {
                     ZStack {
                         RoundedRectangle(cornerRadius: scaledWidth(8))
                             .stroke(lineWidth: scaledWidth(2))
@@ -64,7 +64,6 @@ struct OrderDetailPopupView: View {
                     
                     Spacer()
                 }
-                .padding(.bottom, scaledHeight(25))
                 
                 Rectangle()
                     .fill(.jgray80)
@@ -72,7 +71,7 @@ struct OrderDetailPopupView: View {
                 
                 VStack(spacing: scaledWidth(20)) {
                     ForEach(orderDetail.menus, id: \.menuName) { menu in
-                        HStack {
+                        HStack(spacing: 0) {
                             Text(menu.menuName)
                                 .font(isSimpleMode ? .headline4 : .body2)
                                 .foregroundStyle(.jgray30)
@@ -112,6 +111,7 @@ struct OrderDetailPopupView: View {
                                 .font(isSimpleMode ? .detail2 : .detail1)
                                 .foregroundStyle(.jgray20)
                         }
+                        .padding(.top, scaledHeight(15))
                         
                         Rectangle()
                             .fill(.jgray80)
@@ -134,7 +134,7 @@ struct OrderDetailPopupView: View {
                             
                             Spacer()
                             
-                            Text("\(orderDetail.totalPrice)")
+                            Text("\(orderDetail.totalPrice)원")
                                 .font(isSimpleMode ? .headline7 : .body2)
                                 .foregroundStyle(.jgray30)
                         }
@@ -152,10 +152,12 @@ struct OrderDetailPopupView: View {
                                 .foregroundStyle(.jgray30)
                         }
                         
-                        Rectangle()
-                            .fill(.jgray80)
-                            .frame(height: scaledHeight(1))
-                            .padding(.vertical, scaledHeight(20))
+                        JDashedDivider(
+                            color: .jgray80,
+                            lineWidth: scaledHeight(1),
+                            dashPattern: [6,6]
+                        )
+                        .padding(.vertical, scaledHeight(20))
                         
                         HStack {
                             Text("총 결제 금액")
@@ -164,10 +166,11 @@ struct OrderDetailPopupView: View {
                             
                             Spacer()
                             
-                            Text("\(orderDetail.totalPrice)")
+                            Text("\(orderDetail.totalPrice)원")
                                 .font(isSimpleMode ? .headline1 : .headline3)
                                 .foregroundStyle(.jgray30)
                         }
+                        .padding(.bottom, scaledHeight(15))
                     }
                     .padding(.vertical, scaledHeight(15))
                     .padding(.horizontal, scaledWidth(20))
