@@ -84,19 +84,13 @@ class JangbuStore: ObservableObject {
     func postTaxInvoice() {
         let url = Config.baseURL + "barobill/registAndReverseIssueTaxInvoice"
         
-        let params = [
-            "invoicerMgtNum" : "000017-R",
-            "invoiceeMgtNum" : "000017-E"
-        ]
-        
         let headers: HTTPHeaders = [
             "Content-Type": "application/json"
         ]
         
         AF.request(url,
                    method: .post,
-                   parameters: params,
-                   encoding: JSONEncoding.default,
+                   parameters: nil,
                    headers: headers
         ).responseDecodable(of: BaseResponse<Empty>.self) { response in
             print("postTaxInvoice response: \(response)")
