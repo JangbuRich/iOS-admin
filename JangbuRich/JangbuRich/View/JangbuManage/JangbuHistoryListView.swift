@@ -14,6 +14,7 @@ struct JangbuHistoryListView: View {
     @EnvironmentObject var overlayManager: OverlayManager
     @EnvironmentObject var jangbuStore: JangbuStore
     
+    @State private var selectedPeriod: String = "1개월"
     @State private var isExportExcel: Bool = false
     @State private var isFinishedExportExcel: Bool = false
     
@@ -43,7 +44,7 @@ struct JangbuHistoryListView: View {
                     Button {
                         isExportExcel.toggle()
                         
-                        overlayManager.showSheet(JangbuExportExcelView(isExportExcel: $isExportExcel, isFinishedExportExcel: $isFinishedExportExcel))
+                        overlayManager.showSheet(JangbuExportExcelView(selectedPeriod: $selectedPeriod, isExportExcel: $isExportExcel, isFinishedExportExcel: $isFinishedExportExcel))
                     } label: {
                         ZStack {
                             RoundedRectangle(cornerRadius: scaledWidth(25))
@@ -109,8 +110,20 @@ struct JangbuHistoryListView: View {
         .scrollIndicators(.hidden)
         .background(.jgray95)
         .onChange(of: isFinishedExportExcel) {
-            jangbuStore.getHistoryExcel(period: 6)
+            jangbuStore.getHistoryExcel(period: self.extractLeadingNumber(from: selectedPeriod) ?? 1)
             overlayManager.showSheet(JangbuFinishedExportExcelView())
         }
+    }
+    
+    func extractLeadingNumber(from input: String) -> Int? {
+        var numberString = ""
+        for char in input {
+            if char.isNumber {
+                numberString.append(char)
+            } else {
+                break
+            }
+        }
+        return Int(numberString)
     }
 }
