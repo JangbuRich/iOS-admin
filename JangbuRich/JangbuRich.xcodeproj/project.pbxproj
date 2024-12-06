@@ -34,8 +34,6 @@
 		3C4CF4092CED9F9900515453 /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4CF4082CED9F9900515453 /* Reservation.swift */; };
 		3C4CF40B2CEDA18000515453 /* NowReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4CF40A2CEDA18000515453 /* NowReservationView.swift */; };
 		3C6AA5B22CF27B10000A4D49 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 3C6AA5B12CF27B10000A4D49 /* Lottie */; };
-		3C6AA5B72CF27CCC000A4D49 /* Coin animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 3C6AA5B62CF27CCC000A4D49 /* Coin animation.json */; };
-		3C6AA5B92CF27DAE000A4D49 /* Login ani 1.json in Resources */ = {isa = PBXBuildFile; fileRef = 3C6AA5B82CF27DAE000A4D49 /* Login ani 1.json */; };
 		3C6AA5BB2CF2800F000A4D49 /* MyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6AA5BA2CF2800F000A4D49 /* MyInfo.swift */; };
 		3C6AA5BD2CF280B2000A4D49 /* MyInfoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6AA5BC2CF280B2000A4D49 /* MyInfoStore.swift */; };
 		3C9F9DE32CEAD71000ED539E /* JTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F9DE22CEAD71000ED539E /* JTextField.swift */; };
@@ -87,6 +85,10 @@
 		3CF38A1D2D00446400614169 /* JangbuExportExcelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF38A1C2D00446400614169 /* JangbuExportExcelView.swift */; };
 		3CFB597D2D02CBC800602D7C /* JangbuFinishedExportExcelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFB597C2D02CBC800602D7C /* JangbuFinishedExportExcelView.swift */; };
 		3CFB597F2D02DBAD00602D7C /* JangbuFinishedTaxInvoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFB597E2D02DBAD00602D7C /* JangbuFinishedTaxInvoiceView.swift */; };
+		3CFB59822D03674500602D7C /* login.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CFB59802D03674400602D7C /* login.json */; };
+		3CFB59832D03674500602D7C /* jangbu.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CFB59812D03674400602D7C /* jangbu.json */; };
+		3CFB59852D03695700602D7C /* Coin animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CFB59842D03695700602D7C /* Coin animation.json */; };
+		3CFB59872D03700100602D7C /* JDashedDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFB59862D03700100602D7C /* JDashedDivider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,8 +111,6 @@
 		3C4CF4062CED992600515453 /* HomeTodayOrderHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTodayOrderHistoryView.swift; sourceTree = "<group>"; };
 		3C4CF4082CED9F9900515453 /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
 		3C4CF40A2CEDA18000515453 /* NowReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowReservationView.swift; sourceTree = "<group>"; };
-		3C6AA5B62CF27CCC000A4D49 /* Coin animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "Coin animation.json"; path = "../../../../../../../../Downloads/Home animation/Coin animation.json"; sourceTree = "<group>"; };
-		3C6AA5B82CF27DAE000A4D49 /* Login ani 1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "Login ani 1.json"; path = "../../../../../../../../Downloads/추가 Lottie 파일 (1)/Login ani 1.json"; sourceTree = "<group>"; };
 		3C6AA5BA2CF2800F000A4D49 /* MyInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfo.swift; sourceTree = "<group>"; };
 		3C6AA5BC2CF280B2000A4D49 /* MyInfoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoStore.swift; sourceTree = "<group>"; };
 		3C9F9DE22CEAD71000ED539E /* JTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTextField.swift; sourceTree = "<group>"; };
@@ -164,6 +164,10 @@
 		3CF38A1C2D00446400614169 /* JangbuExportExcelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JangbuExportExcelView.swift; sourceTree = "<group>"; };
 		3CFB597C2D02CBC800602D7C /* JangbuFinishedExportExcelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JangbuFinishedExportExcelView.swift; sourceTree = "<group>"; };
 		3CFB597E2D02DBAD00602D7C /* JangbuFinishedTaxInvoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JangbuFinishedTaxInvoiceView.swift; sourceTree = "<group>"; };
+		3CFB59802D03674400602D7C /* login.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = login.json; path = "../../../../../../../../Downloads/관리자(아이패드)/login.json"; sourceTree = "<group>"; };
+		3CFB59812D03674400602D7C /* jangbu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = jangbu.json; path = "../../../../../../../../Downloads/관리자(아이패드)/jangbu.json"; sourceTree = "<group>"; };
+		3CFB59842D03695700602D7C /* Coin animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "Coin animation.json"; path = "../../../../../../../../Downloads/Coin animation.json"; sourceTree = "<group>"; };
+		3CFB59862D03700100602D7C /* JDashedDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JDashedDivider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,8 +258,9 @@
 		3C6AA5B32CF27C3E000A4D49 /* Lotties */ = {
 			isa = PBXGroup;
 			children = (
-				3C6AA5B62CF27CCC000A4D49 /* Coin animation.json */,
-				3C6AA5B82CF27DAE000A4D49 /* Login ani 1.json */,
+				3CFB59842D03695700602D7C /* Coin animation.json */,
+				3CFB59812D03674400602D7C /* jangbu.json */,
+				3CFB59802D03674400602D7C /* login.json */,
 			);
 			path = Lotties;
 			sourceTree = "<group>";
@@ -414,6 +419,7 @@
 				3C9F9DEE2CEAD90D00ED539E /* JImagePicker.swift */,
 				3C9F9DF02CEAD92700ED539E /* JTagButton.swift */,
 				3C9F9DF22CEAD95100ED539E /* JDayButton.swift */,
+				3CFB59862D03700100602D7C /* JDashedDivider.swift */,
 				3C9F9DFB2CEADC9500ED539E /* JPopupView.swift */,
 				3C1F4C122CF76F60003B5962 /* JKFImage.swift */,
 				3CC986972CF27A7B00B40D78 /* LottieView.swift */,
@@ -536,13 +542,14 @@
 			files = (
 				3CA749072CEA48F400ACDFEF /* Preview Assets.xcassets in Resources */,
 				3CA7491E2CEA4D7200ACDFEF /* Pretendard-Regular.otf in Resources */,
+				3CFB59852D03695700602D7C /* Coin animation.json in Resources */,
 				3CA7491F2CEA4D7200ACDFEF /* Pretendard-SemiBold.otf in Resources */,
 				3CA749202CEA4D7200ACDFEF /* Pretendard-Thin.otf in Resources */,
-				3C6AA5B72CF27CCC000A4D49 /* Coin animation.json in Resources */,
 				3CA7491D2CEA4D7200ACDFEF /* Pretendard-Medium.otf in Resources */,
+				3CFB59822D03674500602D7C /* login.json in Resources */,
 				3CA7491C2CEA4D7200ACDFEF /* Pretendard-Light.otf in Resources */,
 				3CA7491B2CEA4D7200ACDFEF /* Pretendard-Bold.otf in Resources */,
-				3C6AA5B92CF27DAE000A4D49 /* Login ani 1.json in Resources */,
+				3CFB59832D03674500602D7C /* jangbu.json in Resources */,
 				3CA749042CEA48F400ACDFEF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -573,6 +580,7 @@
 				3C4CF4022CECA63400515453 /* MyInfoView.swift in Sources */,
 				3C4CF3FF2CECA60D00515453 /* ReservationView.swift in Sources */,
 				3CA7492A2CEA52CB00ACDFEF /* LoginView.swift in Sources */,
+				3CFB59872D03700100602D7C /* JDashedDivider.swift in Sources */,
 				3CA749322CEA6CCB00ACDFEF /* JBackButton.swift in Sources */,
 				3C9F9DEF2CEAD90D00ED539E /* JImagePicker.swift in Sources */,
 				3CA749262CEA4F5500ACDFEF /* ShapeStyle+.swift in Sources */,
