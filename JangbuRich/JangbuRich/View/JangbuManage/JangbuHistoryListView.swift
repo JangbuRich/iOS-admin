@@ -11,7 +11,11 @@ struct JangbuHistoryListView: View {
     
     @Environment(\.dismiss) private var dismiss
     
-//    @EnvironmentObject var jangbuStore: JangbuStore
+    @EnvironmentObject var overlayManager: OverlayManager
+    @EnvironmentObject var jangbuStore: JangbuStore
+    
+    @State private var isExportExcel: Bool = false
+    @State private var isFinishedExportExcel: Bool = false
     
     let historyList: [PaymentHistory]
     
@@ -35,9 +39,36 @@ struct JangbuHistoryListView: View {
                     }
                     
                     Spacer()
+                    
+                    Button {
+                        isExportExcel.toggle()
+                        
+                        overlayManager.showSheet(JangbuExportExcelView(isExportExcel: $isExportExcel, isFinishedExportExcel: $isFinishedExportExcel))
+                    } label: {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: scaledWidth(25))
+                                .stroke(.jgray80)
+                                .fill(.jgray100)
+                            
+                            Text("엑셀로 내보내기")
+                                .font(.label1)
+                                .foregroundStyle(.jOrange)
+                                .padding(.vertical, scaledHeight(4))
+                                .padding(.horizontal, scaledWidth(12))
+                        }
+                        .frame(width: scaledWidth(125))
+                    }
                 }
                 .padding(.top, scaledHeight(80))
                 .padding(.bottom, scaledHeight(20))
+                
+                HStack {
+                    Text("총 \(historyList.count)건")
+                        .font(.detail1)
+                        .foregroundStyle(.jgray50)
+                    
+                    Spacer()
+                }
                 
                 VStack {
                     HStack {
@@ -62,7 +93,7 @@ struct JangbuHistoryListView: View {
                         .padding(.vertical, scaledHeight(15))
                     
                     VStack(spacing: scaledHeight(20)) {
-                        ForEach(historyList.prefix(10), id: \.id) { history in
+                        ForEach(historyList, id: \.id) { history in
                             JangbuHistoryView(jangbHistory: history)
                         }
                     }
@@ -77,5 +108,9 @@ struct JangbuHistoryListView: View {
         .navigationBarBackButtonHidden(true)
         .scrollIndicators(.hidden)
         .background(.jgray95)
+        .onChange(of: isFinishedExportExcel) {
+            jangbuStore.getHistoryExcel(period: 6)
+            overlayManager.showSheet(JangbuFinishedExportExcelView())
+        }
     }
 }
