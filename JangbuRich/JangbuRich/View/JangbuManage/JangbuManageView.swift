@@ -26,16 +26,14 @@ struct JangbuManageView: View {
                         HStack {
                             Spacer()
                             
-                            Image(.imageJangbuCharacter)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(height: scaledHeight(91))
+                            LottieView(animationName: "jangbu", loopMode: .loop)
+                                .frame(width: scaledWidth(265), height: scaledHeight(151))
                         }
                         
                         Spacer()
                     }
                     .zIndex(1)
-                    .padding(.top, scaledHeight(90))
+                    .padding(.top, scaledHeight(30))
                     .padding(.leading, scaledWidth(44))
                     .padding(.trailing, scaledWidth(74))
                     
@@ -141,9 +139,9 @@ struct JangbuManageView: View {
                     .padding(.trailing, scaledWidth(45))
                 }
             }
+            .scrollIndicators(.hidden)
+            .background(.jgray95)
         }
-        .scrollIndicators(.hidden)
-        .background(.jgray95)
         .onAppear {
             jangbuStore.getPaymentGroup()
             jangbuStore.getPaymentHistory()

@@ -20,7 +20,7 @@ struct LoginView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(height: scaledHeight(120))
-                    .padding(.top, scaledHeight(276))
+                    .padding(.top, scaledHeight(250))
                 
                 Text("소상공인과 소비자를 위한\n손쉬운 장부 관리의 시작!")
                     .font(.body8)
@@ -28,9 +28,9 @@ struct LoginView: View {
                     .multilineTextAlignment(.center)
                     .padding(.top, scaledHeight(25))
                 
-                LottieView(animationName: "Login ani 1", loopMode: .loop)
-                    .frame(width: scaledWidth(517), height: scaledHeight(365))
-                    .padding(.top, scaledHeight(40))
+                LottieView(animationName: "login", loopMode: .loop)
+                    .frame(width: scaledWidth(517), height: scaledHeight(549))
+                    .padding(.top, scaledHeight(10))
                 
                 Spacer()
                 
