@@ -85,8 +85,8 @@ class JangbuStore: ObservableObject {
         let url = Config.baseURL + "barobill/registAndReverseIssueTaxInvoice"
         
         let params = [
-            "invoicerMgtNum" : "000016-R",
-            "invoiceeMgtNum" : "000016-E"
+            "invoicerMgtNum" : "000017-R",
+            "invoiceeMgtNum" : "000017-E"
         ]
         
         let headers: HTTPHeaders = [
