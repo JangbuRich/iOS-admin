@@ -84,6 +84,9 @@
 		3CC986982CF27A7B00B40D78 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC986972CF27A7B00B40D78 /* LottieView.swift */; };
 		3CF18CF72CEEF015006A0AAA /* TodayOrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF18CF62CEEF015006A0AAA /* TodayOrderDetailView.swift */; };
 		3CF18CF92CEEF45C006A0AAA /* OrderDetailPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF18CF82CEEF45C006A0AAA /* OrderDetailPopupView.swift */; };
+		3CF38A1D2D00446400614169 /* JangbuExportExcelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF38A1C2D00446400614169 /* JangbuExportExcelView.swift */; };
+		3CFB597D2D02CBC800602D7C /* JangbuFinishedExportExcelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFB597C2D02CBC800602D7C /* JangbuFinishedExportExcelView.swift */; };
+		3CFB597F2D02DBAD00602D7C /* JangbuFinishedTaxInvoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFB597E2D02DBAD00602D7C /* JangbuFinishedTaxInvoiceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -158,6 +161,9 @@
 		3CC986972CF27A7B00B40D78 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		3CF18CF62CEEF015006A0AAA /* TodayOrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayOrderDetailView.swift; sourceTree = "<group>"; };
 		3CF18CF82CEEF45C006A0AAA /* OrderDetailPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailPopupView.swift; sourceTree = "<group>"; };
+		3CF38A1C2D00446400614169 /* JangbuExportExcelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JangbuExportExcelView.swift; sourceTree = "<group>"; };
+		3CFB597C2D02CBC800602D7C /* JangbuFinishedExportExcelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JangbuFinishedExportExcelView.swift; sourceTree = "<group>"; };
+		3CFB597E2D02DBAD00602D7C /* JangbuFinishedTaxInvoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JangbuFinishedTaxInvoiceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -435,6 +441,9 @@
 				3CC9867E2CF1CC2500B40D78 /* JangbuGroupView.swift */,
 				3CC986822CF1E29500B40D78 /* JangbuHistoryView.swift */,
 				3C1F4C102CF732CA003B5962 /* JangbuDetailHistoryView.swift */,
+				3CF38A1C2D00446400614169 /* JangbuExportExcelView.swift */,
+				3CFB597C2D02CBC800602D7C /* JangbuFinishedExportExcelView.swift */,
+				3CFB597E2D02DBAD00602D7C /* JangbuFinishedTaxInvoiceView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -550,6 +559,7 @@
 				3C9F9DF12CEAD92700ED539E /* JTagButton.swift in Sources */,
 				3CC9868F2CF2404000B40D78 /* TodayOrderStore.swift in Sources */,
 				3C4CF4092CED9F9900515453 /* Reservation.swift in Sources */,
+				3CFB597D2D02CBC800602D7C /* JangbuFinishedExportExcelView.swift in Sources */,
 				3C4CF3D12CEBCD9B00515453 /* JLeftTextField.swift in Sources */,
 				3C9F9DE72CEAD87A00ED539E /* OnboardingSecondView.swift in Sources */,
 				3C1F4C182CF77AE4003B5962 /* Functions.swift in Sources */,
@@ -569,6 +579,7 @@
 				3C4CF3F32CECA4EC00515453 /* MainTapView.swift in Sources */,
 				3CA749282CEA529C00ACDFEF /* LaunchView.swift in Sources */,
 				3C4CF3FC2CECA5E700515453 /* JangbuManageView.swift in Sources */,
+				3CF38A1D2D00446400614169 /* JangbuExportExcelView.swift in Sources */,
 				3CC986812CF1E07700B40D78 /* Jangbu.swift in Sources */,
 				3C4CF3E42CEC65C900515453 /* Auth.swift in Sources */,
 				3CC986932CF2662800B40D78 /* JangbuStore.swift in Sources */,
@@ -578,6 +589,7 @@
 				3C4CF3F62CECA56E00515453 /* HomeView.swift in Sources */,
 				3C9F9DF52CEADA3D00ED539E /* MenuItem.swift in Sources */,
 				3C1F4C112CF732CA003B5962 /* JangbuDetailHistoryView.swift in Sources */,
+				3CFB597F2D02DBAD00602D7C /* JangbuFinishedTaxInvoiceView.swift in Sources */,
 				3CF18CF92CEEF45C006A0AAA /* OrderDetailPopupView.swift in Sources */,
 				3CC986892CF1F7BA00B40D78 /* JangbuGroupDetailView.swift in Sources */,
 				3CA749222CEA4DBF00ACDFEF /* Font+.swift in Sources */,
