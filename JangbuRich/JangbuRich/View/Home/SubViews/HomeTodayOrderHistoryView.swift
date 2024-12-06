@@ -45,10 +45,5 @@ struct HomeTodayOrderHistoryView: View {
                 .foregroundStyle(.jgray20)
         }
         .frame(height: scaledHeight(40))
-        
-        Rectangle()
-            .fill(.jgray80)
-            .frame(height: scaledHeight(1))
-            .padding(.vertical, scaledHeight(15))
     }
 }

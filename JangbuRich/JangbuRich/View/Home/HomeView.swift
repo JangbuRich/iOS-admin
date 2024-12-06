@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     
+    @EnvironmentObject var overlayManager: OverlayManager
     @EnvironmentObject var todayOrderStore: TodayOrderStore
     @EnvironmentObject var myInfoStore: MyInfoStore
     
@@ -245,20 +246,46 @@ struct HomeView: View {
                                         VStack {
                                             ForEach(todayOrderStore.todayOrderList.prefix(5), id: \.id) { order in
                                                 HomeTodayOrderHistoryView(order: order)
+                                                    .onTapGesture {
+                                                        todayOrderStore.getOrderDetail(orderId: order.id) { result in
+                                                            if result {
+                                                                overlayManager.showSheet(
+                                                                    OrderDetailPopupView(orderDetail: todayOrderStore.orderDetailResult)
+                                                                )
+                                                            }
+                                                        }
+                                                    }
+                                                
+                                                if order.id != todayOrderStore.todayOrderList.prefix(5).last?.id {
+                                                    Rectangle()
+                                                        .fill(.jgray80)
+                                                        .frame(height: scaledHeight(1))
+                                                        .padding(.vertical, scaledHeight(15))
+                                                }
                                             }
                                             
-                                            HStack(spacing: scaledWidth(10)) {
+                                            HStack {
+                                                JHalfCircle(color: .jgray95, isLeftSide: false)
+                                                    .frame(width: scaledWidth(26), height: scaledHeight(26))
+                                                
+                                                JDashedDivider(color: .jgray90, lineWidth: scaledHeight(1), dashPattern: [6,6])
+                                                
+                                                JHalfCircle(color: .jgray95, isLeftSide: true)
+                                                    .frame(width: scaledWidth(26), height: scaledHeight(26))
+                                            }
+                                            .padding(.vertical, scaledHeight(13))
+                                            .padding(.horizontal, scaledWidth(-39))
+                                            
+                                            HStack {
                                                 Image(.iconCoupon)
                                                     .resizable()
                                                     .scaledToFit()
                                                     .frame(height: scaledHeight(34))
                                                 
-                                                HStack(spacing: scaledWidth(29)) {
-                                                    VStack {
-                                                        Text("오늘 총 주문")
-                                                            .font(isSimpleMode ? .headline3 : .detail2)
-                                                            .foregroundStyle(.jgray30)
-                                                    }
+                                                HStack(alignment: .top) {
+                                                    Text("오늘 총 주문")
+                                                        .font(isSimpleMode ? .headline3 : .detail2)
+                                                        .foregroundStyle(.jgray30)
                                                     
                                                     Spacer()
                                                     
@@ -272,6 +299,7 @@ struct HomeView: View {
                                                             .foregroundStyle(.jgray20)
                                                     }
                                                 }
+                                                .frame(maxWidth: .infinity)
                                             }
                                         }
                                         .padding(.vertical, scaledHeight(20))

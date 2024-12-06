@@ -54,18 +54,16 @@ struct OrderHistoryView: View {
                         
                         VStack {
                             VStack {
-                                HStack(spacing: scaledWidth(10)) {
+                                HStack {
                                     Image(.iconCoupon)
                                         .resizable()
                                         .scaledToFit()
                                         .frame(height: scaledHeight(34))
                                     
-                                    HStack(spacing: scaledWidth(29)) {
-                                        VStack {
-                                            Text("오늘 총 주문")
-                                                .font(isSimpleMode ? .headline3 : .detail2)
-                                                .foregroundStyle(.jgray30)
-                                        }
+                                    HStack(alignment: .top) {
+                                        Text("오늘 총 주문")
+                                            .font(isSimpleMode ? .headline3 : .detail2)
+                                            .foregroundStyle(.jgray30)
                                         
                                         Spacer()
                                         
@@ -79,8 +77,21 @@ struct OrderHistoryView: View {
                                                 .foregroundStyle(.jgray20)
                                         }
                                     }
+                                    .frame(maxWidth: .infinity)
                                 }
-                                .padding(.vertical, scaledHeight(25))
+                                .padding(.top, scaledHeight(10))
+                                
+                                HStack {
+                                    JHalfCircle(color: .jgray95, isLeftSide: false)
+                                        .frame(width: scaledWidth(26), height: scaledHeight(26))
+                                    
+                                    JDashedDivider(color: .jgray90, lineWidth: scaledHeight(1), dashPattern: [6,6])
+                                    
+                                    JHalfCircle(color: .jgray95, isLeftSide: true)
+                                        .frame(width: scaledWidth(26), height: scaledHeight(26))
+                                }
+                                .padding(.vertical, scaledHeight(13))
+                                .padding(.horizontal, scaledWidth(-39))
                                 
                                 VStack(spacing: scaledHeight(30)) {
                                     ForEach(todayOrderStore.todayOrderList.prefix(5), id: \.id) { order in
