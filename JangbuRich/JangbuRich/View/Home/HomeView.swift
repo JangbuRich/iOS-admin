@@ -291,11 +291,6 @@ struct HomeView: View {
                                                 .foregroundStyle(.jgray20)
                                             
                                             Spacer()
-                                            
-                                            Image(.iconRight)
-                                                .resizable()
-                                                .scaledToFit()
-                                                .frame(height: scaledHeight(24))
                                         }
                                         .padding(.bottom, scaledHeight(15))
                                         

@@ -26,11 +26,6 @@ struct NowReservationView: View {
                             Text(reservation.name)
                                 .font(.detail2)
                                 .foregroundStyle(.jgray20)
-                            
-                            Image(.iconRight)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(height: scaledHeight(20))
                         }
                     }
 
