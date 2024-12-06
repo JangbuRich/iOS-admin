@@ -11,6 +11,7 @@ struct JangbuGroupDetailView: View {
     
     @Environment(\.dismiss) private var dismiss
     
+    @EnvironmentObject var overlayManager: OverlayManager
     @EnvironmentObject var jangbuStore: JangbuStore
     
     @AppStorage("isSimpleMode") var isSimpleMode: Bool = false
@@ -37,6 +38,25 @@ struct JangbuGroupDetailView: View {
                     }
                     
                     Spacer()
+                    
+                    Button {
+                        jangbuStore.postTaxInvoice()
+                        
+                        overlayManager.showSheet(JangbuFinishedTaxInvoiceView())
+                    } label: {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: scaledWidth(25))
+                                .stroke(.jgray80)
+                                .fill(.jgray90)
+                            
+                            Text("세금계산서 발행")
+                                .font(.label1)
+                                .foregroundStyle(.jgray50)
+                                .padding(.vertical, scaledHeight(4))
+                                .padding(.horizontal, scaledWidth(12))
+                        }
+                        .frame(width: scaledWidth(125))
+                    }
                 }
                 .padding(.top, scaledHeight(80))
                 .padding(.bottom, scaledHeight(20))
@@ -145,7 +165,7 @@ struct JangbuGroupDetailView: View {
                         .padding(.vertical, scaledHeight(15))
                     
                     VStack(spacing: scaledHeight(20)) {
-                        ForEach(jangbuStore.groupDetail.historyResponses, id: \.date) { history in
+                        ForEach(jangbuStore.groupDetail.historyResponses, id: \.id) { history in
                             JangbuDetailHistoryView(jangbuDetailHistory: history)
                         }
                     }
