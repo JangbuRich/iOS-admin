@@ -131,6 +131,8 @@ class JangbuStore: ObservableObject {
                 if let contentDisposition = response.response?.allHeaderFields["Content-Disposition"] as? String {
                     suggestedFileName = self.parseFilename(from: contentDisposition) ?? suggestedFileName
                 }
+                suggestedFileName = suggestedFileName.removingPercentEncoding ?? suggestedFileName
+                
                 if let contentType = response.response?.allHeaderFields["Content-Type"] as? String {
                     suggestedFileName = self.adjustFileExtension(for: suggestedFileName, contentType: contentType)
                 }
