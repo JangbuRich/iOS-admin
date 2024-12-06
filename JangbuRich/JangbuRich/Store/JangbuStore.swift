@@ -80,4 +80,33 @@ class JangbuStore: ObservableObject {
             }
         }
     }
+    
+    func postTaxInvoice() {
+        let url = Config.baseURL + "barobill/registAndReverseIssueTaxInvoice"
+        
+        let params = [
+            "invoicerMgtNum" : "000016-R",
+            "invoiceeMgtNum" : "000016-E"
+        ]
+        
+        let headers: HTTPHeaders = [
+            "Content-Type": "application/json"
+        ]
+        
+        AF.request(url,
+                   method: .post,
+                   parameters: params,
+                   encoding: JSONEncoding.default,
+                   headers: headers
+        ).responseDecodable(of: BaseResponse<Empty>.self) { response in
+            print("postTaxInvoice response: \(response)")
+            switch response.result {
+            case .success(let result):
+                print("성공")
+                print("result: \(result)")
+            case .failure(let error):
+                print("Error: \(error.localizedDescription)")
+            }
+        }
+    }
 }
