@@ -14,7 +14,7 @@ struct NowReservationView: View {
         VStack {
             VStack {
                 HStack {
-                    Image(.reservationAvailable)
+                    Image(.reservationRed)
                         .resizable()
                         .scaledToFit()
                         .frame(height: scaledHeight(24))
