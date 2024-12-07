@@ -76,7 +76,11 @@ struct JangbuManageView: View {
                             
                             LazyVGrid(columns: columns, spacing: 15) {
                                 ForEach(jangbuStore.groupList.prefix(4), id: \.id) { group in
-                                    JangbuGroupView(jangbuGroup: group)
+                                    NavigationLink {
+                                        JangbuGroupDetailView(teamID: String(group.teamId))
+                                    } label: {
+                                        JangbuGroupView(jangbuGroup: group)
+                                    }
                                 }
                             }
                         }

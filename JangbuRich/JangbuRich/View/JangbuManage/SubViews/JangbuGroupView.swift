@@ -16,21 +16,17 @@ struct JangbuGroupView: View {
     var body: some View {
         VStack(spacing: scaledHeight(20)) {
             VStack(spacing: 0) {
-                NavigationLink {
-                    JangbuGroupDetailView(teamID: String(jangbuGroup.teamId))
-                } label: {
-                    HStack(spacing: 0) {
-                        Text(jangbuGroup.teamName)
-                            .font(isSimpleMode ? .headline3 : .detail2)
-                            .foregroundStyle(.jgray20)
-                        
-                        Image(.iconRight)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: scaledHeight(24))
-                        
-                        Spacer()
-                    }
+                HStack(spacing: 0) {
+                    Text(jangbuGroup.teamName)
+                        .font(isSimpleMode ? .headline3 : .detail2)
+                        .foregroundStyle(.jgray20)
+                    
+                    Image(.iconRight)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: scaledHeight(24))
+                    
+                    Spacer()
                 }
                 
                 HStack {
