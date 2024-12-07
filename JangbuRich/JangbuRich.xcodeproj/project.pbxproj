@@ -90,6 +90,8 @@
 		3CFB59852D03695700602D7C /* Coin animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CFB59842D03695700602D7C /* Coin animation.json */; };
 		3CFB59872D03700100602D7C /* JDashedDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFB59862D03700100602D7C /* JDashedDivider.swift */; };
 		3CFB59892D037BD700602D7C /* JHalfCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFB59882D037BD700602D7C /* JHalfCircle.swift */; };
+		3CFB598B2D0410AF00602D7C /* GuideSimpleModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFB598A2D0410AF00602D7C /* GuideSimpleModeView.swift */; };
+		3CFB598D2D04662200602D7C /* JLazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFB598C2D04662100602D7C /* JLazyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -170,6 +172,8 @@
 		3CFB59842D03695700602D7C /* Coin animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "Coin animation.json"; path = "../../../../../../../../Downloads/Coin animation.json"; sourceTree = "<group>"; };
 		3CFB59862D03700100602D7C /* JDashedDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JDashedDivider.swift; sourceTree = "<group>"; };
 		3CFB59882D037BD700602D7C /* JHalfCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JHalfCircle.swift; sourceTree = "<group>"; };
+		3CFB598A2D0410AF00602D7C /* GuideSimpleModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideSimpleModeView.swift; sourceTree = "<group>"; };
+		3CFB598C2D04662100602D7C /* JLazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLazyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +257,7 @@
 			children = (
 				3C4CF4062CED992600515453 /* HomeTodayOrderHistoryView.swift */,
 				3C4CF40A2CEDA18000515453 /* NowReservationView.swift */,
+				3CFB598A2D0410AF00602D7C /* GuideSimpleModeView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -427,6 +432,7 @@
 				3CC986972CF27A7B00B40D78 /* LottieView.swift */,
 				3C1F4C172CF77AE4003B5962 /* Functions.swift */,
 				3CFB59882D037BD700602D7C /* JHalfCircle.swift */,
+				3CFB598C2D04662100602D7C /* JLazyView.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -565,6 +571,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C9F9DE52CEAD72D00ED539E /* JNavigationButton.swift in Sources */,
+				3CFB598D2D04662200602D7C /* JLazyView.swift in Sources */,
 				3C6AA5BB2CF2800F000A4D49 /* MyInfo.swift in Sources */,
 				3C9F9DF12CEAD92700ED539E /* JTagButton.swift in Sources */,
 				3CC9868F2CF2404000B40D78 /* TodayOrderStore.swift in Sources */,
@@ -608,6 +615,7 @@
 				3C4CF3D82CEC634000515453 /* AuthStore.swift in Sources */,
 				3CA7492F2CEA6CA300ACDFEF /* View+.swift in Sources */,
 				3C9F9DE32CEAD71000ED539E /* JTextField.swift in Sources */,
+				3CFB598B2D0410AF00602D7C /* GuideSimpleModeView.swift in Sources */,
 				3CC9868D2CF23FC700B40D78 /* TodayOrder.swift in Sources */,
 				3CC9867A2CF1B9C800B40D78 /* OrderHistoryListView.swift in Sources */,
 				3C4CF3DD2CEC647E00515453 /* KeyChainStore.swift in Sources */,
