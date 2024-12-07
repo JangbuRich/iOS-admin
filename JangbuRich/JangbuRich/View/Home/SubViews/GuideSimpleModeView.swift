@@ -20,7 +20,7 @@ struct GuideSimpleModeView: View {
                 .foregroundStyle(.jgray20)
                 .padding(.bottom, scaledHeight(5))
             
-            Text("선택하신 화면이 기본 화면이 됩니다.\n추후 메인 홈 상단 버튼을 통해 수정할 수 있어요!")
+            Text("선택하신 화면이 기본 화면이 됩니다.\n추후 홈 화면 상단 또는 마이페이지에서 수정할 수 있습니다.")
                 .font(.body4)
                 .foregroundStyle(.jgray50)
                 .multilineTextAlignment(.center)
