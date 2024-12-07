@@ -15,7 +15,7 @@ struct JangbuExportExcelView: View {
     @Binding var isExportExcel: Bool
     @Binding var isFinishedExportExcel: Bool
     
-    private let periods = ["1개월", "3개월", "6개월", "직접설정"]
+    private let periods = ["1개월", "3개월", "6개월", "1년"]
     
     var body: some View {
         VStack {
