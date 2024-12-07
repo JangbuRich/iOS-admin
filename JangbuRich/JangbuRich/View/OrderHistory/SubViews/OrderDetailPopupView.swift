@@ -97,14 +97,14 @@ struct OrderDetailPopupView: View {
                                 .font(isSimpleMode ? .label1 : .detail1)
                                 .foregroundStyle(.jgray50)
                             
-//                            Text("|")
-//                                .font(.detail4)
-//                                .foregroundStyle(.jgray70)
-//                            
-//                            Text(formatDate(orderDetail.dateTime))
-//                                .font(.detail1)
-//                                .foregroundStyle(.jgray50)
-//                            
+                            Text("|")
+                                .font(.detail4)
+                                .foregroundStyle(.jgray70)
+                            
+                            Text(extractTime(orderDetail.dateTime))
+                                .font(isSimpleMode ? .label1 : .detail1)
+                                .foregroundStyle(.jgray50)
+                            
                             Spacer()
                             
                             Text("총 \(orderDetail.amount)개")
