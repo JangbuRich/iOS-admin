@@ -13,6 +13,47 @@
 
 <br>
 
+### 📍 주요 기능 - 사장님 앱 (iPadOS)
+> ### 카카오 소셜 로그인 & 홈 화면
+> 카카오 소셜 로그인을 통해 회원가입을 할 수 있습니다. 계속해서 움직이는 로티를 통해 생동감 있는 홈화면을 구성했습니다. <br/>
+> 다양한 연령대를 고려해서 '일반 모드'와 '큰글씨 모드'를 선택 할 수 있습니다.
+
+|![GIF](https://github.com/user-attachments/assets/66b6e406-da84-428a-b843-acd4202fe2e6)|![GIF](https://github.com/user-attachments/assets/e0cb44c4-c68b-43a5-b8d3-12b655c8c8f7)|![GIF](https://github.com/user-attachments/assets/99e7ecff-5bcf-4078-89a3-c89b05481203)|
+|:--:|:--:|:--:|
+|`카카오 소셜 로그인`|`홈화면`|`홈화면 - 모드 선택`|
+
+> ### 주문 내역 & 주문 세부 내역
+> 주문 내역 탭에서는 오늘의 주문 내역과 지난 주문 내역을 확인 할 수 있습니다. <br/>
+> 오늘 주문 내역을 클릭하면 주문 세부 내역을 확인할 수 있습니다.
+
+|![image](https://github.com/user-attachments/assets/c61183d3-4688-4b63-aecb-bea87258ac1f)|![image](https://github.com/user-attachments/assets/9c9018ce-8ec7-4e23-8624-fa0c091668f9)|![image](https://github.com/user-attachments/assets/9f39fb37-fa8b-4d6b-8802-d51ad394fe48)|
+|:--:|:--:|:--:|
+|`주문내역`|`오늘의 주문 내역`|`지난 주문 내역`|
+
+> ### 장부 관리 & 세금계산서 & 주문 내역 엑셀로 내보내기
+> 장부 관리 탭에서는 결제 그룹과 전체 결재 내역을 한 눈에 확인할 수 있습니다. <br/>
+> 그룹 별로 세금계산서 발행이 가능하고, 전체 결제 내역에 대해서 기간을 설정하여 엑셀로 다운받을 수 있습니다.
+
+|![image](https://github.com/user-attachments/assets/3adf080a-9591-4489-ab61-3bda657fb87a)|![image](https://github.com/user-attachments/assets/80de71b1-31a2-4164-a596-b0edbd9548c9)|![image](https://github.com/user-attachments/assets/4025f13c-01ab-41ae-84dd-cf34a0ac80b2)|
+|:--:|:--:|:--:|
+|`장부관리`|`전체 결제 그룹`|`전체 결제 내역`|
+
+<br>
+
+|![GIF](https://github.com/user-attachments/assets/dafc84f9-318e-44c5-b770-1df899035662)|<img src="https://github.com/user-attachments/assets/f565ce54-d4a2-4778-a3f5-548a81ceac14" width=400>|<img src="https://github.com/user-attachments/assets/c4f5adbd-a011-4cb8-8279-51ebb4572bb7" width=400>|
+|:--:|:--:|:--:|
+|`주문내역 엑셀로 내보내기`|`주문 내역 엑셀 기간 선택`|`엑셀 다운로드 완료`|
+
+<br>
+
+|![image](https://github.com/user-attachments/assets/65a3374f-fa3c-4983-bc14-36e9e6578a01)|![image](https://github.com/user-attachments/assets/9edfe3ed-1e82-47d8-9627-39f62cae50b2)|![image](https://github.com/user-attachments/assets/60103652-0318-40eb-925c-c4535fe6da5a)|
+|:--:|:--:|:--:|
+|`결제 그룹 세부 내용`|`세금 계산서 발행 완료`|`마이페이지`|
+
+
+
+<br>
+
 ### 🛠️ Architecture
 ![image](https://github.com/user-attachments/assets/5e25b953-295b-4d2e-9899-3f2926284d7f)
 
