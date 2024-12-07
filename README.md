@@ -53,14 +53,13 @@
 <br>
 
 ### 📍 주요 기능 - 소비자 앱 (Android)
-> ### 카카오페이 연동 & 매장 세부 화면
+> ### 카카오페이, 카카오맵 연동 & 매장 세부 화면 & 홈 화면
 > 카카오페이 연동을 통해 선결제 금액을 충전할 수 있습니다. <br/>
 > 가게 상세 정보를 확인할 수 있습니다.
 
-|![GIF](https://github.com/user-attachments/assets/9873dbb1-a94f-47d9-bd8c-865feddfd29b)|<img src="https://github.com/user-attachments/assets/cb364ed4-b881-4434-a1ad-cc6511b12a7e" width=300>|
-|:--:|:--:|
-|`카카오페이 결제 연동`|`가게 상세정보`|
-
+|![GIF](https://github.com/user-attachments/assets/9873dbb1-a94f-47d9-bd8c-865feddfd29b)|<img src="https://github.com/user-attachments/assets/cb364ed4-b881-4434-a1ad-cc6511b12a7e" width=350>|![GIF](https://github.com/user-attachments/assets/24f40815-a677-40ac-ab60-79b39e4a71bb)|![GIF](https://github.com/user-attachments/assets/147be05a-61e1-486f-8576-14f8cda84c24)|
+|:--:|:--:|:--:|:--:|
+|`카카오페이 결제 연동`|`가게 상세정보`|`카카오맵 연동`|`홈 화면`|
 
 <br>
 
