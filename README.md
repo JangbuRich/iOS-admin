@@ -50,6 +50,16 @@
 |:--:|:--:|:--:|
 |`결제 그룹 세부 내용`|`세금 계산서 발행 완료`|`마이페이지`|
 
+<br>
+
+### 📍 주요 기능 - 소비자 앱 (Android)
+> ### 카카오페이 연동 & 매장 세부 화면
+> 카카오페이 연동을 통해 선결제 금액을 충전할 수 있습니다. <br/>
+> 가게 상세 정보를 확인할 수 있습니다.
+
+|![GIF](https://github.com/user-attachments/assets/9873dbb1-a94f-47d9-bd8c-865feddfd29b)|<img src="https://github.com/user-attachments/assets/cb364ed4-b881-4434-a1ad-cc6511b12a7e" width=300>|
+|:--:|:--:|
+|`카카오페이 결제 연동`|`가게 상세정보`|
 
 
 <br>
