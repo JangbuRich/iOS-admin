@@ -13,14 +13,15 @@ struct HomeView: View {
     @EnvironmentObject var todayOrderStore: TodayOrderStore
     @EnvironmentObject var myInfoStore: MyInfoStore
     
+    @AppStorage("isGuidedSimpleMode") var isGuidedSimpleMode: Bool = false
     @AppStorage("isSimpleMode") var isSimpleMode: Bool = false
     
     @Binding var selectedIndex: Int
     
     let nowReservation = [
-        NowReservation(name: "김장부", numberOfPeople: "6명", reservationDate: "2024.11.23"),
-        NowReservation(name: "김장부", numberOfPeople: "6명", reservationDate: "2024.11.23"),
-        NowReservation(name: "김장부", numberOfPeople: "6명", reservationDate: "2024.11.23")
+        NowReservation(name: "김구름", numberOfPeople: "4명", reservationDate: "2024.12.08"),
+        NowReservation(name: "박장부", numberOfPeople: "6명", reservationDate: "2024.12.08"),
+        NowReservation(name: "이코인", numberOfPeople: "10명", reservationDate: "2024.12.10")
     ]
     
     var body: some View {
@@ -345,6 +346,15 @@ struct HomeView: View {
             .onAppear {
                 todayOrderStore.getOrderToday()
                 myInfoStore.getMyStoreInfo()
+                
+                if !isGuidedSimpleMode {
+                    overlayManager.showSheet(
+                        GuideSimpleModeView()
+                            .onDisappear {
+                                isGuidedSimpleMode = true
+                            }
+                    )
+                }
             }
         }
     }

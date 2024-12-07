@@ -11,6 +11,8 @@ struct LaunchView: View {
     
     @EnvironmentObject var authStore: AuthStore
     
+    @AppStorage("isGuidedSimpleMode") var isGuidedSimpleMode: Bool = false
+    
     @State private var isActive = false
     @State private var isLoading = true
     
@@ -34,6 +36,8 @@ struct LaunchView: View {
                         withAnimation {
                             self.isActive = true
                             self.isLoading.toggle()
+                            
+                            isGuidedSimpleMode = false
                         }
                     }
                 }
