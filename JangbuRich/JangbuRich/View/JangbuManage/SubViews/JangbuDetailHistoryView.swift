@@ -19,7 +19,7 @@ struct JangbuDetailHistoryView: View {
                 Text("\(jangbuDetailHistory.id)")
                     .frame(maxWidth: scaledWidth(49), alignment: .leading)
                 
-                Text(formatDate(jangbuDetailHistory.date))
+                Text(jangbuDetailHistory.date)
                     .frame(maxWidth: scaledWidth(115), alignment: .leading)
                 
                 Text(jangbuDetailHistory.userName)
