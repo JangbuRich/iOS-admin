@@ -47,7 +47,7 @@ struct GuideSimpleModeView: View {
                 Button {
                     isSimpleMode = true
                 } label: {
-                    Text("큰글씨 모드")
+                    Text("간편 모드")
                         .font(.headline8)
                         .foregroundStyle(isSimpleMode ? .jgray20 : .jgray60)
                         .padding(.vertical, scaledHeight(16))
