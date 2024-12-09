@@ -98,10 +98,10 @@ struct HomeView: View {
                                                         .font(isSimpleMode ? .headline5 : .body2)
                                                         .foregroundStyle(.jgray20)
                                                     
-                                                    Image(.iconRight)
-                                                        .resizable()
-                                                        .scaledToFit()
-                                                        .frame(height: scaledHeight(20))
+//                                                    Image(.iconRight)
+//                                                        .resizable()
+//                                                        .scaledToFit()
+//                                                        .frame(height: scaledHeight(20))
                                                 }
                                                 
                                                 HStack(spacing: scaledWidth(7)) {
