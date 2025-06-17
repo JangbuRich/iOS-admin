@@ -100,7 +100,3 @@ struct MainTapView: View {
         .edgesIgnoringSafeArea(.all)
     }
 }
-
-#Preview {
-    MainTapView()
-}
